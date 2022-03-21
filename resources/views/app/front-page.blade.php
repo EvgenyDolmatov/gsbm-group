@@ -43,33 +43,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="slider-item">
-                <div class="slide-image">
-                    <div class="overlay-image"></div>
-                    <img src="{{asset('assets/app/img/banner/slide2.jpg')}}" alt="">
-                </div>
-                <div class="slide-content">
-                    <div class="container-xl container-fluid">
-                        <div class="row">
-                            <div class="col-lg-6 col-12">
-                                <h2 class="title">Комплекс работ по монтажу технологического оборудования на ЦБП</h2>
-                            </div>
-                            <div class="col-lg-6 col-12">
-                                <ul class="slide-description">
-                                    <li>Изготовление ж/б фундаментов под технологическое оборудование (заливка, рубка,
-                                        резка, шлифовка, подливка)
-                                    </li>
-                                    <li>Изготовление опалубки</li>
-                                    <li>Изготовление металлокаркаса</li>
-                                    <li>Общестроительные работы</li>
-                                    <li>Ведение строительного контроля за работами</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="container-xl container-fluid">
             <div class="slider-dots"></div>

@@ -732,6 +732,7 @@ header.header.education .header-right {
 
 .tile .tile-content .tile-image img {
     width: 100%;
+    max-width: 312px;
 }
 
 .tile .tile-content .tile-action {
