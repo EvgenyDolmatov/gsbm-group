@@ -1,0 +1,311 @@
+@extends('layouts.guest')
+
+@section('title', 'О нас')
+@section('keywords', 'О нас')
+@section('description', 'О нас')
+
+@section('content')
+    <section id="about">
+        <div class="header bg-white">
+            <div class="container-xl container-fluid">
+                <h1 class="page-header text-center"> ООО “Геострой - Буммаш”</h1>
+            </div>
+        </div>
+
+        <div class="container-xl container-fluid">
+            <div class="section-content">
+                <p class="text-center">ООО «Геострой-Буммаш» - молодая быстро развивающаяся компания, с перспективными
+                    проектами по развитию бумагоделательной и деревообрабатывающей отрасли.
+                    Главное для нашей компании – люди, которые создают проект, сопровождают его, монтируют своими руками
+                    и запускают, скрупулёзно и терпеливо собирая воедино тысячи деталей, заставляя их крутиться с одной
+                    скоростью.
+                </p>
+                <div class="about-image">
+                    <div class="overlay-image"></div>
+                    <img src="{{asset('assets/app/img/about-page.jpg')}}" alt="О нас">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Directions -->
+    <section id="main-directions">
+        <div class="header">
+            <div class="container-xl container-fluid">
+                <h3 class="section-header">Основные направления</h3>
+            </div>
+        </div>
+
+        <div class="section-content">
+            <div class="container-xl container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <ul class="page-list pr-lg-35">
+                            <li class="page-list-item">Комплекс работ по монтажу технологического оборудования на ЦБП
+                            </li>
+                            <li class="page-list-item">Монтаж технологических трубопроводов</li>
+                            <li class="page-list-item">Монтаж металлоконструкций любой сложности</li>
+                            <li class="page-list-item">Изготовление ж/б фундаментов под технологическое оборудование
+                            </li>
+                            <li class="page-list-item">Сварочные работы</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <ul class="page-list pl-lg-35">
+                            <li class="page-list-item">Высокоточные измерения и выверка оборудования</li>
+                            <li class="page-list-item">Работы по проектированию</li>
+                            <li class="page-list-item">Ремонт технологического оборудования</li>
+                            <li class="page-list-item">Электромонтажные работы и автоматика</li>
+                            <li class="page-list-item">Высокоточные измерения и выверка оборудования</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaders of Directions -->
+    <section id="leaders">
+        <div class="header">
+            <div class="container-xl container-fluid">
+                <h3 class="section-header">Руководители направлений</h3>
+            </div>
+        </div>
+
+        <div class="section-content">
+            <div class="container-xl container-fluid">
+                <div class="row">
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader1.jpg')}}" alt="Лопатин Роман">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Лопатин Роман</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Генеральный директор</p>
+                            </div>
+                            <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">rlopatin.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader2.jpg')}}" alt="Соснин Денис">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Соснин Денис</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Зам. генерального директора</p>
+                            </div>
+                                                        <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">dsosnin.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader3.jpg')}}" alt="Шепелев Алексей">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Шепелев Алексей</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Главный сварщик</p>
+                            </div>
+                                                        <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">ashepelev.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader4.jpg')}}" alt="Гетте Максим">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Гетте Максим</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Начальник службы высокоточных измерений</p>
+                            </div>
+                                                        <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">mgette.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader5.jpg')}}" alt="Лопатин Роман">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Игнатьев Александр</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Начальник ПТО</p>
+                            </div>
+                                                        <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">aignatiev.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader6.jpg')}}" alt="Кузьмин Сергей">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Кузьмин Сергей</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Руководитель проектов</p>
+                            </div>
+                                                        <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">skuzmin.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader7.jpg')}}" alt="Лобанов Игорь">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Лобанов Игорь</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Руководитель проектов</p>
+                            </div>
+                                                        <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">ilobanov.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/supervisors/leader8.jpg')}}" alt="Харламов Евгений">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Харламов Евгений</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>Руководтель проектов</p>
+                            </div>
+                                                        <div class="tile-contacts">
+                                <a href="mailto:name@gsbm-group.ru">ekharlamov.gsbm@yandex.ru</a>
+                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Partners -->
+    <section id="our-partners">
+        <div class="header">
+            <div class="container-xl container-fluid">
+                <h3 class="section-header">Наши партнеры</h3>
+            </div>
+        </div>
+
+        <div class="section-content bg-lg">
+            @include('components.section-partners')
+        </div>
+    </section>
+
+    <!-- Customers -->
+    <section id="our-customers">
+        <div class="header">
+            <div class="container-xl container-fluid">
+                <h3 class="section-header">Наши клиенты</h3>
+            </div>
+        </div>
+
+        <div class="section-content">
+            @include('components.section-customers')
+        </div>
+    </section>
+
+    <section id="simple-text">
+        <div class="container">
+            <p>ООО «Геострой-Буммаш» - молодая быстро развивающаяся компания, с перспективными проектами по развитию
+                бумагоделательной и деревообрабатывающей отрасли. Мы уделяем особое внимание подбору персонала. У нас
+                работают
+                высококвалифицированные специалисты.
+            </p>
+            <p>На сегодняшний день ООО «Геострой-Буммаш» имеет постоянный производственный участок в городе Братске.</p>
+        </div>
+    </section>
+
+    <section id="about-feedback">
+        <div class="overlay-image"></div>
+        <div class="section-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div class="feedback-title pr-md-70">
+                            <h2 class="title">Хотите стать нашим партнером?</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="feedback-form pl-md-70">
+                            <form action="#">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Имя</label>
+                                    <input type="text" id="name" name="name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Телефон</label>
+                                    <input type="text" id="phone" name="phone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" id="email" name="email" class="form-control">
+                                </div>
+
+                                <div class="form-group mt-4">
+                                    <textarea id="comment" name="comment" rows="4"
+                                              class="form-control" placeholder="Что вас интересует?"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-brand mt-4">Оставить заявку</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
