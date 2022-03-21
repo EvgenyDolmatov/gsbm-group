@@ -297,7 +297,7 @@ form .form-checkbox label:before {
     border-radius: 3px;
 }
 
-form .form-radio input[type=radio]:checked+label:after {
+form .form-radio input[type=radio]:checked + label:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -309,7 +309,7 @@ form .form-radio input[type=radio]:checked+label:after {
     background-color: #1c3f94;
 }
 
-form .form-checkbox input[type=checkbox]:checked+label:after {
+form .form-checkbox input[type=checkbox]:checked + label:after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -380,12 +380,21 @@ header.header {
     z-index: 10;
 }
 
+header.header .logo.logo-education {
+    display: flex;
+    justify-content: flex-start;
+}
+
 header.header .logo a {
     display: block;
 }
 
 header.header .logo a img {
     margin-right: 10px;
+}
+
+header.header .logo.logo-education a img {
+    max-height: 120px;
 }
 
 header.header .logo a span {
@@ -437,7 +446,7 @@ header.header.education .header-right {
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #000;
+    color: #000;
 }
 
 .navbar .navbar-burger {
@@ -999,13 +1008,15 @@ main .section-content .simple-tile .tile-description p {
     letter-spacing: -0.045;
     text-align: center;
 }
+
 main .section-content .simple-tile .tile-contacts {
-  margin-top: -5px;
+    margin-top: -5px;
 }
+
 main .section-content .simple-tile .tile-contacts a {
-  display: block;
-  text-align: center;
-  color: #1c3f94;
+    display: block;
+    text-align: center;
+    color: #1c3f94;
 
 }
 

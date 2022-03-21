@@ -32,7 +32,7 @@
                                 <a href="#">Доп. услуги</a>
                             </li>
                             <li class="footer-nav-item">
-                                <a href="#">Учебный центр</a>
+                                <a href="{{route('education.info.main')}}">Учебный центр</a>
                             </li>
                             <li class="footer-nav-item">
                                 <a href="{{route('app.contacts-page')}}">Контакты</a>

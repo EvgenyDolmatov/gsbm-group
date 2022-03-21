@@ -130,6 +130,9 @@
             <div class="accordion-body">
                 <ul class="accordion-list">
                     <li>
+                        <a href="#">Платные услуги</a>
+                    </li>
+                    <li>
                         <a href="{{route('education.about.contacts')}}">Контакты</a>
                     </li>
                     <li>
