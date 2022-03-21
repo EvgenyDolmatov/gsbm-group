@@ -43,7 +43,7 @@
             <div class="accordion-body">
                 <ul class="accordion-list">
                     <li>
-                        <a href="#">Охрана труда</a>
+                        <a href="{{route('education.directions.safety-and-health')}}">Охрана труда</a>
                     </li>
                     <li>
                         <a href="#">Электробезопасность</a>

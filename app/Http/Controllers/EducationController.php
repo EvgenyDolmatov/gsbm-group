@@ -35,6 +35,14 @@ class EducationController extends Controller
     }
 
     /*
+     * Направления обучения
+     */
+    public function safetyAndHealth()
+    {
+        return view('app.education.directions.price-safety-and-health');
+    }
+
+    /*
      * Формы обучения
      */
     public function fullTimeStudyView()
