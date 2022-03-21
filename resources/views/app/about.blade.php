@@ -89,8 +89,8 @@
                                 <p>Генеральный директор</p>
                             </div>
                             <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">rlopatin.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                                <a href="mailto:rlopatin.gsbm@yandex.ru">rlopatin.gsbm@yandex.ru</a>
+                                <a href="tel:+79223281860">+7 922 328 1860</a>
                             </div>
                         </div>
                     </div>
@@ -107,9 +107,9 @@
                             <div class="tile-description">
                                 <p>Зам. генерального директора</p>
                             </div>
-                                                        <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">dsosnin.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            <div class="tile-contacts">
+                                <a href="mailto:dsosnin.gsbm@yandex.ru">dsosnin.gsbm@yandex.ru</a>
+                                <a href="tel:+79519385356">+7 951 938 5356</a>
                             </div>
                         </div>
                     </div>
@@ -126,9 +126,9 @@
                             <div class="tile-description">
                                 <p>Главный сварщик</p>
                             </div>
-                                                        <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">ashepelev.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            <div class="tile-contacts">
+                                <a href="mailto:ashepelev.gsbm@yandex.ru">ashepelev.gsbm@yandex.ru</a>
+                                <a href="tel:+79803560796">+7 980 356 0796</a>
                             </div>
                         </div>
                     </div>
@@ -145,9 +145,9 @@
                             <div class="tile-description">
                                 <p>Начальник службы высокоточных измерений</p>
                             </div>
-                                                        <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">mgette.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            <div class="tile-contacts">
+                                <a href="mailto:mgette.gsbm@yandex.ru">mgette.gsbm@yandex.ru</a>
+                                <a href="tel:+79223166799">+7 922 316 6799</a>
                             </div>
                         </div>
                     </div>
@@ -164,9 +164,9 @@
                             <div class="tile-description">
                                 <p>Начальник ПТО</p>
                             </div>
-                                                        <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">aignatiev.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            <div class="tile-contacts">
+                                <a href="mailto:aignatiev.gsbm@yandex.ru">aignatiev.gsbm@yandex.ru</a>
+                                <a href="tel:+79504725766">+7 950 472 5766</a>
                             </div>
                         </div>
                     </div>
@@ -183,9 +183,9 @@
                             <div class="tile-description">
                                 <p>Руководитель проектов</p>
                             </div>
-                                                        <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">skuzmin.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            <div class="tile-contacts">
+                                <a href="mailto:skuzmin.gsbm@yandex.ru">skuzmin.gsbm@yandex.ru</a>
+                                <a href="tel:+79247025857">+7 924 702 5857</a>
                             </div>
                         </div>
                     </div>
@@ -202,9 +202,9 @@
                             <div class="tile-description">
                                 <p>Руководитель проектов</p>
                             </div>
-                                                        <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">ilobanov.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            <div class="tile-contacts">
+                                <a href="mailto:ilobanov.gsbm@yandex.ru">ilobanov.gsbm@yandex.ru</a>
+                                <a href="tel:+79027912385">+7 902 791 2385</a>
                             </div>
                         </div>
                     </div>
@@ -221,9 +221,9 @@
                             <div class="tile-description">
                                 <p>Руководтель проектов</p>
                             </div>
-                                                        <div class="tile-contacts">
-                                <a href="mailto:name@gsbm-group.ru">ekharlamov.gsbm@yandex.ru</a>
-                                <a href="tel:+70000000000">+7 000 000 0000</a>
+                            <div class="tile-contacts">
+                                <a href="mailto:ekharlamov.gsbm@yandex.ru">ekharlamov.gsbm@yandex.ru</a>
+                                <a href="tel:+79223801909">+7 922 380 1909</a>
                             </div>
                         </div>
                     </div>
