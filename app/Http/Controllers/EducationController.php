@@ -35,11 +35,16 @@ class EducationController extends Controller
     }
 
     /*
-     * Направления обучения
+     * Платные услуги
      */
-    public function safetyAndHealth()
+    public function educationPrice()
     {
-        return view('app.education.directions.price-safety-and-health');
+        return view('app.education.services.price-education');
+    }
+
+    public function outsourcingPrice()
+    {
+        return view('app.education.services.price-outsourcing');
     }
 
     /*

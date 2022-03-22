@@ -41,9 +41,10 @@ Route::prefix('education')->group(function () {
         Route::get('standards', [EducationController::class, 'standardsView'])->name('education.info.standards');
         Route::get('teachers', [EducationController::class, 'teachersView'])->name('education.info.teachers');
     });
-    // Направления обучения
-    Route::prefix('directions')->group(function (){
-        Route::get('safety-and-health', [EducationController::class, 'safetyAndHealth'])->name('education.directions.safety-and-health');
+    // Платные услуги
+    Route::prefix('services')->group(function (){
+        Route::get('price', [EducationController::class, 'educationPrice'])->name('education.price');
+        Route::get('outsourcing/price', [EducationController::class, 'outsourcingPrice'])->name('education.outsourcing.price');
     });
     // Формы обучения
     Route::prefix('forms')->group(function () {

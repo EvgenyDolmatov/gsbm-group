@@ -35,7 +35,7 @@
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseStudyDirections" aria-expanded="false"
                     aria-controls="flush-collapseStudyDirections">
-                Направления обучения
+                Платные услуги
             </button>
         </h2>
         <div id="flush-collapseStudyDirections" class="accordion-collapse collapse"
@@ -43,25 +43,10 @@
             <div class="accordion-body">
                 <ul class="accordion-list">
                     <li>
-                        <a href="{{route('education.directions.safety-and-health')}}">Охрана труда</a>
+                        <a href="{{route('education.outsourcing.price')}}">Услуги аутсорсинга в области охраны труда</a>
                     </li>
                     <li>
-                        <a href="#">Электробезопасность</a>
-                    </li>
-                    <li>
-                        <a href="#">Рабочая специальность (любое направление)</a>
-                    </li>
-                    <li>
-                        <a href="#">Пожарная безопасность</a>
-                    </li>
-                    <li>
-                        <a href="#">Работа на высоте</a>
-                    </li>
-                    <li>
-                        <a href="#">Консультационные услуги</a>
-                    </li>
-                    <li>
-                        <a href="#">Аутсорсинг в области «Охраны труда»</a>
+                        <a href="{{route('education.price')}}">Обучение по охране труда и смежным направлениям</a>
                     </li>
                 </ul>
             </div>

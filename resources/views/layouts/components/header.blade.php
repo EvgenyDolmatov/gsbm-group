@@ -95,7 +95,7 @@
                                                 образовательной организации</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Направления обучения</a>
+                                            <a class="nav-link" href="{{route('education.outsourcing.price')}}">Платные услуги</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('education.forms.full-time')}}">Формы

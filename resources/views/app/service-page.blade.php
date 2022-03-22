@@ -51,78 +51,74 @@
         <div class="section-content bg-lg">
             <div class="container-xl container-fluid">
                 <div class="row">
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                    @if($service->title == 'Сварочные работы')
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate2.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate3.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate4.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate5.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate6.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                    @elseif($service->title == 'Работы по проектированию')
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate4.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-6">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
+                    @else
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate4.jpg')}}" alt>
                             </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate1.jpg')}}" alt="Image">
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>

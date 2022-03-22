@@ -1,6 +1,6 @@
 @extends('layouts.education')
 
-@section('title', 'Охрана труда')
+@section('title', 'Обучение по охране труда и смежным направлениям')
 @section('content')
     <section id="add-services">
         <div class="container-xl container-fluid">
@@ -14,7 +14,7 @@
                     <div class="col-lg-7 offset-xl-1 offset-0 col-12">
                         <div class="page-right-content">
                             <div class="service-title">
-                                <h2>Охрана труда</h2>
+                                <h2>Обучение по охране труда и смежным направлениям</h2>
                             </div>
 
                             <!-- Table for desktop -->
@@ -23,52 +23,63 @@
                                 <tr>
                                     <th scope="col" style="width:45px;">№<br>п/п</th>
                                     <th scope="col">Направление обучения</th>
-                                    <th scope="col">Выдаваемый документ</th>
                                     <th scope="col">Часы</th>
-                                    <th scope="col">Стоимость, руб./чел.</th>
+                                    <th scope="col">Стоимость,<br>руб./чел.</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>Техносферная безопасность. Охрана труда.</td>
-                                    <td>Диплом</td>
+                                    <td>Охрана труда. Техносферная безопасность</td>
                                     <td>256</td>
                                     <td>9&nbsp;700</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Охрана труда для руководителей и специалистов (разные отрасли производства)</td>
-                                    <td>Удостоверение</td>
+                                    <td>Охрана труда</td>
                                     <td>40</td>
                                     <td>2&nbsp;000</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Охрана труда для работников рабочих профессий и прочего обслуживающего персонала</td>
-                                    <td>Удостоверение</td>
-                                    <td>20</td>
-                                    <td>1&nbsp;850</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Безопасные методы и приемы выполнения работ на высоте</td>
-                                    <td>Удостоверение</td>
+                                    <td>Работа на высоте</td>
                                     <td>24</td>
                                     <td>1&nbsp;500</td>
                                 </tr>
                                 <tr>
+                                    <td>4</td>
+                                    <td>Первая помощь</td>
+                                    <td>20</td>
+                                    <td>1&nbsp;300</td>
+                                </tr>
+                                <tr>
                                     <td>5</td>
-                                    <td>Внеочередная проверка знаний</td>
-                                    <td>Протокол</td>
+                                    <td>Электробезопасность</td>
+                                    <td>72</td>
+                                    <td>2&nbsp;800</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Рабочая специальность (любое направление)</td>
+                                    <td>80</td>
+                                    <td>2&nbsp;500</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Пожарная безопасность</td>
+                                    <td>24</td>
+                                    <td>1&nbsp;500</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Внеочередная проверка</td>
                                     <td>16</td>
                                     <td>600</td>
                                 </tr>
                                 <tr>
-                                    <td>6</td>
+                                    <td>9</td>
                                     <td>Повторная аттестация</td>
-                                    <td>---</td>
-                                    <td>40/20</td>
+                                    <td>20</td>
                                     <td>1&nbsp;000</td>
                                 </tr>
                                 </tbody>

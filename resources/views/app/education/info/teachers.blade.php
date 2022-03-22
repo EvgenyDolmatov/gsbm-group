@@ -17,7 +17,30 @@
                                 <h2>Руководство. Педагогический состав</h2>
                             </div>
 
-                            <p>Пока непонятно, что писать ...</p>
+                            <div class="section-content">
+                                <div class="container-xl container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="simple-tile">
+                                                <div class="tile-image">
+                                                    <div class="overlay-image"></div>
+{{--                                                    <img src="{{asset('assets/app/img/supervisors/leader9.jpg')}}" alt="Лопатин Роман">--}}
+                                                </div>
+                                                <div class="tile-title">
+                                                    <h4>Александра Верхоланцева</h4>
+                                                </div>
+                                                <div class="tile-description">
+                                                    <p>Руководитель учебного центра</p>
+                                                </div>
+                                                <div class="tile-contacts">
+                                                    <a href="mailto:rlopatin@gsbm-group.ru">averholanceva@gsbm-group.ru</a>
+                                                    <a href="tel:+79223801909">+7 000 000 0000</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>
