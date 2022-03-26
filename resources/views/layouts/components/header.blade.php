@@ -54,7 +54,8 @@
                                     <ul class="nav-dropdown-list">
                                         @foreach($services as $service)
                                             <li class="nav-item">
-                                                <a class="nav-link" href="{{route('services.show-public', $service->slug)}}">
+                                                <a class="nav-link"
+                                                   href="{{route('services.show-public', $service->slug)}}">
                                                     {{$service->title}}
                                                 </a>
                                             </li>
@@ -95,11 +96,12 @@
                                                 образовательной организации</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('education.outsourcing.price')}}">Платные услуги</a>
+                                            <a class="nav-link" href="{{route('education.outsourcing.price')}}">Платные
+                                                услуги</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('education.forms.full-time')}}">Формы
-                                                обучения</a>
+                                            <a class="nav-link" href="{{route('education.forms.full-time')}}">Дистанционное
+                                                обучение</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('education.docs.permits')}}">Документы</a>
