@@ -11,7 +11,7 @@ class Service extends Model
 {
     use HasFactory, HasSlug;
 
-    protected $fillable = ['title', 'slug', 'description'];
+    protected $fillable = ['title', 'slug', 'description', 'priority'];
 
     public function images()
     {

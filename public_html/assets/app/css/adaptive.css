@@ -545,6 +545,12 @@
     .structure-tile.arrow-both:after {
         top: 50px;
     }
+
+    .alert-wrap {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
 }
 
 @media (max-width: 450px) {

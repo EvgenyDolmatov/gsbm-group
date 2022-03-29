@@ -10,7 +10,7 @@ class AppController extends Controller
     public function frontPage()
     {
         return view('app.front-page', [
-            'services' => Service::all(),
+            'services' => Service::all()->sortBy('priority'),
         ]);
     }
 

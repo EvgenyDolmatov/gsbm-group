@@ -265,4 +265,9 @@
             }
         });
     });
+
+    // Remove Alert
+    $('.alert-wrap .close').on('click', function (){
+       $(this).parent('.alert').remove();
+    });
 })(jQuery);

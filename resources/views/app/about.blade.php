@@ -218,7 +218,7 @@
                                 <h4>Харламов Евгений</h4>
                             </div>
                             <div class="tile-description">
-                                <p>Руководтель проектов</p>
+                                <p>Зам. генерального директора по стртегическому ращвитию</p>
                             </div>
                             <div class="tile-contacts">
                                 <a href="mailto:ekharlamov@gsbm-group.ru">ekharlamov@gsbm-group.ru</a>
@@ -280,7 +280,8 @@
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="feedback-form pl-md-70">
-                            <form action="#">
+                            <form action="{{route('email.feedback-partner-data')}}" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <label for="name" class="form-label">Имя</label>
                                     <input type="text" id="name" name="name" class="form-control">
@@ -307,4 +308,26 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('popups')
+    @if(session()->has('success'))
+        <div class="alert-wrap">
+            <div class="alert alert-success">
+                <span>{{session('success')}}</span>
+                <span class="close">x</span>
+            </div>
+        </div>
+    @endif
+
+    @if($errors->any())
+        <div class="alert-wrap">
+            @foreach($errors->all() as $error)
+                <div class="alert alert-danger">
+                    <span>{{$error}}</span>
+                    <span class="close">x</span>
+                </div>
+            @endforeach
+        </div>
+    @endif
 @endsection

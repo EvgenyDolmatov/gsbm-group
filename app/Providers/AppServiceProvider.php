@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('layouts.components.header', function ($view) {
             $view->with([
-                'services' => Service::all(),
+                'services' => Service::all()->sortBy('priority'),
             ]);
         });
     }

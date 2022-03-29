@@ -5,6 +5,7 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EducationController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ServiceController;
@@ -31,6 +32,12 @@ Route::get('contacts', [AppController::class, 'contactsPage'])->name('app.contac
 
 Route::prefix('services')->group(function (){
     Route::get('/{slug}', [ServiceController::class, 'publicShow'])->name('services.show-public');
+});
+
+Route::prefix('email')->group(function (){
+    Route::post('feedback-data', [EmailController::class, 'mailFeedbackData'])->name('email.feedback-data');
+    Route::post('feedback-consult', [EmailController::class, 'mailFeedbackConsultData'])->name('email.feedback-consult-data');
+    Route::post('feedback-data', [EmailController::class, 'mailFeedbackPartnerData'])->name('email.feedback-partner-data');
 });
 
 Route::prefix('education')->group(function () {

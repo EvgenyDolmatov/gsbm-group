@@ -11,7 +11,7 @@
         <div class="header bg-white">
             <div class="container-xl container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 col-12">
+                    <div class="col-12">
                         <h1 class="page-header">{{$service->title}}</h1>
                         <div class="page-description">
                             <p>{!! $service->description !!}</p>
@@ -148,7 +148,8 @@
                     <div class="col-lg-6 col-12">
                         <div class="right-container">
                             <h2 class="page-header">Нужна консультация?</h2>
-                            <form action="#">
+                            <form action="{{route('email.feedback-consult-data')}}" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <label for="name" class="form-label">Имя</label>
                                     <input type="text" id="name" name="name" class="form-control">
@@ -182,4 +183,24 @@
             <img src="#" alt="Certificate 1">
         </div>
     </div>
+
+    @if(session()->has('success'))
+        <div class="alert-wrap">
+            <div class="alert alert-success">
+                <span>{{session('success')}}</span>
+                <span class="close">x</span>
+            </div>
+        </div>
+    @endif
+
+    @if($errors->any())
+        <div class="alert-wrap">
+            @foreach($errors->all() as $error)
+                <div class="alert alert-danger">
+                    <span>{{$error}}</span>
+                    <span class="close">x</span>
+                </div>
+            @endforeach
+        </div>
+    @endif
 @endsection

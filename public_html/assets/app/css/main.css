@@ -1627,3 +1627,33 @@ main.centered-content .form-container.quiz-result .btn {
     margin-right: -30px;
     transform: rotate(-45deg);
 }
+
+.alert-wrap {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 100;
+}
+.alert-wrap .alert {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.alert-wrap .alert .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    margin-left: 20px;
+    background: rgba(255, 255,255, .5);
+    cursor: pointer;
+    transition: all .3s;
+}
+.alert-wrap .alert-wrap .close:hover {
+    background: rgba(255, 255,255, 1);
+    transition: all .3s;
+}
