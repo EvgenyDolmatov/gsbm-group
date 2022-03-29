@@ -276,7 +276,7 @@
                     </div>
                     <div class="col-md-6 col-12 order-4">
                         <div class="feedback-form pl-lg-35">
-                            <form action="{{route('email.feedback-data')}}" method="post" novalidate>
+                            <form action="{{route('email.feedback')}}" method="post" novalidate>
                                 @csrf
                                 <div class="form-group">
                                     <label for="name" class="form-label">Имя</label>

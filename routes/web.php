@@ -35,9 +35,9 @@ Route::prefix('services')->group(function (){
 });
 
 Route::prefix('email')->group(function (){
-    Route::post('feedback-data', [EmailController::class, 'mailFeedbackData'])->name('email.feedback-data');
-    Route::post('feedback-consult', [EmailController::class, 'mailFeedbackConsultData'])->name('email.feedback-consult-data');
-    Route::post('feedback-data', [EmailController::class, 'mailFeedbackPartnerData'])->name('email.feedback-partner-data');
+    Route::post('feedback/data', [EmailController::class, 'mailFeedbackData'])->name('email.feedback');
+    Route::post('feedback/consult', [EmailController::class, 'mailFeedbackConsultData'])->name('email.feedback-consult-data');
+    Route::post('feedback/partner', [EmailController::class, 'mailFeedbackPartnerData'])->name('email.feedback-partner-data');
 });
 
 Route::prefix('education')->group(function () {
