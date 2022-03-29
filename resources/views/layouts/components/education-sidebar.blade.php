@@ -20,9 +20,6 @@
                             организацией</a>
                     </li>
                     <li>
-                        <a href="{{route('education.info.standards')}}">Образовательные стандарты</a>
-                    </li>
-                    <li>
                         <a href="{{route('education.info.teachers')}}">Руководство. Педагогический состав</a>
                     </li>
                 </ul>
@@ -58,7 +55,7 @@
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseStudyForms" aria-expanded="false"
                     aria-controls="flush-collapseStudyForms">
-                Формы обучения
+                Дистанционное обучение
             </button>
         </h2>
         <div id="flush-collapseStudyForms" class="accordion-collapse collapse"
@@ -66,13 +63,10 @@
             <div class="accordion-body">
                 <ul class="accordion-list">
                     <li>
-                        <a href="{{route('education.forms.full-time')}}">Очное</a>
+                        <a href="{{route('education.forms.full-time')}}">Очно (в Учебном центре)</a>
                     </li>
                     <li>
-                        <a href="{{route('education.forms.distance')}}">Дистанционное</a>
-                    </li>
-                    <li>
-                        <a href="{{route('education.forms.remote')}}">На территории клиента</a>
+                        <a href="{{route('education.forms.distance')}}">Дистанционно (без отрыва от производства)</a>
                     </li>
                 </ul>
             </div>
@@ -114,9 +108,6 @@
              aria-labelledby="flush-headingContacts" data-bs-parent="#accordionContacts">
             <div class="accordion-body">
                 <ul class="accordion-list">
-                    <li>
-                        <a href="#">Платные услуги</a>
-                    </li>
                     <li>
                         <a href="{{route('education.about.contacts')}}">Контакты</a>
                     </li>

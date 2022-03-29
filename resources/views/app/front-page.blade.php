@@ -83,11 +83,11 @@
                                             </div>
                                         </a>
 
-                                        <div class="tile-action">
+                                        {{--<div class="tile-action">
                                             <button class="expand-btn">
                                                 <span class="arrow"></span>
                                             </button>
-                                        </div>
+                                        </div>--}}
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                     </div>
 
                     <button type="button" id="more-services" class="btn btn-brand">
-                        Еще усуги
+                        Еще услуги
                     </button>
                 </div>
             </div>

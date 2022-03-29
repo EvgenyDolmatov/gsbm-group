@@ -541,6 +541,10 @@
     main .section-content .simple-tile .tile-contacts a {
       font-size: 12px;
     }
+    .structure-tile.arrow-both:before,
+    .structure-tile.arrow-both:after {
+        top: 50px;
+    }
 }
 
 @media (max-width: 450px) {

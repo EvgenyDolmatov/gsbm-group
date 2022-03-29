@@ -20,7 +20,6 @@
                 </div>
             </div>
         </div>
-        </div>
 
         <div class="container-xl container-fluid">
             <div class="section-content p-0">
@@ -130,7 +129,7 @@
             <div class="container-xl container-fluid">
                 <div class="row">
                     <div class="col-lg-6 col-12">
-                        <div class="left-container">
+                        {{--<div class="left-container">
                             <h2 class="page-header">Консультационная помощь</h2>
                             <p>В нашей Компании к вашим услугам специалисты, смогут ответить на сложный вопрос,
                                 посоветовать
@@ -143,7 +142,7 @@
                                 Опытные специалисты не только расскажут, как правильно применять нормы и правила, но и
                                 поделятся
                                 практическим опытом в решении сложных ситуаций.</p>
-                        </div>
+                        </div>--}}
                     </div>
 
                     <div class="col-lg-6 col-12">

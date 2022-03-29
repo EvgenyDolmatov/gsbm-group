@@ -72,7 +72,7 @@
 
     // Filter Services
 
-    $(window).on('load', function () {
+    /*$(window).on('load', function () {
         let width = $(window).width();
         let serviceTiles = $('#service .tile').closest('.row').children('.col-12:nth-child(n+5)');
         let button = $('#more-services.btn');
@@ -88,7 +88,7 @@
         } else {
             serviceTiles.css({display: 'block'});
         }
-    });
+    });*/
 
     // Mobile header
     $(document).on('click', '.navbar-burger.open', function () {

@@ -17,7 +17,43 @@
                                 <h2>Структура и органы управления образовательной организацией</h2>
                             </div>
 
-                            <p>Пока непонятно, что писать ...</p>
+
+                            <div class="d-flex justify-content-center">
+                                <div class="structure-tile arrow-bottom">
+                                    <div class="tile-title">
+                                        <h4>Генеральный директор ООО&nbsp;«Геострой&#8209;Буммаш»</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <div class="structure-tile arrow-bottom">
+                                    <div class="tile-title">
+                                        <h4>Руководитель Учебного&nbsp;Центра</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <div class="structure-tile arrow-both">
+                                    <div class="tile-title">
+                                        <h4>Методист</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <div class="structure-tile">
+                                    <div class="tile-title">
+                                        <h4>Педагоги</h4>
+                                    </div>
+                                </div>
+                                <div class="structure-tile">
+                                    <div class="tile-title">
+                                        <h4>Диспетчер</h4>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

@@ -29,11 +29,6 @@ class EducationController extends Controller
         return view('app.education.info.teachers');
     }
 
-    public function permitsDocsView()
-    {
-        return view('app.education.documents.docs');
-    }
-
     /*
      * Платные услуги
      */
@@ -57,7 +52,7 @@ class EducationController extends Controller
 
     public function distanceStudyView()
     {
-        return view('app.education.study-forms.full-time');
+        return view('app.education.study-forms.distance');
     }
 
     public function remoteStudyView()
@@ -68,6 +63,11 @@ class EducationController extends Controller
     /*
      * Документы
      */
+    public function permitsDocsView()
+    {
+        return view('app.education.documents.docs-permits');
+    }
+
     public function localDocsView()
     {
         return view('app.education.documents.docs');
