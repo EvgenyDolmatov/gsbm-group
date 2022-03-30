@@ -32,7 +32,7 @@ class PasswordChanged extends Mailable
     public function build()
     {
         $subject = 'Пароль успешно изменен';
-        return $this->from('no-reply@geostroy.com', 'Геострой-Буммаш')
+        return $this->from('no-reply@gsbm-group.ru', 'Геострой-Буммаш')
             ->subject($subject)
             ->view('emails.password-changed', ['user' => $this->user]);
     }

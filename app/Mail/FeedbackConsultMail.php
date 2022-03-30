@@ -29,7 +29,7 @@ class FeedbackConsultMail extends Mailable
      */
     public function build()
     {
-        return $this->from('evd.work@yandex.ru', config('app.name'))
+        return $this->from('no-reply@gsbm-group.ru', config('app.name'))
             ->subject('Новая заявка для консультации!')
             ->view('emails.feedback-consult', ['customer' => $this->customer]);
     }
