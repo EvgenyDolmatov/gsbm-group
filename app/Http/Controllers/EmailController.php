@@ -24,7 +24,6 @@ class EmailController extends Controller
             'email' => $request->email,
         );
 
-        // info@gsbm-group.ru
         Mail::to('no-reply@gsbm-group.ru')->send(new FeedbackMail($customer));
 
         return back()->with('success', 'Ваше сообщение успешно отпарвлено!');
@@ -46,7 +45,6 @@ class EmailController extends Controller
             'comment' => $request->comment,
         );
 
-        // info@gsbm-group.ru
         Mail::to('no-reply@gsbm-group.ru')->send(new FeedbackConsultMail($customer));
 
         return back()->with('success', 'Ваше сообщение успешно отпарвлено!');
@@ -68,7 +66,6 @@ class EmailController extends Controller
             'comment' => $request->comment,
         );
 
-        // info@gsbm-group.ru
         Mail::to('no-reply@gsbm-group.ru')->send(new FeedbackPartnerMail($customer));
 
         return back()->with('success', 'Ваше сообщение успешно отпарвлено!');

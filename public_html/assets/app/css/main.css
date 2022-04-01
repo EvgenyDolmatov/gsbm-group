@@ -1365,6 +1365,10 @@ table.table th:last-child {
     margin-right: 30px;
 }
 
+.table-flex .table-flex-item .item-main .item-main-params.code {
+    min-width: 40px;
+}
+
 .table-flex .table-flex-item .item-main .item-main-params span {
     display: block;
 }

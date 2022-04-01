@@ -55,7 +55,7 @@
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseStudyForms" aria-expanded="false"
                     aria-controls="flush-collapseStudyForms">
-                Дистанционное обучение
+                Формы обучения
             </button>
         </h2>
         <div id="flush-collapseStudyForms" class="accordion-collapse collapse"

@@ -22,6 +22,10 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <div class="simple-tile">
+                                                <div class="tile-image">
+                                                    <div class="overlay-image"></div>
+                                                    <img src="{{asset('assets/app/img/education/vercholantceva.jpg')}}" alt="Верхоланцева Александра">
+                                                </div>
                                                 <div class="tile-title">
                                                     <h4>Александра Верхоланцева</h4>
                                                 </div>
@@ -36,6 +40,10 @@
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class="simple-tile">
+                                                <div class="tile-image">
+                                                    <div class="overlay-image"></div>
+                                                    <img src="{{asset('assets/app/img/education/churilov.jpg')}}" alt="Чурилов Михаил">
+                                                </div>
                                                 <div class="tile-title">
                                                     <h4>Чурилов Михаил</h4>
                                                 </div>
