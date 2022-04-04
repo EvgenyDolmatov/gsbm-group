@@ -22,16 +22,17 @@
                             <p>Фактический адрес: 614051, г. Пермь, ул. Подольская, д. 35</p>
                             <p>Режим работы: с понедельника по пятницу с 09:00 до 17:00</p>
                             <p>Выходные дни – суббота и воскресенье</p>
-
+                            <p>Телефон: <a href="tel:+79091112167" class="text-primary">+7 (909) 111 2167</a></p>
+                            <p>E-mail: <a href="mailto:gsbm.center@mail.ru" class="text-primary">gsbm.center@mail.ru</a></p>
 
                             <div class="social mt-5">
                                 <h3>Мы в соцсетях:</h3>
-
                                 <div class="social-items">
-                                    <a href="#" class="social social-fb"></a>
-                                    <a href="#" class="social social-vk"></a>
-                                    <a href="#" class="social social-instagram"></a>
-                                    <a href="#" class="social social-telegram"></a>
+                                    <a href="https://t.me/gsbm_center" class="social social-telegram" target="_blank"></a>
+                                    <a href="https://vk.com/club210037775" class="social social-vk" target="_blank"></a>
+                                    <a href="https://ok.ru/group/64147437584634" class="social social-ok" target="_blank"></a>
+                                    <a href="https://www.facebook.com/gsbmcenter" class="social social-fb" target="_blank"></a>
+                                    <a href="https://www.instagram.com/gsbm.center" class="social social-instagram" target="_blank"></a>
                                 </div>
                             </div>
 

@@ -1689,6 +1689,9 @@ main.centered-content .form-container.quiz-result .btn {
 .social-items .social.social-vk {
     background-image: url("../img/social/vk.svg");
 }
+.social-items .social.social-ok {
+    background-image: url("../img/social/ok.png");
+}
 .social-items .social.social-instagram {
     background-image: url("../img/social/instagram.svg");
 }

@@ -15,10 +15,10 @@
                 </div>
 
                 <div class="footer-social mobile">
-                    <a href="#" class="social vk"></a>
-                    <a href="#" class="social instagram"></a>
-                    <a href="#" class="social fb"></a>
-                    <a href="#" class="social telegram"></a>
+                    <a href="https://vk.com/club210037775" class="social vk" target="_blank"></a>
+                    <a href="https://www.instagram.com/gsbm.center" class="social instagram" target="_blank"></a>
+                    <a href="https://www.facebook.com/gsbmcenter" class="social fb" target="_blank"></a>
+                    <a href="https://t.me/gsbm_center" class="social telegram" target="_blank"></a>
                 </div>
             </div>
             <div class="col-lg-9 col-12">

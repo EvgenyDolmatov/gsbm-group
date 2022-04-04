@@ -218,7 +218,7 @@
                                 <h4>Харламов Евгений</h4>
                             </div>
                             <div class="tile-description">
-                                <p>Зам. генерального директора по стртегическому ращвитию</p>
+                                <p>Зам. генерального директора по стратегическому ращвитию</p>
                             </div>
                             <div class="tile-contacts">
                                 <a href="mailto:ekharlamov@gsbm-group.ru">ekharlamov@gsbm-group.ru</a>

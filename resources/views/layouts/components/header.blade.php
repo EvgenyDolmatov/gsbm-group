@@ -201,7 +201,7 @@
             </li>
         </ul>
 
-        <button class="btn btn-brand">Связаться с нами</button>
+        <a href="{{route('app.about-page')}}" class="btn btn-brand">Связаться с нами</a>
 
         <div class="mob-contacts">
             <a href="tel:+79504725766" class="phone">89504725766</a>
