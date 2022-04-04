@@ -31,9 +31,7 @@
                 </div>
                 <div class="col-lg-7 col-12">
                     <div class="section-content">
-                        <div id="ya-maps">
-                            <img src="{{asset('assets/app/img/ya-maps.jpg')}}" alt>
-                        </div>
+                        <div id="map"></div>
 
                         <h5>Юридический адрес</h5>
                         <p>614056, Российская&nbsp;Федерация, Пермский&nbsp;край, г.&nbsp;Пермь, ул.&nbsp;Соликамская, д.248 лит.&nbsp;А оф.5</p>
@@ -44,4 +42,28 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('additional-scripts')
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=51a23294-4f97-43ec-8dbe-6e047a5427be" type="text/javascript"></script>
+    <script>
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                    center: [58.073284, 56.349979],
+                    zoom: 16
+                }, {
+                    searchControlProvider: 'yandex#search'
+                }),
+
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                    hintContent: 'ООО «Геострой-Буммаш»',
+                    balloonContent: 'ООО «Геострой-Буммаш»'
+                }, {
+                    preset: 'islands#icon',
+                    iconColor: '#0095b6'
+                });
+
+            myMap.geoObjects.add(myPlacemark);
+        });
+    </script>
 @endsection

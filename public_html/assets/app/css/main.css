@@ -1089,8 +1089,9 @@ main section#contacts a {
     font-weight: 300;
 }
 
-main section#contacts #ya-maps {
+#map {
     margin-bottom: 20px;
+    height: 420px;
 }
 
 main section#add-services .section-content {
@@ -1660,4 +1661,37 @@ main.centered-content .form-container.quiz-result .btn {
 .alert-wrap .alert-wrap .close:hover {
     background: rgba(255, 255,255, 1);
     transition: all .3s;
+}
+
+.social-items {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+.social-items .social {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #e7e7e7;
+    border-radius: 50%;
+    transition: all .3s;
+}
+.social-items .social:hover {
+    background-color: #e7e7e7;
+    transition: all .3s;
+}
+.social-items .social.social-fb {
+    background-image: url("../img/social/facebook.svg");
+}
+.social-items .social.social-vk {
+    background-image: url("../img/social/vk.svg");
+}
+.social-items .social.social-instagram {
+    background-image: url("../img/social/instagram.svg");
+}
+.social-items .social.social-telegram {
+    background-image: url("../img/social/telegram.svg");
 }
