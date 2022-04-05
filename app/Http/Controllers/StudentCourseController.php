@@ -10,8 +10,10 @@ class StudentCourseController extends Controller
 {
     public function myCourses()
     {
+        $user = auth()->user();
+
         return view('app.account.my-courses.courses-list', [
-            'courses' => Course::all(),
+            'course' => $user->group->course,
         ]);
     }
 

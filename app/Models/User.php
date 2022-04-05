@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -67,5 +68,37 @@ class User extends Authenticatable implements MustVerifyEmail
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new CustomResetPasswordNotification($token));
+    }
+
+    public function group()
+    {
+        return $this->belongsTo(StudyGroup::class, 'group_id');
+    }
+
+    public static function createByAdmin(array $input, $group, $pass)
+    {
+        $user = new static;
+        $user->fill($input);
+        $user->password = Hash::make($pass);
+        $user->group_id = $group->id;
+        $user->save();
+
+        return $user;
+    }
+
+    public function getFullName() : string
+    {
+        $arr = array();
+
+        if ($this->surname)
+            $arr[] = $this->surname;
+
+        if ($this->name)
+            $arr[] = $this->name;
+
+        if ($this->middle_name)
+            $arr[] = $this->middle_name;
+
+        return implode(' ', $arr);
     }
 }

@@ -12,12 +12,12 @@
 
         <!-- Points -->
         <div class="item-result">
-            <div class="value">{{$quiz->result->points}}</div>
+            <div class="value">{{$quiz->getResult()->points}}</div>
             <div class="title">Количество баллов</div>
         </div>
         <!-- Grade -->
         <div class="item-result">
-            <div class="value">{{$quiz->result->getGrade()}}</div>
+            <div class="value">{{$quiz->getGrade()}}</div>
             <div class="title">Оценка</div>
         </div>
         <!-- Mistakes -->

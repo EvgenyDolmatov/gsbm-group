@@ -26,6 +26,35 @@
         </div>
     </div>
 
+    <!-- Учебный центр -->
+    @can('manage course')
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingEducation">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseEducation" aria-expanded="false"
+                        aria-controls="flush-collapseEducation">
+                    Учебный центр
+                </button>
+            </h2>
+            <div id="flush-collapseEducation" class="accordion-collapse collapse"
+                 aria-labelledby="flush-headingEducation" data-bs-parent="#accordionEducation">
+                <div class="accordion-body">
+                    <ul class="accordion-list">
+                        <li>
+                            <a href="{{route('courses.index')}}">Курсы</a>
+                        </li>
+                        <li>
+                            <a href="{{route('study-groups.index')}}">Группы</a>
+                        </li>
+                        <li>
+                            <a href="#">Студенты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    @endcan
+
     {{-- Услуги --}}
     @can('manage service')
         <div class="accordion-item">
@@ -49,30 +78,8 @@
         </div>
     @endcan
 
-    {{-- Courses --}}
-    @can('manage course')
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="flush-headingCourses">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseCourses" aria-expanded="false"
-                        aria-controls="flush-collapseCourses">
-                    Курсы
-                </button>
-            </h2>
-            <div id="flush-collapseCourses" class="accordion-collapse collapse"
-                 aria-labelledby="flush-headingCourses" data-bs-parent="#accordionCourses">
-                <div class="accordion-body">
-                    <ul class="accordion-list">
-                        <li>
-                            <a href="{{route('courses.index')}}">Курсы</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    @endcan
-
     {{-- My Courses --}}
+    @role('user')
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingMyCourses">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -92,4 +99,5 @@
             </div>
         </div>
     </div>
+    @endrole
 </div>

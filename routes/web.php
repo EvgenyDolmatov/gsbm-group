@@ -11,6 +11,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StudentCourseController;
 use App\Http\Controllers\StudentQuizController;
+use App\Http\Controllers\StudyGroupController;
 use App\Http\Controllers\SuperUserController;
 use Illuminate\Support\Facades\Route;
 
@@ -98,6 +99,13 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
     Route::resource('courses/{course}/quizzes', QuizController::class);
     Route::resource('quizzes/{quiz}/questions', QuestionController::class);
     Route::resource('services', ServiceController::class);
+    // Study groups
+    Route::resource('study-groups', StudyGroupController::class);
+    Route::get('study-groups/{group}/students/create', [StudyGroupController::class, 'createStudent'])->name('study-groups.students.create');
+    Route::post('study-groups/{group}/students/create', [StudyGroupController::class, 'storeStudent'])->name('study-groups.students.store');
+    Route::get('study-groups/{group}/students/{student}/edit', [StudyGroupController::class, 'editStudent'])->name('study-groups.students.edit');
+    Route::put('study-groups/{group}/students/{student}/edit', [StudyGroupController::class, 'updateStudent'])->name('study-groups.students.update');
+    Route::delete('study-groups/{group}/students/{student}', [StudyGroupController::class, 'destroyStudent'])->name('study-groups.students.destroy');
 });
 
 // Делаем пользователя evd.work@yandex.ru супер-администратором

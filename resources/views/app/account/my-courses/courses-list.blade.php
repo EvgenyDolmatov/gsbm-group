@@ -17,16 +17,15 @@
                                 <h2>Мои курсы</h2>
                             </div>
 
-                            @foreach($courses as $course)
-                                <h4>{{$course->title}}</h4>
-                                <ul>
-                                    @foreach($course->quizzes as $quiz)
-                                        <li>
-                                            <a href="{{route('account.choose-quiz', $quiz)}}">{{$quiz->title}}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            @endforeach
+                            <h4 class="mb-3 mt-3">{{$course->title}}</h4>
+                            <ul>
+                                @foreach($course->quizzes as $quiz)
+                                    <li class="mt-2">
+                                        <a href="{{route('account.choose-quiz', $quiz)}}"
+                                           class="@if($quiz->isPassed()) text-success @endif">{{$quiz->title}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>
                 </div>

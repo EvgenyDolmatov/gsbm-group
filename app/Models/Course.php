@@ -19,6 +19,11 @@ class Course extends Model
         return $this->belongsTo(StudyArea::class);
     }
 
+    public function groups()
+    {
+        return $this->hasMany(StudyGroup::class);
+    }
+
     public function quizzes()
     {
         return $this->hasMany(Quiz::class);

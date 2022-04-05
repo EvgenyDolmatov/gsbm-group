@@ -24,9 +24,9 @@ class Quiz extends Model
         return $this->hasMany(Question::class);
     }
 
-    public function result()
+    public function results()
     {
-        return $this->hasOne(QuizResult::class);
+        return $this->hasMany(QuizResult::class);
     }
 
     public function getSlugOptions(): SlugOptions
@@ -150,5 +150,27 @@ class Quiz extends Model
             'points' => round(($userPoints * 100) / $maxPoints), // Возвращаем процент правильных ответов от 0 до 100
             'wrongAnswers' => $wrongAnswers, // Возвращаем номера неверных ответов
         );
+    }
+
+    public function getResult()
+    {
+        return QuizResult::where('user_id', auth()->user()->id)->where('quiz_id', $this->id)->first();
+    }
+
+    public function getGrade()
+    {
+        return round($this->getResult()->points/20);
+    }
+
+    public function isPassed()
+    {
+        $user = auth()->user();
+
+        $result = QuizResult::where('user_id', $user->id)->where('quiz_id', $this->id)->first();
+
+        if ($result && $result->points >= 50) {
+            return true;
+        }
+        return false;
     }
 }

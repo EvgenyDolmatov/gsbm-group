@@ -9,4 +9,11 @@ class StudyArea extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
+    public function groups()
+    {
+        return $this->belongsTo(StudyGroup::class);
+    }
+
 }
