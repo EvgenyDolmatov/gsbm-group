@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="x-apple-disable-message-reformatting">
-    <title>Пароль изменен</title>
+    <title>Вы зарегистрированы</title>
     <style type="text/css">
 
         @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans');
@@ -160,7 +160,7 @@
                         <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
                             <tr>
                                 <td align="center" class="px-sm-16" style="padding: 0 96px;">
-                                    <h1 class="webfont h1" style="color: #FFFFFF; font-size: 36px; font-weight: 300; line-height: 100%; margin: 0;">Пароль успешно изменен</h1>
+                                    <h1 class="webfont h1" style="color: #FFFFFF; font-size: 36px; font-weight: 300; line-height: 100%; margin: 0;">Вы зарегистрированы как администратор</h1>
                                 </td>
                             </tr>
                         </table>
@@ -184,12 +184,15 @@
                             <tr>
                                 <td class="col px-sm-16" align="center" width="100%" style="padding: 0 64px;">
                                     <h2 style="color: #000; font-size: 20px; font-weight: 300; line-height: 28px; margin: 0 0 24px;">Здравствуйте, {{$user->name}}!</h2>
-                                    <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Вы успешно изменили пароль к своему аккаунту!</p>
+                                    <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Вы успешно зарегистрированы, как администратор, в учебном центре ООО "Геострой-Буммаш"!</p>
+                                    <br>
+                                    <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Ваш логин: {{$user->email}}</p>
+                                    <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Ваш пароль: {{$pass}}</p>
                                     <div class="spacer" style="line-height: 32px;">&zwnj;</div>
                                     <table cellpadding="0" cellspacing="0" role="presentation">
                                         <tr>
                                             <td class="webfont hover-scale" bgcolor="#7ABA29" style="border-radius: 3px; transition: all 0.3s ease-in-out 0s; mso-padding-alt: 6px 32px 12px;">
-                                                <a href="{{URL::to('/')}}" style="color: #FFFFFF; display: inline-block; font-size: 14px; font-weight: 700; padding: 12px 32px; text-decoration: none;">Перейти на сайт</a>
+                                                <a href="{{URL::to('/')}}" style="background-color:#0c63e4;color: #FFFFFF; display: inline-block; font-size: 14px; font-weight: 700; padding: 12px 32px; text-decoration: none;">Перейти на сайт</a>
                                             </td>
                                         </tr>
                                     </table>

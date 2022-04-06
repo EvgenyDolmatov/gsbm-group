@@ -137,7 +137,7 @@
                             <tr>
                                 <td class="col" align="center" width="100%">
                                     <a href="{{URL::to('/')}}">
-                                        <img src="http://geostroy.loc/assets/app/img/logo-edu.svg" alt="Header Logo" width="100">
+                                        <img src="https://gsbm-group.ru/assets/app/img/logo-edu.svg" alt="Header Logo" width="100">
                                     </a>
                                 </td>
                             </tr>
