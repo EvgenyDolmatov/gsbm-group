@@ -8,9 +8,13 @@
     </div>
 
     <div class="form-container quiz-result">
-        <h2>Тест пройден</h2>
+        @if($quiz->getResult()->points >= 50)
+            <h2>Тест пройден</h2>
+        @else
+            <h2>Тест не пройден</h2>
+        @endif
 
-        <!-- Points -->
+    <!-- Points -->
         <div class="item-result">
             <div class="value">{{$quiz->getResult()->points}}</div>
             <div class="title">Количество баллов</div>
@@ -26,7 +30,9 @@
             <div class="title">Ошибки</div>
         </div>
 
-        <a href="{{route('account.quizzes.show', $quiz->id)}}" class="btn btn-brand btn-large">Пересдать</a>
+        @if($quiz->getResult()->points <= 50)
+            <a href="{{route('account.quizzes.show', $quiz->id)}}" class="btn btn-brand btn-large">Пересдать</a>
+        @endif
     </div>
 
     <div class="text-center mt-5">
