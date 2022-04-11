@@ -11,6 +11,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StudentCourseController;
 use App\Http\Controllers\StudentQuizController;
+use App\Http\Controllers\StudyAreaController;
 use App\Http\Controllers\StudyGroupController;
 use App\Http\Controllers\SuperUserController;
 use Illuminate\Support\Facades\Route;
@@ -106,6 +107,8 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
     Route::get('study-groups/{group}/students/{student}/edit', [StudyGroupController::class, 'editStudent'])->name('study-groups.students.edit');
     Route::put('study-groups/{group}/students/{student}/edit', [StudyGroupController::class, 'updateStudent'])->name('study-groups.students.update');
     Route::delete('study-groups/{group}/students/{student}', [StudyGroupController::class, 'destroyStudent'])->name('study-groups.students.destroy');
+
+    Route::resource('study/directions', StudyAreaController::class);
 });
 
 // Делаем пользователя evd.work@yandex.ru супер-администратором

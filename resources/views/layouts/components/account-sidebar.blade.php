@@ -41,6 +41,9 @@
                 <div class="accordion-body">
                     <ul class="accordion-list">
                         <li>
+                            <a href="{{ route('directions.index') }}">Напрвления</a>
+                        </li>
+                        <li>
                             <a href="{{route('courses.index')}}">Курсы</a>
                         </li>
                         <li>
