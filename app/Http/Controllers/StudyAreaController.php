@@ -35,37 +35,29 @@ class StudyAreaController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(StudyArea $direction)
     {
-        //
+        return view('app.account.study-areas.edit', [
+            'area' => $direction,
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, StudyArea $direction)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        $direction->update($request->all());
+        return redirect()->route('directions.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function destroy(StudyArea $direction)
     {
-        //
+        if ($direction->courses()->count()) {
+            return back()->with('errMessage', 'Напрвление привязано к курсам. Удаление невозможно!');
+        }
+        $direction->delete();
+        return redirect()->route('directions.index');
     }
 }

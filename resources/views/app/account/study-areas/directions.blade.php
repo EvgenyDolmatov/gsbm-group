@@ -20,6 +20,12 @@
                             <a href="{{route('directions.create')}}" class="btn btn-success">
                                 <i class="fa fa-plus"></i> Добавить</a>
 
+                            @if(session()->has('errMessage'))
+                                <div class="alert alert-danger mt-4">
+                                    <span>{{session('errMessage')}}</span>
+                                </div>
+                            @endif
+
                             <table class="table">
                                 <thead>
                                 <tr>

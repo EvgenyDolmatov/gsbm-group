@@ -16,4 +16,9 @@ class StudyArea extends Model
         return $this->belongsTo(StudyGroup::class);
     }
 
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
+
 }
