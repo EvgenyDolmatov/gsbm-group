@@ -31,7 +31,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($course->quizzes as $key => $quiz)
+                                    @foreach($course->quizzes->sortBy('title') as $key => $quiz)
                                         <tr>
                                             <td>
                                                 <a href="{{ route('quizzes.show', [$course, $quiz]) }}">{{$quiz->title}}</a>

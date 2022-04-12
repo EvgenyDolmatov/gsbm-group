@@ -11,14 +11,14 @@ class CourseController extends Controller
     public function index()
     {
         return view('app.account.courses.courses', [
-            'courses' => Course::all(),
+            'courses' => Course::all()->sortBy('title'),
         ]);
     }
 
     public function create()
     {
         return view('app.account.courses.create', [
-            'studyAreas' => StudyArea::all(),
+            'studyAreas' => StudyArea::all()->sortBy('name'),
         ]);
     }
 

@@ -1,6 +1,6 @@
 @extends('layouts.account')
 
-@section('title', 'Новая группа')
+@section('title', $group->name . ' (ред.)')
 @section('content')
     <section id="add-services">
         <div class="container-xl container-fluid">
@@ -14,15 +14,16 @@
                     <div class="col-lg-7 offset-xl-1 offset-0 col-12">
                         <div class="page-right-content">
                             <div class="service-title">
-                                <h2>Новая группа</h2>
+                                <h2>{{$group->name . ' (ред.)'}}</h2>
                             </div>
 
-                            <form action="{{route('study-groups.store')}}" method="POST" class="account-form">
-                                @csrf
+                            <form action="{{route('study-groups.update', $group)}}" method="POST" class="account-form">
+                                @csrf @method('PUT')
 
                                 <div class="form-group mb-5">
                                     <label for="name" class="form-label">Название группы</label>
-                                    <input type="text" id="name" class="form-control" name="name" value="{{old('name')}}">
+                                    <input type="text" id="name" class="form-control" name="name"
+                                           value="{{old('name', $group->name)}}">
                                     @error('name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -34,7 +35,7 @@
                                         <option value="" selected disabled>Выберите курс</option>
                                         @foreach($courses as $course)
                                             <option value="{{$course->id}}"
-                                                    @if($course->id==old('course_id')) selected @endif>
+                                                    @if($course->id==old('course_id') || $course->id == $group->course->id) selected @endif>
                                                 {{ $course->title }}
                                             </option>
                                         @endforeach
@@ -44,7 +45,7 @@
                                     @enderror
                                 </div>
 
-                                <button type="submit" class="btn btn-brand btn-filled mb-3">Добавить</button>
+                                <button type="submit" class="btn btn-brand btn-filled mb-3">Сохранить</button>
                             </form>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
 @section('additional-scripts')
     <script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
     <script>
-        $(document).ready(function (){
+        $(document).ready(function () {
             CKEDITOR.replace('description');
         });
     </script>

@@ -46,6 +46,31 @@ class StudyGroupController extends Controller
         ]);
     }
 
+    public function edit(StudyGroup $studyGroup)
+    {
+        return view('app.account.users.groups.edit', [
+            'group' => $studyGroup,
+            'courses' => Course::all()->sortBy('title'),
+        ]);
+    }
+
+    public function update(Request $request, StudyGroup $studyGroup)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'course_id' => ['required'],
+        ]);
+
+        $studyGroup->update($request->all());
+        return redirect()->route('study-groups.index');
+    }
+
+    public function destroy(StudyGroup $studyGroup)
+    {
+        $studyGroup->delete();
+        return redirect()->route('study-groups.index');
+    }
+
     public function createStudent(StudyGroup $group)
     {
         return view('app.account.users.students.create', [
@@ -55,15 +80,29 @@ class StudyGroupController extends Controller
 
     public function storeStudent(Request $request, StudyGroup $group)
     {
-        $request->validate([
+        $rules = [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
-        ]);
+        ];
+        $request->validate($rules);
 
-        $pass = Str::random(8);
-        $user = User::createByAdmin($request->all(), $group, $pass);
-        $user->assignRole('user');
-        Mail::to($user->email)->send(new RegisterSuccessByAdmin($user, $pass));
+        $user = User::withTrashed()->where('email', $request->email)->first();
+
+        if ($user) {
+            if ($user->trashed()) {
+                $user->restore();
+                $user->update($request->all());
+                $user->update(['group_id' => $group->id]);
+            } else {
+                $rules['email'][] = 'unique:users';
+                $request->validate($rules);
+            }
+        } else {
+            $pass = Str::random(8);
+            $user = User::createByAdmin($request->all(), $group, $pass);
+            $user->assignRole('user');
+            Mail::to($user->email)->send(new RegisterSuccessByAdmin($user, $pass));
+        }
 
         return redirect()->route('study-groups.show', $group);
     }
@@ -91,5 +130,13 @@ class StudyGroupController extends Controller
     {
         $student->delete();
         return back();
+    }
+
+    public function getGroupResults(StudyGroup $group)
+    {
+        return view('app.account.users.results.results', [
+            'group' => $group,
+            'students' => $group->students,
+        ]);
     }
 }

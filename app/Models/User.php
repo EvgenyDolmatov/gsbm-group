@@ -6,6 +6,7 @@ use App\Notifications\CustomResetPasswordNotification;
 use App\Notifications\CustomVerificationEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +15,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, HasRoles, Notifiable;
+    use HasApiTokens, HasFactory, HasRoles, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -28,6 +29,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'phone',
         'password',
+        'group_id',
     ];
 
     /**
@@ -75,6 +77,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(StudyGroup::class, 'group_id');
     }
 
+    public function results()
+    {
+        return $this->hasMany(QuizResult::class);
+    }
+
     public static function createByAdmin(array $input, $group, $pass)
     {
         $user = new static;
@@ -100,5 +107,30 @@ class User extends Authenticatable implements MustVerifyEmail
             $arr[] = $this->middle_name;
 
         return implode(' ', $arr);
+    }
+
+    public function getResultByGroup($group)
+    {
+        $quiz = $group->course->quizzes->first();
+        $res = $this->results->where('quiz_id', $quiz->id)->first();
+
+        if ($res) {
+            if ($res->points >= 50) {
+                return 'Сдал';
+            }
+            return 'Не сдал';
+        }
+        return 'Не сдавал';
+    }
+
+    public function getResultDate($group)
+    {
+        $quiz = $group->course->quizzes->first();
+        $res = $this->results->where('quiz_id', $quiz->id)->first();
+
+        if ($res) {
+            return $this->created_at;
+        }
+        return '-';
     }
 }

@@ -19,7 +19,7 @@
 
                             <a href="{{route('study-groups.students.create', $group)}}" class="btn btn-success">
                                 <i class="fa fa-plus"></i> Добавить студента</a>
-                            <a href="#" class="btn btn-dark">Результаты экзамена</a>
+                            <a href="{{route('study-groups.results', $group)}}" class="btn btn-dark">Результаты экзамена</a>
 
 
                             @if($students->count())
