@@ -43,7 +43,7 @@
                                     <td>3</td>
                                     <td>Охрана труда для работников рабочих профессий и прочего обслуживающего персонала</td>
                                     <td>20</td>
-                                    <td>1 850</td>
+                                    <td>1&nbsp;850</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
@@ -65,13 +65,13 @@
                                 </tr>
                                 <tr>
                                     <td>7</td>
-                                    <td>Первая помощь</td>
+                                    <td>Оказание первой помощи при несчастных случаях на производстве</td>
                                     <td>20</td>
                                     <td>1&nbsp;300</td>
                                 </tr>
                                 <tr>
                                     <td>8</td>
-                                    <td>Электробезопасность</td>
+                                    <td>Обучение на группу допуска по электробезопасности</td>
                                     <td>72</td>
                                     <td>2&nbsp;800</td>
                                 </tr>
@@ -79,13 +79,13 @@
                                     <td>9</td>
                                     <td>Пожарная безопасность</td>
                                     <td>16</td>
-                                    <td>1 200</td>
+                                    <td>1&nbsp;200</td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>Пожарная безопасность</td>
                                     <td>24</td>
-                                    <td>1 500</td>
+                                    <td>1&nbsp;500</td>
                                 </tr>
                                 <tr>
                                     <td>11</td>
@@ -95,9 +95,21 @@
                                 </tr>
                                 <tr>
                                     <td>12</td>
-                                    <td>Рабочая специальность (любое направление)</td>
+                                    <td>Рабочая специальность (подсобный рабочий)</td>
                                     <td>20</td>
                                     <td>2&nbsp;000</td>
+                                </tr>
+                                <tr>
+                                    <td>13</td>
+                                    <td>Гражданская оборона и чрезвычайные ситуации</td>
+                                    <td>72</td>
+                                    <td>3&nbsp;000</td>
+                                </tr>
+                                <tr>
+                                    <td>14</td>
+                                    <td>Работа с отходами I-IV класс опасности</td>
+                                    <td>112</td>
+                                    <td>3&nbsp;000</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -224,7 +236,7 @@
                                         Повторная аттестация
                                     </div>
                                 </div>
-                                <!-- 7. Первая помощь -->
+                                <!-- 7. Оказание первой помощи при несчастных случаях на производстве -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
@@ -241,7 +253,7 @@
                                         </div>
                                     </div>
                                     <div class="item-value description">
-                                        Первая помощь
+                                        Оказание первой помощи при несчастных случаях на производстве
                                     </div>
                                 </div>
                                 <!-- 8. Электробезопасность -->
@@ -261,7 +273,7 @@
                                         </div>
                                     </div>
                                     <div class="item-value description">
-                                        Первая помощь
+                                        Обучение на группу допуска по электробезопасности
                                     </div>
                                 </div>
                                 <!-- 9. Пожарная безопасность -->
@@ -341,7 +353,47 @@
                                         </div>
                                     </div>
                                     <div class="item-value description">
-                                        Рабочая специальность (любое направление)
+                                        Рабочая специальность (подсобный рабочий)
+                                    </div>
+                                </div>
+                                <!-- 13. Гражданская оборона и чрезвычайные ситуации -->
+                                <div class="table-flex-item">
+                                    <div class="item-main">
+                                        <div class="item-main-params code">
+                                            <span class="title">№ п/п</span>
+                                            <span class="value">13</span>
+                                        </div>
+                                        <div class="item-main-params hours">
+                                            <span class="title">Часы</span>
+                                            <span class="value">72</span>
+                                        </div>
+                                        <div class="item-main-params hours">
+                                            <span class="title">Стоимость, руб.</span>
+                                            <span class="value">3 000</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-value description">
+                                        Гражданская оборона и чрезвычайные ситуации
+                                    </div>
+                                </div>
+                                <!-- 12. Работа с отходами I-IV класс опасности -->
+                                <div class="table-flex-item">
+                                    <div class="item-main">
+                                        <div class="item-main-params code">
+                                            <span class="title">№ п/п</span>
+                                            <span class="value">14</span>
+                                        </div>
+                                        <div class="item-main-params hours">
+                                            <span class="title">Часы</span>
+                                            <span class="value">112</span>
+                                        </div>
+                                        <div class="item-main-params hours">
+                                            <span class="title">Стоимость, руб.</span>
+                                            <span class="value">3 000</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-value description">
+                                        Работа с отходами I-IV класс опасности
                                     </div>
                                 </div>
                             </div>

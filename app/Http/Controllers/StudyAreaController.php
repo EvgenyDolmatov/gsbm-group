@@ -11,7 +11,7 @@ class StudyAreaController extends Controller
     public function index()
     {
         return view('app.account.study-areas.directions', [
-            'studyAreas' => StudyArea::all(),
+            'studyAreas' => StudyArea::all()->sortBy('name'),
         ]);
     }
 
