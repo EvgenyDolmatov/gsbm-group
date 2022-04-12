@@ -39,6 +39,7 @@ class QuizController extends Controller
     public function edit(Course $course, Quiz $quiz)
     {
         return view('app.account.courses.quizzes.edit', [
+            'courses' => Course::all()->sortBy('title'),
             'course' => $course,
             'quiz' => $quiz,
         ]);
@@ -47,7 +48,8 @@ class QuizController extends Controller
     public function update(Request $request, Course $course, Quiz $quiz)
     {
         $request->validate([
-            'title' => ['required', 'string', 'max:255']
+            'course_id' => ['required'],
+            'title' => ['required', 'string', 'max:255'],
         ]);
 
         $quiz->update($request->all());

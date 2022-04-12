@@ -12,7 +12,7 @@ class Quiz extends Model
 {
     use HasFactory, HasSlug, SoftDeletes;
 
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'course_id'];
 
     public function course()
     {
