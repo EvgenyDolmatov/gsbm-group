@@ -164,7 +164,7 @@
                                 <p>Начальник ПТО</p>
                             </div>
                             <div class="tile-contacts">
-                                <a href="mailto:aignatiev@gsbm-group.ru">aignatiev@gsbm-group.ru</a>
+                                <a href="mailto:aignatev@gsbm-group.ru">aignatev@gsbm-group.ru</a>
                                 <a href="tel:+79504725766">+7 950 472 5766</a>
                             </div>
                         </div>
