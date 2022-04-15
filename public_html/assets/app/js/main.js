@@ -205,7 +205,16 @@
         let $imgSrc = $(this).parent().next('img').attr('src');
         let $imagePopup = $('.image-popup');
 
-        console.log($imgSrc);
+        $imagePopup.find('img').attr('src', $imgSrc);
+        $imagePopup.css({
+            display: 'block',
+        });
+    });
+
+    $('#service .gallery-item').on('click', function () {
+
+        let $imgSrc = $(this).find('img').attr('src');
+        let $imagePopup = $('.image-popup');
 
         $imagePopup.find('img').attr('src', $imgSrc);
         $imagePopup.css({
