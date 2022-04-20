@@ -26,18 +26,29 @@
                     <div class="container-xl container-fluid">
                         <div class="row">
                             <div class="col-lg-6 col-12">
-                                <h2 class="title">Комплекс работ по монтажу технологического оборудования на ЦБП</h2>
+                                <h2 class="title">Монтаж, обслуживание и ремонт технологического оборудования для
+                                    производства бумаги и картона, а также для деревообработки, включая основное:</h2>
                             </div>
                             <div class="col-lg-6 col-12">
                                 <ul class="info-list-secondary">
-                                    <li>Изготовление ж/б фундаментов под технологическое оборудование (заливка, рубка,
-                                        резка, шлифовка, подливка)
-                                    </li>
-                                    <li>Изготовление опалубки</li>
-                                    <li>Изготовление металлокаркаса</li>
+                                    <li>станины</li>
+                                    <li>цилиндры и валы</li>
+                                    <li>натяжки, правки</li>
                                     <li>Общестроительные работы</li>
-                                    <li>Ведение строительного контроля за работами</li>
+                                    <li>шабера, отрезные устройства</li>
                                 </ul>
+
+                                <p class="info-paragraph-secondary">и вспомогательное оборудование:</p>
+
+                                <ul class="info-list-secondary">
+                                    <li>емкостное оборудование</li>
+                                    <li>трубопроводы</li>
+                                    <li>системы гидравлики, смазки, пневматики</li>
+                                    <li>силовой электрики и КИПиА</li>
+                                </ul>
+
+                                <p class="info-paragraph-secondary">Высокоточная выверка, сопровождение ПНР и
+                                    комплексного опробования</p>
                             </div>
                         </div>
                     </div>
@@ -248,7 +259,49 @@
 
 
     <!-- Feedback -->
-    <section id="feedback">
+    <section id="about-feedback">
+        <div class="overlay-image"></div>
+        <div class="section-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <div class="feedback-title pr-md-70">
+                            <h2 class="title">Хотите стать нашим партнером?</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="feedback-form pl-md-70">
+                            <form action="{{route('email.feedback-partner-data')}}" method="post">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Имя</label>
+                                    <input type="text" id="name" name="name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Телефон</label>
+                                    <input type="text" id="phone" name="phone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" id="email" name="email" class="form-control">
+                                </div>
+
+                                <div class="form-group mt-4">
+                                    <textarea id="comment" name="comment" rows="4"
+                                              class="form-control" placeholder="Что вас интересует?"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-brand mt-4">Оставить заявку</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- TODO: после проверки удалить комментарий --}}
+    {{--<section id="feedback">
         <div class="decor-gear"></div>
 
         <div class="header">
@@ -256,7 +309,6 @@
                 <h3 class="section-header">Оставить заявку</h3>
             </div>
         </div>
-
         <div class="section-content">
             <div class="container-xl container-fluid">
                 <div class="row">
@@ -298,7 +350,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
 @endsection
 
 @section('popups')

@@ -169,6 +169,9 @@
     ul.info-list-secondary {
         margin-left: 35px;
     }
+    .info-paragraph-secondary {
+        margin-left: 0;
+    }
 
     .left-container {
         margin-right: 0;

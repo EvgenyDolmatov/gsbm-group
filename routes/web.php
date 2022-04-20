@@ -16,21 +16,12 @@ use App\Http\Controllers\StudyGroupController;
 use App\Http\Controllers\SuperUserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', [AppController::class, 'frontPage'])->name('app.front-page');
 Route::get('about', [AppController::class, 'aboutPage'])->name('app.about-page');
 Route::get('licensees', [AppController::class, 'licenseesPage'])->name('app.licensees-page');
 Route::get('contacts', [AppController::class, 'contactsPage'])->name('app.contacts-page');
+Route::get('privacy-policy', [AppController::class, 'privacyPolicyPage'])->name('app.privacy-policy-page');
 
 Route::prefix('services')->group(function (){
     Route::get('/{slug}', [ServiceController::class, 'publicShow'])->name('services.show-public');

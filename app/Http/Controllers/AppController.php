@@ -28,4 +28,9 @@ class AppController extends Controller
     {
         return view('app.licensees');
     }
+
+    public function privacyPolicyPage()
+    {
+        return view('app.privacy-policy');
+    }
 }

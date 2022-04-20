@@ -49,8 +49,11 @@
 
                         <div class="collapse navbar-collapse">
                             <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('app.about-page')}}">О нас</a>
+                                </li>
                                 <li class="nav-item dropdown active">
-                                    <a class="nav-link" href="#">Основные виды работ</a>
+                                    <a class="nav-link" href="#">Виды работ</a>
                                     <ul class="nav-dropdown-list">
                                         @foreach($services as $service)
                                             <li class="nav-item">
@@ -62,31 +65,8 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#">Доп. услуги</a>
-                                    <ul class="nav-dropdown-list">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Установка бумагодельных машин</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Термопокрытие напылением </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Механическая обработка</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Динамическая балансировка</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Шлифовка</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Ремонт канавок и повреждений</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Центровка</a>
-                                        </li>
-                                    </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('app.licensees-page')}}">Свидетельства</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="#">Учебный центр</a>
@@ -113,13 +93,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('app.about-page')}}">О нас</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="{{route('app.contacts-page')}}">Контакты</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('app.licensees-page')}}">Лицензии</a>
                                 </li>
                             </ul>
                         </div>
@@ -131,8 +105,11 @@
 
     <div id="mobile-menu">
         <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('app.about-page')}}">О нас</a>
+            </li>
             <li class="nav-item dropdown active">
-                <a class="nav-link parent-link" href="#">Основные виды работ</a>
+                <a class="nav-link parent-link" href="#">Виды работ</a>
                 <ul class="nav-dropdown-list">
                     @foreach($services as $service)
                         <li class="nav-item">
@@ -143,31 +120,8 @@
                     @endforeach
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link parent-link" href="#">Доп. услуги</a>
-                <ul class="nav-dropdown-list">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Установка бумагодельных машин</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Термопокрытие напылением </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Механическая обработка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Динамическая балансировка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Шлифовка</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ремонт канавок и повреждений</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Центровка</a>
-                    </li>
-                </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('app.licensees-page')}}">Свидетельства</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link parent-link" href="#">Учебный центр</a>
@@ -191,14 +145,9 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('app.about-page')}}">О нас</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{{route('app.contacts-page')}}">Контакты</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('app.licensees-page')}}">Лицензии</a>
-            </li>
+
         </ul>
 
         <a href="{{route('app.about-page')}}" class="btn btn-brand">Связаться с нами</a>

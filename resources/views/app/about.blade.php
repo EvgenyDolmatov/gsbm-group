@@ -8,7 +8,7 @@
     <section id="about">
         <div class="header bg-white">
             <div class="container-xl container-fluid">
-                <h1 class="page-header text-center"> ООО “Геострой - Буммаш”</h1>
+                <h1 class="page-header text-center">ООО “Геострой - Буммаш”</h1>
             </div>
         </div>
 
