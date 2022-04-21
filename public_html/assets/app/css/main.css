@@ -252,6 +252,7 @@ form .form-group {
 }
 
 form .form-control {
+    padding: 11px;
     border-radius: unset !important;
     border: none;
     border-bottom: 1px solid #1c3f94 !important;
