@@ -72,7 +72,7 @@
     <section id="certificates" class="bg-lg">
         <div class="header bg-white">
             <div class="container-xl container-fluid">
-                <h3 class="section-header">Сертификаты</h3>
+                <h3 class="section-header">Свидетельства</h3>
             </div>
         </div>
 
