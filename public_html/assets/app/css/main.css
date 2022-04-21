@@ -802,6 +802,10 @@ header.header.education .header-right {
     padding-bottom: 100px;
 }
 
+.about-leader-text {
+    margin: 0;
+}
+
 .about-image {
     position: relative;
     margin-bottom: 40px;
