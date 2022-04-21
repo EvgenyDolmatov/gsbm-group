@@ -13,6 +13,35 @@
                 <div class="row">
                     <div class="col-12">
                         <h1 class="page-header">{{$service->title}}</h1>
+
+                        @if($service->leaders->count())
+
+                            <h2 class="mt-5">Наши руководители направления:</h2>
+
+                            <div class="section-content row">
+                                @foreach($service->leaders as $leader)
+                                    <div class="col-lg-4 col-6">
+                                        <div class="simple-tile">
+                                            <div class="tile-image">
+                                                <div class="overlay-image"></div>
+                                                <img src="{{$leader->getPhoto()}}"
+                                                     alt="{{$leader->getFullName()}}">
+                                            </div>
+                                            <div class="tile-title">
+                                                <h4>{{$leader->getFullName()}}</h4>
+                                            </div>
+                                            <div class="tile-description">
+                                                <p>{{$leader->position}}</p>
+                                            </div>
+                                            <div class="tile-contacts">
+                                                <a href="tel:{{$leader->getPhoneLink()}}">{{$leader->phone}}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+
                         <div class="page-description">
                             <p>{!! $service->description !!}</p>
                         </div>

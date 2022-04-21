@@ -33,7 +33,7 @@
                                     <tbody>
                                     @foreach($leaders as $leader)
                                         <tr>
-                                            <td>{{$leader->name}}</td>
+                                            <td>{{$leader->getFullName()}}</td>
                                             <td>{{$leader->position}}</td>
                                             <td>{{$leader->service->title}}</td>
                                             <td class="actions">

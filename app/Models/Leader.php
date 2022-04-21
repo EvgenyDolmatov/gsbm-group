@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Intervention\Image\Facades\Image;
 
 class Leader extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['surname', 'name', 'position', 'phone', 'email', 'service_id'];
+    protected $fillable = ['surname', 'name', 'position', 'phone', 'email', 'service_id', 'photo'];
 
     public function service()
     {
@@ -34,14 +36,46 @@ class Leader extends Model
             File::makeDirectory('uploads/' . $path);
         }
 
-//        $compressImage = Image::make($image);
-//        // Save Full Size Image
-//        $compressImage->resize(null, 1200, function ($constraint) {
-//            $constraint->aspectRatio();
-//        })->save($fullPathImage, 80);
-//        // Save Thumbnail
-//        $compressImage->resize(null, 360, function ($constraint) {
-//            $constraint->aspectRatio();
-//        })->save($fullPathThumb, 100);
+        $compressImage = Image::make($image);
+        $compressImage->resize(300, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($fullPathImage, 100);
+
+        $this->photo = $path . '/' . $filename . '.' . $ext;
+        $this->save();
+    }
+
+    public function getPhoto(): string
+    {
+        if ($this->photo != null)
+            return '/uploads/' . $this->photo;
+        return false;
+    }
+
+    public function removePhoto()
+    {
+        if ($this->photo != null) {
+            Storage::disk('uploads')->delete($this->photo);
+            $this->photo = null;
+            $this->save();
+        }
+    }
+
+    public function remove()
+    {
+        if ($this->photo) {
+            Storage::disk('uploads')->delete($this->photo);
+        }
+        $this->delete();
+    }
+
+    public function getFullName(): string
+    {
+        return $this->surname . ' ' . $this->name;
+    }
+
+    public function getPhoneLink(): string
+    {
+        return str_replace(' ', '', $this->phone);
     }
 }

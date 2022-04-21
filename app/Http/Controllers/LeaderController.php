@@ -32,52 +32,37 @@ class LeaderController extends Controller
         ]);
 
         $leader = Leader::create($request->all());
+        $leader->uploadPhoto($request->file('photo'));
 
         return redirect()->route('leaders.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function edit(Leader $leader)
     {
-        //
+        return view('app.account.leaders.edit', [
+            'leader' => $leader,
+            'services' => Service::all(),
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function update(Request $request, Leader $leader)
     {
-        //
+        $request->validate([
+            'surname' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
+            'position' => ['required', 'string', 'max:255'],
+            'service_id' => ['required'],
+        ]);
+
+        $leader->update($request->all());
+        $leader->uploadPhoto($request->file('photo'));
+
+        return redirect()->route('leaders.index');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function destroy(Leader $leader)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $leader->remove();
+        return back();
     }
 }

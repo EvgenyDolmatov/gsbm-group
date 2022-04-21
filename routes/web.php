@@ -68,6 +68,7 @@ Route::prefix('education')->group(function () {
 
 // AJAX
 Route::get('ajax/remove-image/{image}', [AjaxController::class, 'removeImage'])->name('ajax.remove-image');
+Route::get('ajax/leaders/remove-photo/{leader}', [AjaxController::class, 'removeLeaderPhoto'])->name('ajax.leaders.remove-photo');
 
 Route::middleware('auth')->group(function () {
     Route::prefix('account')->group(function () {

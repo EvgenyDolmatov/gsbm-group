@@ -261,7 +261,7 @@
         optionContainer.last().after(option);
     });
 
-    // Remove Product Image
+    // Remove Image
     $('a.remove').on('click', function (e){
         e.preventDefault();
 
