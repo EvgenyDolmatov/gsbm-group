@@ -6,6 +6,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ServiceController;
@@ -91,6 +92,7 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
     Route::resource('courses/{course}/quizzes', QuizController::class);
     Route::resource('quizzes/{quiz}/questions', QuestionController::class);
     Route::resource('services', ServiceController::class);
+    Route::resource('leaders', LeaderController::class);
     // Study groups
     Route::resource('study-groups', StudyGroupController::class);
     Route::get('study-groups/{group}/students/create', [StudyGroupController::class, 'createStudent'])->name('study-groups.students.create');

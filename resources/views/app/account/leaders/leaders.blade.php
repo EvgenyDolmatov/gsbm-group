@@ -1,6 +1,6 @@
 @extends('layouts.account')
 
-@section('title', 'Услуги')
+@section('title', 'Руководители')
 @section('content')
     <section id="add-services">
         <div class="container-xl container-fluid">
@@ -14,34 +14,37 @@
                     <div class="col-lg-7 offset-xl-1 offset-0 col-12">
                         <div class="page-right-content">
                             <div class="service-title">
-                                <h2>Направления услуг</h2>
+                                <h2>Руководители направлений</h2>
                             </div>
 
-                            <a href="{{route('services.create')}}" class="btn btn-success">
+                            <a href="{{route('leaders.create')}}" class="btn btn-success">
                                 <i class="fa fa-plus"></i> Добавить</a>
 
-
-                            @if($services->count())
+                            @if($leaders->count())
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th scope="col">Наименование</th>
+                                        <th scope="col">ФИО</th>
+                                        <th scope="col">Должность</th>
+                                        <th scope="col">Направление</th>
                                         <th scope="col">Действия</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($services as $service)
+                                    @foreach($leaders as $leader)
                                         <tr>
-                                            <td><a href="{{route('services.show-public', $service->slug)}}">{{$service->title}}</a></td>
+                                            <td>{{$leader->name}}</td>
+                                            <td>{{$leader->position}}</td>
+                                            <td>{{$leader->service->title}}</td>
                                             <td class="actions">
-                                                <a href="{{ route('services.edit', $service) }}"
+                                                <a href="{{ route('leaders.edit', $leader) }}"
                                                    class="text-primary">Изменить</a>
 
-                                                <form action="{{route('services.destroy', $service)}}" method="POST">
+                                                <form action="{{route('leaders.destroy', $leader)}}" method="POST">
                                                     @csrf @method('delete')
 
-                                                    <a href="{{route('services.destroy', $service)}}" class="text-danger"
-                                                       onclick="event.preventDefault();if(confirm('Услуга будет удалена. Продолжить?')){this.closest('form').submit();}">
+                                                    <a href="{{route('leaders.destroy', $leader)}}" class="text-danger"
+                                                       onclick="event.preventDefault();if(confirm('Руководитель будет удален. Продолжить?')){this.closest('form').submit();}">
                                                         Удалить
                                                     </a>
                                                 </form>
@@ -52,7 +55,7 @@
                                     </tbody>
                                 </table>
                             @else
-                                <p class="mt-4">У вас пока нет ни одной услуги.</p>
+                                <p class="mt-4">У вас пока нет ни одного руководителя.</p>
                             @endif
                         </div>
                     </div>

@@ -73,7 +73,10 @@
                 <div class="accordion-body">
                     <ul class="accordion-list">
                         <li>
-                            <a href="{{route('services.index')}}">Все услуги</a>
+                            <a href="{{route('services.index')}}">Направления</a>
+                        </li>
+                        <li>
+                            <a href="{{route('leaders.index')}}">Руководители</a>
                         </li>
                     </ul>
                 </div>

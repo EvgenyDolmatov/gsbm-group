@@ -18,6 +18,11 @@ class Service extends Model
         return $this->hasMany(ServiceImage::class);
     }
 
+    public function leaders()
+    {
+        return $this->hasMany(Leader::class);
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
