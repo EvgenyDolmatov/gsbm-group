@@ -41,7 +41,7 @@ class ServiceImage extends Model
         // Save Full Size Image
         $compressImage->resize(null, 1200, function ($constraint) {
             $constraint->aspectRatio();
-        })->save($fullPathImage, 80);
+        })->save($fullPathImage, 100);
         // Save Thumbnail
         $compressImage->resize(null, 360, function ($constraint) {
             $constraint->aspectRatio();

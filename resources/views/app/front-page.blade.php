@@ -114,7 +114,7 @@
     @endif
 
     <!-- About -->
-    <section id="about" class="bg-lg">
+    {{--<section id="about" class="bg-lg">
         <div class="header bg-white">
             <div class="container-xl container-fluid">
                 <h3 class="section-header">О компании</h3>
@@ -157,11 +157,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
 
     <!-- Benefits -->
     <section id="benefits" class="bg-lg">
-        <div class="header">
+        <div class="header bg-white">
             <div class="container-xl container-fluid">
                 <h3 class="section-header">Наши приемущества</h3>
             </div>
