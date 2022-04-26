@@ -213,7 +213,7 @@
 
     $('#service .gallery-item').on('click', function () {
 
-        let $imgSrc = $(this).find('img').attr('src');
+        let $imgSrc = $(this).attr('data-src');
         let $imagePopup = $('.image-popup');
 
         $imagePopup.find('img').attr('src', $imgSrc);

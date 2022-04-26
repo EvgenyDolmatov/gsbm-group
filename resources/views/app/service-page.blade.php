@@ -56,7 +56,7 @@
                     <div class="row">
                         @foreach($service->images as $image)
                             <div class="col-lg-4 col-6">
-                                <div class="gallery-item">
+                                <div class="gallery-item" data-src="{{$image->getFullImage()}}">
                                     <div class="overlay-image"></div>
                                     <img src="{{$image->getImage()}}" alt="{{$service->title}}">
                                 </div>

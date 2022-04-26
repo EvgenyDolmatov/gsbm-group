@@ -1129,6 +1129,7 @@ main section#add-services .section-content {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .document-thumb {
