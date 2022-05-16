@@ -22,7 +22,7 @@ class LessonAttachment extends Model
         if ($file == null) return;
 
         $fileName = $file->getClientOriginalName();
-        $path = 'courses/id_' . $lesson->course_id . '/';
+        $path = 'courses/lessons/id_' . $lesson->course_id . '/';
 
         $file->storeAs($path, $fileName, 'uploads');
 
