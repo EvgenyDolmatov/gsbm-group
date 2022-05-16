@@ -13,8 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::create('lesson_attachments', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('lesson_id')->references('id')->on('lessons')->cascadeOnDelete();
+            $table->string('title')->nullable();
+            $table->string('file_path');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('lesson_attachments');
     }
 };

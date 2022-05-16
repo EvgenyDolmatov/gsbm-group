@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::create('lessons', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('course_id')->references('id')->on('courses')->cascadeOnDelete();
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->text('content')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('lessons');
     }
 };

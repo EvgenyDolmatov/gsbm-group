@@ -7,10 +7,12 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LeaderController;
+use App\Http\Controllers\LessonController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StudentCourseController;
+use App\Http\Controllers\StudentLessonController;
 use App\Http\Controllers\StudentQuizController;
 use App\Http\Controllers\StudyAreaController;
 use App\Http\Controllers\StudyGroupController;
@@ -69,6 +71,7 @@ Route::prefix('education')->group(function () {
 // AJAX
 Route::get('ajax/remove-image/{image}', [AjaxController::class, 'removeImage'])->name('ajax.remove-image');
 Route::get('ajax/leaders/remove-photo/{leader}', [AjaxController::class, 'removeLeaderPhoto'])->name('ajax.leaders.remove-photo');
+Route::get('ajax/lessons/remove-file/{attachment}', [AjaxController::class, 'removeAttachment'])->name('ajax.lessons.remove-file');
 
 Route::middleware('auth')->group(function () {
     Route::prefix('account')->group(function () {
@@ -85,11 +88,13 @@ Route::middleware('auth')->group(function () {
     Route::get('quizzes/{quiz}', [StudentQuizController::class, 'show'])->name('account.quizzes.show');
     Route::post('quizzes/{quiz}', [StudentQuizController::class, 'storeAnswers'])->name('account.quiz.answers.store');
     Route::get('quizzes/{quiz}/result/asd', [StudentQuizController::class, 'quizResult'])->name('account.quiz.result');
+    Route::get('lessons/{lesson}/show', [StudentLessonController::class, 'lessonShow'])->name('account.lesson.show');
 });
 
 // Функционал для супер-админа и админа
 Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(function () {
     Route::resource('courses', CourseController::class);
+    Route::resource('courses/{course}/lessons', LessonController::class);
     Route::resource('courses/{course}/quizzes', QuizController::class);
     Route::resource('quizzes/{quiz}/questions', QuestionController::class);
     Route::resource('services', ServiceController::class);

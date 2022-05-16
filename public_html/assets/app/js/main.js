@@ -275,6 +275,20 @@
         });
     });
 
+    // Remove File
+    $('a.remove-file').on('click', function (e){
+        e.preventDefault();
+
+        let $this = $(this);
+        $.ajax({
+            url: $this.attr('href'),
+            method: 'GET',
+            success: function (){
+                $this.parent('.item-file').remove();
+            }
+        });
+    });
+
     // Remove Alert
     $('.alert-wrap .close').on('click', function (){
        $(this).parent('.alert').remove();

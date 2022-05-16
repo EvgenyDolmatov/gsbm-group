@@ -19,9 +19,52 @@
 
                             <p class="mb-5">{!! $course->description !!}</p>
 
+                            <h4>Лекции</h4>
+                            @if($course->lessons()->count())
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Название лекции</th>
+                                        <th scope="col">Действия</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($course->lessons->sortBy('title') as $key => $lesson)
+                                        <tr>
+                                            <td>
+                                                <a href="{{ route('lessons.show', [$course, $lesson]) }}">{{$lesson->title}}</a>
+                                            </td>
+                                            <td class="actions">
+                                                <a href="{{ route('lessons.edit', [$course, $lesson]) }}"
+                                                   class="text-primary">Изменить</a>
+
+                                                <form action="{{route('lessons.destroy', [$course, $lesson])}}"
+                                                      method="POST">
+                                                    @csrf @method('delete')
+
+                                                    <a href="{{route('lessons.destroy', [$course, $lesson])}}"
+                                                       class="text-danger"
+                                                       onclick="event.preventDefault();if(confirm('Лекция будет удалена. Продолжить?')){this.closest('form').submit();}">
+                                                        Удалить
+                                                    </a>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            @else
+                                <p>В курсе пока нет ни одной лекции.</p>
+                            @endif
+
+                            <div class="d-flex justify-content-end mt-5 mb-5">
+                                <a href="{{route('lessons.create', $course)}}" class="btn btn-success">
+                                    <i class="fa fa-plus"></i> Добавить лекцию
+                                </a>
+                            </div>
+
 
                             <h4>Экзамены</h4>
-
                             @if($course->quizzes()->count())
                                 <table class="table">
                                     <thead>
