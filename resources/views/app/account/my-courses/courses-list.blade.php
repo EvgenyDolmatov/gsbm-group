@@ -18,6 +18,19 @@
                             </div>
 
                             <h4 class="mb-3 mt-3">{{$course->title}}</h4>
+
+                            @if($course->lessons->count() > 0)
+                                <h5 class="mb-3 mt-5">Лекции</h5>
+                                <ul>
+                                    @foreach($course->lessons as $key => $lesson)
+                                        <li class="mt-2">
+                                            <a href="{{route('account.lesson.show', $lesson)}}">{{$key+1 . ') ' .$lesson->title}}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+
+                            <h5 class="mb-3 mt-5">Тесты</h5>
                             <ul>
                                 @foreach($course->quizzes as $quiz)
                                     <li class="mt-2">
