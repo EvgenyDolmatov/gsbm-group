@@ -32,7 +32,7 @@
                                     @foreach($course->lessons->sortBy('title') as $key => $lesson)
                                         <tr>
                                             <td>
-                                                <a href="{{ route('account.lesson.show', [$course, $lesson]) }}">{{$lesson->title}}</a>
+                                                <a href="{{ route('account.lesson.show', $lesson) }}">{{$lesson->title}}</a>
                                             </td>
                                             <td class="actions">
                                                 <a href="{{ route('lessons.edit', [$course, $lesson]) }}"
