@@ -13,7 +13,7 @@ class StudentCourseController extends Controller
         $user = auth()->user();
 
         return view('app.account.my-courses.courses-list', [
-            'course' => $user->group->course,
+            'groups' => $user->groups,
         ]);
     }
 

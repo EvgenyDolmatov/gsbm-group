@@ -42,7 +42,8 @@ class StudyGroupController extends Controller
     {
         return view('app.account.users.groups.show', [
             'group' => $studyGroup,
-            'students' => $studyGroup->students
+            'students' => $studyGroup->students,
+            'users' => User::all(),
         ]);
     }
 
@@ -63,6 +64,15 @@ class StudyGroupController extends Controller
 
         $studyGroup->update($request->all());
         return redirect()->route('study-groups.index');
+    }
+
+    public function addUserToGroup(Request $request, StudyGroup $group) {
+        $request->validate([
+            'user_id' => ['required'],
+        ]);
+
+        $group->students()->attach($request->input('user_id'));
+        return back();
     }
 
     public function destroy(StudyGroup $studyGroup)
@@ -101,7 +111,7 @@ class StudyGroupController extends Controller
             $pass = Str::random(8);
             $user = User::createByAdmin($request->all(), $group, $pass);
             $user->assignRole('user');
-            Mail::to($user->email)->send(new RegisterSuccessByAdmin($user, $pass));
+            Mail::to($user->email)->send(new RegisterSuccessByAdmin($group, $user, $pass));
         }
 
         return redirect()->route('study-groups.show', $group);
@@ -128,7 +138,8 @@ class StudyGroupController extends Controller
 
     public function destroyStudent(StudyGroup $group, User $student)
     {
-        $student->delete();
+//        $student->delete();
+        $group->students()->detach($student->id);
         return back();
     }
 

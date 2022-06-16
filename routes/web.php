@@ -105,6 +105,7 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
     Route::post('study-groups/{group}/students/create', [StudyGroupController::class, 'storeStudent'])->name('study-groups.students.store');
     Route::get('study-groups/{group}/students/{student}/edit', [StudyGroupController::class, 'editStudent'])->name('study-groups.students.edit');
     Route::put('study-groups/{group}/students/{student}/edit', [StudyGroupController::class, 'updateStudent'])->name('study-groups.students.update');
+    Route::post('study-groups/{group}/students/add-to-group', [StudyGroupController::class, 'addUserToGroup'])->name('study-groups.students.add-to-group');
     Route::delete('study-groups/{group}/students/{student}', [StudyGroupController::class, 'destroyStudent'])->name('study-groups.students.destroy');
 
     Route::get('study-groups/{group}/results', [StudyGroupController::class, 'getGroupResults'])->name('study-groups.results');

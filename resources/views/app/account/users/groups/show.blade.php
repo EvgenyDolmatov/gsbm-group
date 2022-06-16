@@ -18,9 +18,26 @@
                             </div>
 
                             <a href="{{route('study-groups.students.create', $group)}}" class="btn btn-success">
-                                <i class="fa fa-plus"></i> Добавить студента</a>
+                                <i class="fa fa-plus"></i> Новый студент</a>
                             <a href="{{route('study-groups.results', $group)}}" class="btn btn-dark">Результаты экзамена</a>
 
+                            <form action="{{ route('study-groups.students.add-to-group', $group) }}" method="POST"
+                                  class="account-form mt-5">
+                                @csrf
+
+                                <div class="input-group">
+                                    <select name="user_id" class="form-select" aria-label="Select user">
+                                        <option value="" selected disabled>Выберите студента...</option>
+                                        @foreach($users as $user)
+                                            <option value="{{$user->id}}"
+                                                    @if($user->id==old('user_id')) selected @endif>
+                                                {{ $user->getFullName() }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                    <button class="btn btn-primary" type="submit">Добавить в группу</button>
+                                </div>
+                            </form>
 
                             @if($students->count())
                                 <table class="table">
@@ -58,7 +75,7 @@
 
                                                     <a href="{{route('study-groups.students.destroy', [$group, $student])}}"
                                                        class="text-danger"
-                                                       onclick="event.preventDefault();if(confirm('Студент будет удален. Продолжить?')){this.closest('form').submit();}">
+                                                       onclick="event.preventDefault();if(confirm('Студент будет исключен. Продолжить?')){this.closest('form').submit();}">
                                                         Удалить
                                                     </a>
                                                 </form>

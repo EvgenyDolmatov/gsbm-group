@@ -64,7 +64,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Send the password reset notification.
      *
-     * @param  string  $token
+     * @param string $token
      * @return void
      */
     public function sendPasswordResetNotification($token)
@@ -72,9 +72,14 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new CustomResetPasswordNotification($token));
     }
 
-    public function group()
+//    public function group()
+//    {
+//        return $this->belongsTo(StudyGroup::class, 'group_id');
+//    }
+
+    public function groups()
     {
-        return $this->belongsTo(StudyGroup::class, 'group_id');
+        return $this->belongsToMany(StudyGroup::class, 'group_user');
     }
 
     public function results()
@@ -87,13 +92,15 @@ class User extends Authenticatable implements MustVerifyEmail
         $user = new static;
         $user->fill($input);
         $user->password = Hash::make($pass);
-        $user->group_id = $group->id;
+//        $user->group_id = $group->id;
         $user->save();
+
+        $user->groups()->attach($group->id);
 
         return $user;
     }
 
-    public function getFullName() : string
+    public function getFullName(): string
     {
         $arr = array();
 
@@ -112,25 +119,33 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getResultByGroup($group)
     {
         $quiz = $group->course->quizzes->first();
-        $res = $this->results->where('quiz_id', $quiz->id)->first();
 
-        if ($res) {
-            if ($res->points >= 50) {
-                return 'Сдал';
+        if ($quiz) {
+            $res = $this->results->where('quiz_id', $quiz->id)->first();
+
+            if ($res) {
+                if ($res->points >= 50) {
+                    return 'Сдал';
+                }
+                return 'Не сдал';
             }
-            return 'Не сдал';
         }
+
         return 'Не сдавал';
     }
 
     public function getResultDate($group)
     {
         $quiz = $group->course->quizzes->first();
-        $res = $this->results->where('quiz_id', $quiz->id)->first();
 
-        if ($res) {
-            return $this->created_at;
+        if ($quiz) {
+            $res = $this->results->where('quiz_id', $quiz->id)->first();
+
+            if ($res) {
+                return $this->created_at;
+            }
         }
+
         return '-';
     }
 }

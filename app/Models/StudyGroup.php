@@ -24,7 +24,7 @@ class StudyGroup extends Model
 
     public function students()
     {
-        return $this->hasMany(User::class, 'group_id');
+        return $this->belongsToMany(User::class, 'group_user');
     }
 
     public static function add(array $input)

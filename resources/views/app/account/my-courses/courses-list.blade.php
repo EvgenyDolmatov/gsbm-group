@@ -17,28 +17,34 @@
                                 <h2>Мои курсы</h2>
                             </div>
 
-                            <h4 class="mb-3 mt-3">{{$course->title}}</h4>
+                            @foreach($groups as $group)
 
-                            @if($course->lessons->count() > 0)
-                                <h5 class="mb-3 mt-5">Лекции</h5>
+                                <h4 class="mb-3 mt-3">{{$group->course->title}}</h4>
+
+                                @if($group->course->lessons->count() > 0)
+                                    <h5 class="mb-3 mt-5">Лекции</h5>
+                                    <ul>
+                                        @foreach($group->course->lessons as $key => $lesson)
+                                            <li class="mt-2">
+                                                <a href="{{route('account.lesson.show', $lesson)}}">{{$key+1 . ') ' .$lesson->title}}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+
+                                <h5 class="mb-3 mt-5">Тесты</h5>
                                 <ul>
-                                    @foreach($course->lessons as $key => $lesson)
+                                    @foreach($group->course->quizzes as $quiz)
                                         <li class="mt-2">
-                                            <a href="{{route('account.lesson.show', $lesson)}}">{{$key+1 . ') ' .$lesson->title}}</a>
+                                            <a href="{{route('account.choose-quiz', $quiz)}}"
+                                               class="@if($quiz->isPassed()) text-success @endif">{{$quiz->title}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
-                            @endif
 
-                            <h5 class="mb-3 mt-5">Тесты</h5>
-                            <ul>
-                                @foreach($course->quizzes as $quiz)
-                                    <li class="mt-2">
-                                        <a href="{{route('account.choose-quiz', $quiz)}}"
-                                           class="@if($quiz->isPassed()) text-success @endif">{{$quiz->title}}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                            @endforeach
+
+
                         </div>
                     </div>
                 </div>

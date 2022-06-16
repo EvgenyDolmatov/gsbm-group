@@ -40,7 +40,7 @@
                                                 @if($group->course) {{$group->course->title}} @endif
                                             </td>
                                             <td>{{ $student->getResultByGroup($group) }}</td>
-                                            <td>@if($student->results){{ $student->results->first()->points }}@endif</td>
+                                            <td>@if($student->results->first()){{ $student->results->first()->points }}@endif</td>
                                             <td>{{ $student->getResultDate($group) }}</td>
                                         </tr>
                                     @endforeach
