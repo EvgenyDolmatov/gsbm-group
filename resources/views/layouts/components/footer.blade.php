@@ -4,7 +4,7 @@
             <div class="col-lg-3 col-12">
                 <div class="footer-contacts">
                     <div class="footer-phone">
-                        <a href="tel:+79504725766">89504725766</a>
+                        <a href="tel:+73422055003">+7&nbsp;(342)&nbsp;205-50-03</a>
                     </div>
                     <div class="footer-email">
                         <a href="mailto:info@gsbm-group.ru">info@gsbm-group.ru</a>

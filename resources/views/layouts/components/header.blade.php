@@ -32,7 +32,7 @@
                 <div class="header-right">
                     <div class="header-contacts">
                         <div class="phone">
-                            <a href="tel:+79504725766">89504725766</a>
+                            <a href="tel:+73422055003">+7&nbsp;(342)&nbsp;205-50-03</a>
                         </div>
                         <div class="email">
                             <a href="mailto:info@gsbm-group.ru">info@gsbm-group.ru</a>
@@ -153,7 +153,7 @@
         <a href="{{route('app.about-page')}}" class="btn btn-brand">Связаться с нами</a>
 
         <div class="mob-contacts">
-            <a href="tel:+79504725766" class="phone">89504725766</a>
+            <a href="tel:+73422055003">+7&nbsp;(342)&nbsp;205-50-03</a>
             <a href="mailto:info@gsbm-group.ru" class="email">info@gsbm-group.ru</a>
         </div>
     </div>
