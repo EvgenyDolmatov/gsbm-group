@@ -38,7 +38,16 @@
                                     @enderror
                                 </div>
 
-                                <button type="submit" class="btn btn-brand btn-filled mb-3">Сохранить</button>
+                                <div class="form-group mb-5">
+                                    <label for="time_limit" class="form-label">Ограничение по времени, ЧЧ:ММ:СС</label>
+                                    <input type="text" id="time_limit" class="form-control" name="time_limit"
+                                           value="{{old('time_limit', "00:10:00")}}">
+                                    @error('time_limit')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                @include('components.form-save-btn')
                             </form>
                         </div>
                     </div>
@@ -46,4 +55,8 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section("additional-scripts")
+    <script src="{{asset('assets/app/vendor/inputmask/jquery.inputmask.min.js')}}"></script>
 @endsection

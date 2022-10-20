@@ -19,6 +19,10 @@
 
                             <p class="mb-5">{!! $quiz->description !!}</p>
 
+                            <p class="mb-5">
+                                Время на прохождение теста: <span class="text-primary">{{ $quiz->getTimeToString() }}</span>
+                            </p>
+
                             <h4>Вопросы</h4>
 
                             <table class="table">

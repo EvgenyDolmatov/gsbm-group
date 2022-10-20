@@ -87,7 +87,7 @@ Route::middleware('auth')->group(function () {
     Route::get('choose-quiz/{quiz}', [StudentCourseController::class, 'quizType'])->name('account.choose-quiz');
     Route::get('quizzes/{quiz}', [StudentQuizController::class, 'show'])->name('account.quizzes.show');
     Route::post('quizzes/{quiz}', [StudentQuizController::class, 'storeAnswers'])->name('account.quiz.answers.store');
-    Route::get('quizzes/{quiz}/result/asd', [StudentQuizController::class, 'quizResult'])->name('account.quiz.result');
+    Route::get('quizzes/{quiz}/result', [StudentQuizController::class, 'quizResult'])->name('account.quiz.result');
     Route::get('lessons/{lesson}/show', [StudentLessonController::class, 'lessonShow'])->name('account.lesson.show');
 });
 

@@ -17,21 +17,22 @@ class StudentQuizController extends Controller
 
     public function storeAnswers(Request $request, Quiz $quiz)
     {
-        $rules = array();
+        $emptyQ = [];
         foreach ($quiz->questions as $question) {
-            $rules['question_' . $question->id] = ['required'];
+            if (!array_key_exists('question_' . $question->id, $request->all())) {
+                $emptyQ['question_' . $question->id] = 0;
+            }
         }
-        $request->validate($rules);
 
         // Сохраняем все ответы
-        $quiz->storeAnswers($request->all());
+        $quiz->storeAnswers(array_merge($request->all(), $emptyQ));
         $calcResult = $quiz->calculateResult();
 
         // Считаем результат
         if ($quiz->result) {
             $quiz->result->update(['points' => $calcResult['points']]);
         } else {
-            QuizResult::add($quiz);
+            QuizResult::add($request->time_spent, $quiz);
         }
 
         return redirect()->route('account.quiz.result', $quiz);

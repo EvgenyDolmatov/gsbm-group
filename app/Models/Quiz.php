@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,7 +13,7 @@ class Quiz extends Model
 {
     use HasFactory, HasSlug, SoftDeletes;
 
-    protected $fillable = ['title', 'description', 'course_id'];
+    protected $fillable = ['title', 'description', 'course_id', 'time_limit'];
 
     public function course()
     {
@@ -36,13 +37,20 @@ class Quiz extends Model
             ->saveSlugsTo('slug');
     }
 
+    protected function timeLimit(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => secondsToTime($value),
+            set: fn($value) => timeToSeconds($value)
+        );
+    }
+
     public static function add(array $input, $course)
     {
         $quiz = new static;
         $quiz->fill($input);
         $quiz->course_id = $course->id;
         $quiz->save();
-
         return $quiz;
     }
 
@@ -52,6 +60,32 @@ class Quiz extends Model
             $question->remove();
         }
         $this->delete();
+    }
+
+    public function getTimeToString(): string
+    {
+        $str = '';
+        $timeArr = explode(":", $this->time_limit);
+        $hours = $timeArr[0] > 0 ? $timeArr[0] : "";
+        $minutes = $timeArr[1] > 0 ? $timeArr[1] : "";
+
+        if ($timeArr[0] > 0) {
+            if ($hours < 10) {
+                $hours = str_replace("0", "", $hours);
+            }
+            $str .= $hours . " ч ";
+        }
+
+        if ($timeArr[1] > 0) {
+            if ($minutes < 10) {
+                $minutes = str_replace("0", "", $minutes);
+            }
+            $str .= $minutes . " мин ";
+        }
+
+        if ($str)
+            return $str;
+        return "Время не ограничено";
     }
 
     /*
@@ -140,7 +174,7 @@ class Quiz extends Model
             // Если между ответами пользователя и правильными ответами есть разница, то вычитаем баллы
             if (!empty($diff)) {
                 $questionPoints -= count($diff);
-                $wrongAnswers[] = '№'.$key;
+                $wrongAnswers[] = '№' . $key;
             }
 
             $userPoints += $questionPoints;
@@ -154,12 +188,12 @@ class Quiz extends Model
 
     public function getResult()
     {
-        return QuizResult::where('user_id', auth()->user()->id)->where('quiz_id', $this->id)->first();
+        return QuizResult::where('user_id', auth()->user()->id)->where('quiz_id', $this->id)->latest()->first();
     }
 
     public function getGrade()
     {
-        return round($this->getResult()->points/20);
+        return round($this->getResult()->points / 20);
     }
 
     public function isPassed()

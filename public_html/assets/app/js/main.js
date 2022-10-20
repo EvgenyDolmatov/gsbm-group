@@ -9,10 +9,15 @@
         navText: ["", ""]
     });
 
+    // Input Mask
+    if ($("#time_limit").length > 0) {
+        $("#time_limit").inputmask("99:99:99");
+    }
+
     // Active sidebar item
-    window.onload = function (){
+    window.onload = function () {
         let url = window.location.href;
-        let link =  $('a[href="'+url+'"]');
+        let link = $('a[href="' + url + '"]');
         let button = link.closest('.accordion-item').find('.accordion-button');
 
         link.parent('li').addClass('active');
@@ -254,43 +259,86 @@
         let optionsCount = optionContainer.length;
 
         let option = '<div class="option-group d-flex justify-content-end mb-3">\n' +
-                     '<input type="text" name="options[]" class="form-control">\n' +
-                     '<input type="'+checkboxType+'" name="is_correct[]" class="form-radio is-correct" value="'+(optionsCount+1)+'">\n' +
-                     '</div>';
+            '<input type="text" name="options[]" class="form-control">\n' +
+            '<input type="' + checkboxType + '" name="is_correct[]" class="form-radio is-correct" value="' + (optionsCount + 1) + '">\n' +
+            '</div>';
 
         optionContainer.last().after(option);
     });
 
     // Remove Image
-    $('a.remove').on('click', function (e){
+    $('a.remove').on('click', function (e) {
         e.preventDefault();
 
         let $this = $(this);
         $.ajax({
             url: $this.attr('href'),
             method: 'GET',
-            success: function (){
+            success: function () {
                 $this.parent('.img-thumbnail').remove();
             }
         });
     });
 
     // Remove File
-    $('a.remove-file').on('click', function (e){
+    $('a.remove-file').on('click', function (e) {
         e.preventDefault();
 
         let $this = $(this);
         $.ajax({
             url: $this.attr('href'),
             method: 'GET',
-            success: function (){
+            success: function () {
                 $this.parent('.item-file').remove();
             }
         });
     });
 
     // Remove Alert
-    $('.alert-wrap .close').on('click', function (){
-       $(this).parent('.alert').remove();
+    $('.alert-wrap .close').on('click', function () {
+        $(this).parent('.alert').remove();
     });
+
+
+    // Test time counter
+    let $time_control = $("#time-control")
+    if ($time_control.length > 0) {
+        let $time_counter = $("#time-counter");
+        let time_limit = $time_counter.attr("data-limit");
+        let time_parts = time_limit.split(":");
+        let time = parseInt(time_parts[0]) * 3600 + parseInt(time_parts[1]) * 60 + parseInt(time_parts[2]);
+        let start_time = time;
+        let $time_spent = $('input[name="time_spent"]');
+
+
+        if (time > 0) {
+            $time_control.css({display: "flex"});
+            setTimeout(run, 1000, time);
+
+            function run(time) {
+                if (time === 0) {
+                    $("#quiz-form").submit();
+                }
+                time--;
+
+                let minutes = time % 3600 / 60 >= 1 ? Math.floor(time % 3600 / 60) : 0;
+                let hours = time / 3600 >= 1 ? Math.floor(time / 3600) : 0;
+                let seconds = time % 3600 % 60;
+
+                if (hours < 10) hours = "0" + hours;
+                if (minutes < 10) minutes = "0" + minutes;
+                if (seconds < 10) seconds = "0" + seconds;
+
+                if ((time * 100) / start_time <= 20) {
+                    $("#time-control").animate({
+                        backgroundColor: "#ff4141",
+                    }, 300);
+                }
+                $time_counter.html(hours + ":" + minutes + ":" + seconds)
+                $time_spent.val( parseInt($time_spent.val()) + 1);
+
+                return setTimeout(run, 1000, time);
+            }
+        }
+    }
 })(jQuery);

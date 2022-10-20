@@ -28,6 +28,7 @@
                                         <th scope="col">Курс</th>
                                         <th scope="col">Результат</th>
                                         <th scope="col">Баллы</th>
+                                        <th scope="col">Время</th>
                                         <th scope="col">Дата</th>
                                     </tr>
                                     </thead>
@@ -40,7 +41,8 @@
                                                 @if($group->course) {{$group->course->title}} @endif
                                             </td>
                                             <td>{{ $student->getResultByGroup($group) }}</td>
-                                            <td>@if($student->results->first()){{ $student->results->first()->points }}@endif</td>
+                                            <td>@if($student->results->last()){{ $student->results->last()->points }}@endif</td>
+                                            <td>@if($student->results->last()){{ secondsToTime($student->results->last()->time_spent)}}@endif</td>
                                             <td>{{ $student->getResultDate($group) }}</td>
                                         </tr>
                                     @endforeach

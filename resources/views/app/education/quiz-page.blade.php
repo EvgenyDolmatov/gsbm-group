@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="quiz-container">
-                    <form action="{{route('account.quiz.answers.store', $quiz)}}" method="post">
+                    <form id="quiz-form" action="{{route('account.quiz.answers.store', $quiz)}}" method="post">
                         @csrf
 
                         @if ($errors->any())
@@ -22,6 +22,8 @@
                                 <span>Вы ответили не на все вопросы.</span>
                             </div>
                         @endif
+
+                        <input type="hidden" name="time_spent" value="0">
 
                         <div class="questions">
                             @foreach($quiz->questions as $key => $question)
@@ -48,4 +50,12 @@
             </div>
         </div>
     </section>
+
+    <div id="time-control" class="time-control">
+        <span id="time-counter" data-limit="{{ $quiz->time_limit }}">{{ $quiz->time_limit }}</span>
+    </div>
+@endsection
+
+@section("additional-scripts")
+    <script src="{{ asset('assets/app/vendor/jquery-ui/jquery-ui.min.js') }}"></script>
 @endsection

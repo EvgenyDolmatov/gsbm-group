@@ -32,7 +32,7 @@
                                 @foreach($courses as $course)
                                     <tr>
                                         <td>{{$course->studyArea->name}}</td>
-                                        <td><a href="{{route('courses.show', $course)}}">{{$course->title}}</a></td>
+                                        <td><a href="{{route('courses.show', $course)}}" class="list-link">{{$course->title}}</a></td>
                                         <td class="actions">
                                             <a href="{{ route('courses.edit', $course) }}"
                                                class="text-primary">Изменить</a>
