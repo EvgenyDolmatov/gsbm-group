@@ -31,19 +31,19 @@
                                     <td>1</td>
                                     <td>Охрана труда. Техносферная безопасность</td>
                                     <td>256</td>
-                                    <td>9&nbsp;700</td>
+                                    <td>10&nbsp;000</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>Охрана труда для руководителей и специалистов (разные отрасли производства)</td>
+                                    <td>Охрана труда</td>
                                     <td>40</td>
-                                    <td>2&nbsp;000</td>
+                                    <td>2&nbsp;500</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>Охрана труда для работников рабочих профессий и прочего обслуживающего персонала</td>
                                     <td>20</td>
-                                    <td>1&nbsp;850</td>
+                                    <td>2&nbsp;500</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
@@ -55,58 +55,40 @@
                                     <td>5</td>
                                     <td>Внеочередная проверка знаний</td>
                                     <td>16</td>
-                                    <td>600</td>
+                                    <td>1 000</td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
-                                    <td>Повторная аттестация</td>
-                                    <td>40/20</td>
-                                    <td>1&nbsp;000</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
                                     <td>Оказание первой помощи при несчастных случаях на производстве</td>
                                     <td>20</td>
-                                    <td>1&nbsp;300</td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>Обучение на группу допуска по электробезопасности</td>
-                                    <td>72</td>
-                                    <td>2&nbsp;800</td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>Пожарная безопасность</td>
-                                    <td>16</td>
-                                    <td>1&nbsp;200</td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Пожарная безопасность</td>
-                                    <td>24</td>
                                     <td>1&nbsp;500</td>
                                 </tr>
                                 <tr>
-                                    <td>11</td>
+                                    <td>7</td>
+                                    <td>Обучение на группу допуска по электробезопасности</td>
+                                    <td>72</td>
+                                    <td>3 000</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Пожарная безопасность</td>
+                                    <td>24</td>
+                                    <td>2 000</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
                                     <td>Рабочая специальность (любое направление)</td>
                                     <td>80</td>
-                                    <td>2&nbsp;500</td>
+                                    <td>3&nbsp;000</td>
                                 </tr>
                                 <tr>
-                                    <td>12</td>
-                                    <td>Рабочая специальность (подсобный рабочий)</td>
-                                    <td>20</td>
-                                    <td>2&nbsp;000</td>
-                                </tr>
-                                <tr>
-                                    <td>13</td>
+                                    <td>10</td>
                                     <td>Гражданская оборона и чрезвычайные ситуации</td>
                                     <td>72</td>
                                     <td>3&nbsp;000</td>
                                 </tr>
                                 <tr>
-                                    <td>14</td>
+                                    <td>11</td>
                                     <td>Работа с отходами I-IV класс опасности</td>
                                     <td>112</td>
                                     <td>3&nbsp;000</td>
@@ -129,7 +111,7 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">9 700</span>
+                                            <span class="value">10 000</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
@@ -149,7 +131,7 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">2 000</span>
+                                            <span class="value">2 500</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
@@ -169,7 +151,7 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">1 850</span>
+                                            <span class="value">2 500</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
@@ -209,34 +191,14 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">600</span>
+                                            <span class="value">1 000</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
                                         Внеочередная проверка знаний
                                     </div>
                                 </div>
-                                <!-- 6. Повторная аттестация -->
-                                <div class="table-flex-item">
-                                    <div class="item-main">
-                                        <div class="item-main-params code">
-                                            <span class="title">№ п/п</span>
-                                            <span class="value">6</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Часы</span>
-                                            <span class="value">40/20</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Стоимость, руб.</span>
-                                            <span class="value">1 000</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-value description">
-                                        Повторная аттестация
-                                    </div>
-                                </div>
-                                <!-- 7. Оказание первой помощи при несчастных случаях на производстве -->
+                                <!-- 6. Оказание первой помощи при несчастных случаях на производстве -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
@@ -249,14 +211,14 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">1 300</span>
+                                            <span class="value">1 500</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
                                         Оказание первой помощи при несчастных случаях на производстве
                                     </div>
                                 </div>
-                                <!-- 8. Электробезопасность -->
+                                <!-- 7. Электробезопасность -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
@@ -269,31 +231,11 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">2 800</span>
+                                            <span class="value">3 000</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
                                         Обучение на группу допуска по электробезопасности
-                                    </div>
-                                </div>
-                                <!-- 9. Пожарная безопасность -->
-                                <div class="table-flex-item">
-                                    <div class="item-main">
-                                        <div class="item-main-params code">
-                                            <span class="title">№ п/п</span>
-                                            <span class="value">9</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Часы</span>
-                                            <span class="value">16</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Стоимость, руб.</span>
-                                            <span class="value">1 200</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-value description">
-                                        Пожарная безопасность
                                     </div>
                                 </div>
                                 <!-- 10. Пожарная безопасность -->
@@ -309,7 +251,7 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">1 500</span>
+                                            <span class="value">2 000</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
@@ -329,31 +271,11 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">2 500</span>
+                                            <span class="value">3 000</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
                                         Рабочая специальность (любое направление)
-                                    </div>
-                                </div>
-                                <!-- 12. Рабочая специальность (любое направление) -->
-                                <div class="table-flex-item">
-                                    <div class="item-main">
-                                        <div class="item-main-params code">
-                                            <span class="title">№ п/п</span>
-                                            <span class="value">12</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Часы</span>
-                                            <span class="value">20</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Стоимость, руб.</span>
-                                            <span class="value">2 000</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-value description">
-                                        Рабочая специальность (подсобный рабочий)
                                     </div>
                                 </div>
                                 <!-- 13. Гражданская оборона и чрезвычайные ситуации -->

@@ -26,8 +26,11 @@
         </div>
         <!-- Mistakes -->
         <div class="item-result mistakes">
-            <div class="value">{{implode(', ', $quiz->calculateResult()['wrongAnswers'])}}</div>
             <div class="title">Ошибки</div>
+            @foreach($quiz->calculateResult()['wrongQuestionsList'] as $key => $q)
+                <div class="value mb-2 text-start">{{ $q }}</div>
+            @endforeach
+{{--            <div class="value">{{implode(', ', $quiz->calculateResult()['wrongAnswers'])}}</div>--}}
         </div>
 
         @if($quiz->getResult()->points <= 50)

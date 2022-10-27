@@ -143,6 +143,7 @@ class Quiz extends Model
     {
         $userPoints = 0;
         $wrongAnswers = array();
+        $wrongQuestionsList = array();
         $maxPoints = count($this->getAnswersByUser()); // Максимальное количество баллов за тест
         $answers = $this->getAnswersByUser(); // Все ответы пользователя
 
@@ -175,6 +176,7 @@ class Quiz extends Model
             if (!empty($diff)) {
                 $questionPoints -= count($diff);
                 $wrongAnswers[] = '№' . $key;
+                $wrongQuestionsList[] = QuestionOption::find($option[0])->question->question_text;
             }
 
             $userPoints += $questionPoints;
@@ -183,6 +185,7 @@ class Quiz extends Model
         return array(
             'points' => round(($userPoints * 100) / $maxPoints), // Возвращаем процент правильных ответов от 0 до 100
             'wrongAnswers' => $wrongAnswers, // Возвращаем номера неверных ответов
+            'wrongQuestionsList' => $wrongQuestionsList, // Возвращаем неверные вопросы
         );
     }
 
