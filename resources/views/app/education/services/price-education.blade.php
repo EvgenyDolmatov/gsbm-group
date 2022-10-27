@@ -41,54 +41,48 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>Охрана труда для работников рабочих профессий и прочего обслуживающего персонала</td>
-                                    <td>20</td>
-                                    <td>2&nbsp;500</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
                                     <td>Безопасные методы и приемы выполнения работ на высоте</td>
                                     <td>24</td>
                                     <td>1&nbsp;500</td>
                                 </tr>
                                 <tr>
-                                    <td>5</td>
+                                    <td>4</td>
                                     <td>Внеочередная проверка знаний</td>
                                     <td>16</td>
                                     <td>1 000</td>
                                 </tr>
                                 <tr>
-                                    <td>6</td>
+                                    <td>5</td>
                                     <td>Оказание первой помощи при несчастных случаях на производстве</td>
                                     <td>20</td>
                                     <td>1&nbsp;500</td>
                                 </tr>
                                 <tr>
-                                    <td>7</td>
+                                    <td>6</td>
                                     <td>Обучение на группу допуска по электробезопасности</td>
                                     <td>72</td>
                                     <td>3 000</td>
                                 </tr>
                                 <tr>
-                                    <td>8</td>
+                                    <td>7</td>
                                     <td>Пожарная безопасность</td>
                                     <td>24</td>
                                     <td>2 000</td>
                                 </tr>
                                 <tr>
-                                    <td>9</td>
+                                    <td>8</td>
                                     <td>Рабочая специальность (любое направление)</td>
                                     <td>80</td>
                                     <td>3&nbsp;000</td>
                                 </tr>
                                 <tr>
-                                    <td>10</td>
+                                    <td>9</td>
                                     <td>Гражданская оборона и чрезвычайные ситуации</td>
                                     <td>72</td>
                                     <td>3&nbsp;000</td>
                                 </tr>
                                 <tr>
-                                    <td>11</td>
+                                    <td>10</td>
                                     <td>Работа с отходами I-IV класс опасности</td>
                                     <td>112</td>
                                     <td>3&nbsp;000</td>
@@ -138,32 +132,12 @@
                                         Охрана труда для руководителей и специалистов (разные отрасли производства)
                                     </div>
                                 </div>
-                                <!-- 3. Охрана труда для работников рабочих профессий и прочего обслуживающего персонала -->
+                                <!-- 3. Безопасные методы и приемы выполнения работ на высоте -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
                                             <span class="value">3</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Часы</span>
-                                            <span class="value">20</span>
-                                        </div>
-                                        <div class="item-main-params hours">
-                                            <span class="title">Стоимость, руб.</span>
-                                            <span class="value">2 500</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-value description">
-                                        Охрана труда для работников рабочих профессий и прочего обслуживающего персонала
-                                    </div>
-                                </div>
-                                <!-- 4. Безопасные методы и приемы выполнения работ на высоте -->
-                                <div class="table-flex-item">
-                                    <div class="item-main">
-                                        <div class="item-main-params code">
-                                            <span class="title">№ п/п</span>
-                                            <span class="value">4</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
@@ -178,12 +152,12 @@
                                         Безопасные методы и приемы выполнения работ на высоте
                                     </div>
                                 </div>
-                                <!-- 5. Внеочередная проверка знаний -->
+                                <!-- 4. Внеочередная проверка знаний -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
-                                            <span class="value">5</span>
+                                            <span class="value">4</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
@@ -198,12 +172,12 @@
                                         Внеочередная проверка знаний
                                     </div>
                                 </div>
-                                <!-- 6. Оказание первой помощи при несчастных случаях на производстве -->
+                                <!-- 5. Оказание первой помощи при несчастных случаях на производстве -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
-                                            <span class="value">7</span>
+                                            <span class="value">5</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
@@ -218,12 +192,12 @@
                                         Оказание первой помощи при несчастных случаях на производстве
                                     </div>
                                 </div>
-                                <!-- 7. Электробезопасность -->
+                                <!-- 6. Электробезопасность -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
-                                            <span class="value">8</span>
+                                            <span class="value">6</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
@@ -238,12 +212,12 @@
                                         Обучение на группу допуска по электробезопасности
                                     </div>
                                 </div>
-                                <!-- 10. Пожарная безопасность -->
+                                <!-- 7. Пожарная безопасность -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
-                                            <span class="value">10</span>
+                                            <span class="value">7</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
@@ -258,12 +232,12 @@
                                         Пожарная безопасность
                                     </div>
                                 </div>
-                                <!-- 11. Рабочая специальность (любое направление) -->
+                                <!-- 8. Рабочая специальность (любое направление) -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
-                                            <span class="value">11</span>
+                                            <span class="value">8</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
@@ -278,12 +252,12 @@
                                         Рабочая специальность (любое направление)
                                     </div>
                                 </div>
-                                <!-- 13. Гражданская оборона и чрезвычайные ситуации -->
+                                <!-- 9. Гражданская оборона и чрезвычайные ситуации -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
-                                            <span class="value">13</span>
+                                            <span class="value">9</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
@@ -298,12 +272,12 @@
                                         Гражданская оборона и чрезвычайные ситуации
                                     </div>
                                 </div>
-                                <!-- 12. Работа с отходами I-IV класс опасности -->
+                                <!-- 10. Работа с отходами I-IV класс опасности -->
                                 <div class="table-flex-item">
                                     <div class="item-main">
                                         <div class="item-main-params code">
                                             <span class="title">№ п/п</span>
-                                            <span class="value">14</span>
+                                            <span class="value">10</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
