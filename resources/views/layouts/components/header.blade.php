@@ -16,7 +16,6 @@
                     </li>
                 @else
                     <li><a href="{{route('login')}}">Вход в аккаунт</a></li>
-                    <li><a href="{{route('register')}}">Регистрация</a></li>
                 @endauth
             </ul>
         </div>

@@ -38,11 +38,4 @@
             <button type="submit" class="btn btn-brand">Войти</button>
         </form>
     </div>
-    <div class="container">
-        <div class="d-flex justify-center">
-            <p class="m-auto mt-3 form-control-sm text-black-50">
-                Еще нет аккаунта? <a class="text-primary" href="{{route('register')}}">Регистрация</a>
-            </p>
-        </div>
-    </div>
 @endsection
