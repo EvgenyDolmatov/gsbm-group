@@ -1288,6 +1288,10 @@ main section#add-services .section-content {
     font-weight: 600;
 }
 
+.accordion-flush.left-sidebar {
+    margin-right: 30px;
+}
+
 .service-right .service-title,
 .page-right-content .service-title {
     margin-bottom: 30px;
@@ -1331,7 +1335,7 @@ table.table thead {
 }
 
 table.table tbody {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 table.table tbody:not(:first-child) {
@@ -1343,13 +1347,24 @@ table.table tbody tr:nth-child(2n-1) {
 }
 
 table.table th, table.table td {
-    padding: 12px 10px;
-    text-align: center;
+    padding: 12px 30px;
+    /*text-align: center;*/
     min-height: 50px;
     border: none;
-    border-left: 1px solid #b3b3b3;
-    border-right: 1px solid #b3b3b3;
+    /*border-left: 1px solid #e3e3e3;*/
+    /*border-right: 1px solid #e3e3e3;*/
     font-weight: 300;
+}
+
+table.table th {
+    background-color: #1c3f94;
+    border: 1px solid #1c3f94;
+    color: #fff;
+    font-weight: 500;
+}
+
+table.table th:last-child {
+    text-align: right;
 }
 
 table.table th.status, table.table td.status {
@@ -1357,6 +1372,15 @@ table.table th.status, table.table td.status {
     color: #1c3f94;
 }
 
+table.table td.area-title {
+    background-color: #eaeaea;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+table.table td.actions {
+    text-align: right;
+}
 table.table td.actions a {
     display: block;
     margin-bottom: 5px;

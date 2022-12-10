@@ -26,7 +26,7 @@
                                     <label for="course_id" class="form-label">Курс</label>
                                     <select name="course_id" id="course_id" class="form-control form-select w-100">
                                         <option value="" selected disabled>Выберите курс</option>
-                                        @foreach($courses as $c)
+                                        @foreach($courses->sortBy("title") as $c)
                                             <option value="{{$c->id}}"
                                                     @if($c->id == old('course_id') || $c->id == $lesson->course->id) selected @endif>
                                                 {{$c->title}}

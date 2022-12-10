@@ -39,17 +39,6 @@ class LessonController extends Controller
         return redirect()->route('courses.show', $course);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     public function edit(Course $course, Lesson $lesson)
     {
         return view('app.account.courses.lessons.edit', [

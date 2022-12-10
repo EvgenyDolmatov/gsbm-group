@@ -1,4 +1,4 @@
-<div class="accordion accordion-flush" id="accordionServices">
+<div class="accordion accordion-flush left-sidebar" id="accordionServices">
     <!-- Account -->
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOne">
@@ -50,7 +50,7 @@
                             <a href="{{route('study-groups.index')}}">Группы</a>
                         </li>
                         <li>
-                            <a href="#">Студенты</a>
+                            <a href="{{route('students.index')}}">Студенты</a>
                         </li>
                     </ul>
                 </div>

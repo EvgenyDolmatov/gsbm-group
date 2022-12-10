@@ -109,9 +109,9 @@ class StudyGroupController extends Controller
             }
         } else {
             $pass = Str::random(8);
-            $user = User::createByAdmin($request->all(), $group, $pass);
+            $user = User::createByAdmin($request->all(), $pass, $group);
             $user->assignRole('user');
-            Mail::to($user->email)->send(new RegisterSuccessByAdmin($group, $user, $pass));
+            Mail::to($user->email)->send(new RegisterSuccessByAdmin($user, $pass));
         }
 
         return redirect()->route('study-groups.show', $group);
@@ -138,7 +138,6 @@ class StudyGroupController extends Controller
 
     public function destroyStudent(StudyGroup $group, User $student)
     {
-//        $student->delete();
         $group->students()->detach($student->id);
         return back();
     }

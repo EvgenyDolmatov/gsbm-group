@@ -17,6 +17,7 @@ use App\Http\Controllers\StudentQuizController;
 use App\Http\Controllers\StudyAreaController;
 use App\Http\Controllers\StudyGroupController;
 use App\Http\Controllers\SuperUserController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -99,6 +100,7 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
     Route::resource('quizzes/{quiz}/questions', QuestionController::class);
     Route::resource('services', ServiceController::class);
     Route::resource('leaders', LeaderController::class);
+    Route::resource('students', UserController::class);
     // Study groups
     Route::resource('study-groups', StudyGroupController::class);
     Route::get('study-groups/{group}/students/create', [StudyGroupController::class, 'createStudent'])->name('study-groups.students.create');

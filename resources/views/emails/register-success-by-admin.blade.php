@@ -184,7 +184,7 @@
                             <tr>
                                 <td class="col px-sm-16" align="center" width="100%" style="padding: 0 64px;">
                                     <h2 style="color: #000; font-size: 20px; font-weight: 300; line-height: 28px; margin: 0 0 24px;">Здравствуйте, {{$user->name}}!</h2>
-                                    <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Вы успешно зачислены в группу {{$group->name}} в учебном центре ООО "Геострой-Буммаш"!</p>
+                                    <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Вы успешно зарегистрированы в учебном центре ООО "Геострой-Буммаш"!</p>
                                     <br>
                                     <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Ваш логин: {{$user->email}}</p>
                                     <p style="color: #888888; font-size: 16px; line-height: 24px; margin: 0;">Ваш пароль: {{$pass}}</p>

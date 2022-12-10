@@ -12,6 +12,7 @@ class CourseController extends Controller
     {
         return view('app.account.courses.courses', [
             'courses' => Course::all()->sortBy('title'),
+            'studyAreas' => StudyArea::all()->sortBy("name"),
         ]);
     }
 

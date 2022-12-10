@@ -13,16 +13,15 @@ class RegisterSuccessByAdmin extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $group, $user, $pass;
+    public $user, $pass;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(StudyGroup $group, User $user, $pass)
+    public function __construct(User $user, $pass)
     {
-        $this->group = $group;
         $this->user = $user;
         $this->pass = $pass;
     }
@@ -34,11 +33,8 @@ class RegisterSuccessByAdmin extends Mailable
      */
     public function build()
     {
-
-//        dd($group = $this->user->groups->latest()->name);
-
         return $this->from('no-reply@gsbm-group.ru', config('app.name'))
-            ->subject('Вы зачислены в группу '.$this->group->name.'!')
+            ->subject('Вы зарегистрированы на сайте Геострой-Буммаш!')
             ->view('emails.register-success-by-admin', ['user' => $this->user]);
     }
 }

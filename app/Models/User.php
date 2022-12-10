@@ -87,15 +87,16 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(QuizResult::class);
     }
 
-    public static function createByAdmin(array $input, $group, $pass)
+    public static function createByAdmin(array $input, $pass, $group = null)
     {
         $user = new static;
         $user->fill($input);
         $user->password = Hash::make($pass);
-//        $user->group_id = $group->id;
         $user->save();
 
-        $user->groups()->attach($group->id);
+        if ($group) {
+            $user->groups()->attach($group->id);
+        }
 
         return $user;
     }

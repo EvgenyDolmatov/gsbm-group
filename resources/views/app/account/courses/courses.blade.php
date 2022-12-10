@@ -23,31 +23,36 @@
                             <table class="table">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Направление</th>
                                     <th scope="col">Наименование</th>
                                     <th scope="col">Действия</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($courses as $course)
-                                    <tr>
-                                        <td>{{$course->studyArea->name}}</td>
-                                        <td><a href="{{route('courses.show', $course)}}" class="list-link">{{$course->title}}</a></td>
-                                        <td class="actions">
-                                            <a href="{{ route('courses.edit', $course) }}"
-                                               class="text-primary">Изменить</a>
+                                @foreach($studyAreas as $area)
+                                    @if($area->courses->count())
+                                        <tr>
+                                            <td colspan="2" class="area-title">{{ $area->name }}</td>
+                                        </tr>
+                                    @endif
+                                    @foreach($area->courses as $course)
+                                        <tr>
+                                            <td><a href="{{route('courses.show', $course)}}"
+                                                   class="list-link">{{$course->title}}</a></td>
+                                            <td class="actions">
+                                                <a href="{{ route('courses.edit', $course) }}"
+                                                   class="text-primary">Изменить</a>
 
-                                            <form action="{{route('courses.destroy', $course)}}" method="POST">
-                                                @csrf @method('delete')
+                                                <form action="{{route('courses.destroy', $course)}}" method="POST">
+                                                    @csrf @method('delete')
 
-                                                <a href="{{route('courses.destroy', $course)}}" class="text-danger"
-                                                   onclick="event.preventDefault();if(confirm('Курс будет удален. Продолжить?')){this.closest('form').submit();}">
-                                                    Удалить
-                                                </a>
-                                            </form>
-
-                                        </td>
-                                    </tr>
+                                                    <a href="{{route('courses.destroy', $course)}}" class="text-danger"
+                                                       onclick="event.preventDefault();if(confirm('Курс будет удален. Продолжить?')){this.closest('form').submit();}">
+                                                        Удалить
+                                                    </a>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 @endforeach
                                 </tbody>
                             </table>
