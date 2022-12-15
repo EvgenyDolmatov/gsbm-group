@@ -25,9 +25,19 @@ class Quiz extends Model
         return $this->hasMany(Question::class);
     }
 
+    public function stage()
+    {
+        return $this->hasOne(CourseStage::class);
+    }
+
     public function results()
     {
-        return $this->hasMany(QuizResult::class);
+        return $this->hasMany(UserResult::class, "result_id");
+    }
+
+    public function relatedLessons()
+    {
+        return $this->belongsToMany(Lesson::class);
     }
 
     public function getSlugOptions(): SlugOptions
@@ -59,6 +69,8 @@ class Quiz extends Model
         foreach ($this->questions as $question) {
             $question->remove();
         }
+        $this->relatedLessons()->detach();
+        $this->stage->delete();
         $this->delete();
     }
 
@@ -91,11 +103,9 @@ class Quiz extends Model
     /*
      * Сохраняем ответы пользователя
      */
-    public function storeAnswers(array $input)
+    public function storeAnswers($userResult, array $input)
     {
-        $user = auth()->user();
         foreach ($this->questions as $question) {
-
             $field = $input['question_' . $question->id];
 
             if (is_array($field)) {
@@ -104,20 +114,11 @@ class Quiz extends Model
                 $answer = $field;
             }
 
-            $answerExists = QuestionAnswer::where([
-                ['user_id', $user->id],
-                ['question_id', $question->id],
-            ])->first();
-
-            if ($answerExists) {
-                $answerExists->update(['answer' => $answer]);
-            } else {
-                QuestionAnswer::create([
-                    'user_id' => $user->id,
-                    'question_id' => $question->id,
-                    'answer' => $answer,
-                ]);
-            }
+            UserResultDetail::create([
+                'result_id' => $userResult->id,
+                'question_id' => $question->id,
+                'answer' => $answer,
+            ]);
         }
     }
 
@@ -126,14 +127,7 @@ class Quiz extends Model
      */
     public function getAnswersByUser()
     {
-        $user = auth()->user();
-        $questionIds = array();
-
-        foreach ($this->questions as $question) {
-            $questionIds[] = $question->id;
-        }
-
-        return QuestionAnswer::where('user_id', $user->id)->whereIn('question_id', $questionIds)->get();
+        return auth()->user()->results->where("stage_id", $this->stage->id)->last()->details;
     }
 
     /*
@@ -191,7 +185,7 @@ class Quiz extends Model
 
     public function getResult()
     {
-        return QuizResult::where('user_id', auth()->user()->id)->where('quiz_id', $this->id)->latest()->first();
+        return UserResult::where('user_id', auth()->user()->id)->where('stage_id', $this->stage->id)->latest()->first();
     }
 
     public function getGrade()
@@ -199,15 +193,31 @@ class Quiz extends Model
         return round($this->getResult()->points / 20);
     }
 
-    public function isPassed()
+    public function isPassed(): bool
+    {
+        $results = UserResult::where('user_id', auth()->user()->id)->where('stage_id', $this->stage->id)->get();
+        if ($results->count()) {
+            foreach ($results as $result) {
+                if ($result->is_passed) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public function isAvailableByUser(): bool
     {
         $user = auth()->user();
 
-        $result = QuizResult::where('user_id', $user->id)->where('quiz_id', $this->id)->first();
+        if ($this->relatedLessons->count()) {
 
-        if ($result && $result->points >= 50) {
-            return true;
+            $stagesIds = [];
+            foreach ($this->relatedLessons as $relatedLesson) {
+                $stagesIds[] = $relatedLesson->stage->id;
+            }
+            return $user->results()->whereIn("stage_id", $stagesIds)->get()->count() === count($stagesIds);
         }
-        return false;
+        return true;
     }
 }

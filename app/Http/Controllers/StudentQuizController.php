@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Quiz;
-use App\Models\QuizResult;
+use App\Models\UserResult;
 use Illuminate\Http\Request;
 
 class StudentQuizController extends Controller
@@ -24,16 +24,22 @@ class StudentQuizController extends Controller
             }
         }
 
+        // Создаем результат
+        $userRes = UserResult::create([
+            "user_id" => auth()->user()->id,
+            "stage_id" => $quiz->stage->id,
+        ]);
+
         // Сохраняем все ответы
-        $quiz->storeAnswers(array_merge($request->all(), $emptyQ));
+        $quiz->storeAnswers($userRes, array_merge($request->all(), $emptyQ));
         $calcResult = $quiz->calculateResult();
 
         // Считаем результат
-        if ($quiz->result) {
-            $quiz->result->update(['points' => $calcResult['points']]);
-        } else {
-            QuizResult::add($request->time_spent, $quiz);
-        }
+        $userRes->update([
+            'points' => $calcResult['points'],
+            "time_spent" => $request->time_spent,
+            "is_passed" => $calcResult['points'] >= 50 ? 1 : 0,
+        ]);
 
         return redirect()->route('account.quiz.result', $quiz);
     }

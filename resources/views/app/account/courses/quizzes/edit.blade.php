@@ -17,7 +17,8 @@
                                 <h2>{{  $quiz->title . ' (ред.)' }}</h2>
                             </div>
 
-                            <form action="{{route('quizzes.update', [$course, $quiz])}}" method="POST" class="account-form">
+                            <form action="{{route('quizzes.update', [$course, $quiz])}}" method="POST"
+                                  class="account-form">
                                 @csrf @method('PUT')
 
                                 <div class="form-group mb-5">
@@ -61,6 +62,38 @@
                                     @error('time_limit')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
+                                </div>
+
+                                <div class="form-group mb-5">
+                                    <label class="form-label">Связанные лекции</label>
+
+                                    @if($quiz->relatedLessons->count())
+                                        @foreach($quiz->relatedLessons as $relatedLesson)
+                                            <select name="related_lessons[]"
+                                                    class="form-select w-100 shadow-none select-option">
+                                                <option value="" selected>Выберите лекцию</option>
+                                                @foreach($lessons as $lesson)
+                                                    <option value="{{ $lesson->id }}"
+                                                            @if($relatedLesson->id === $lesson->id) selected @endif>
+                                                        {{$lesson->title}}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        @endforeach
+                                    @else
+                                        <select name="related_lessons[]"
+                                                class="form-select w-100 shadow-none select-option">
+                                            <option value="" selected>Выберите лекцию</option>
+                                            @foreach($lessons as $lesson)
+                                                <option value="{{ $lesson->id }}">{{$lesson->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    @endif
+
+                                    <button type="button" id="add-select-option"
+                                            class="btn btn-sm btn-outline-dark mt-3">
+                                        Добавить лекцию
+                                    </button>
                                 </div>
 
                                 {{-- Save Button --}}

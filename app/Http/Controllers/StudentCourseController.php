@@ -13,6 +13,7 @@ class StudentCourseController extends Controller
         $user = auth()->user();
 
         return view('app.account.my-courses.courses-list', [
+            'user' => $user,
             'groups' => $user->groups,
         ]);
     }
@@ -21,6 +22,13 @@ class StudentCourseController extends Controller
     {
         return view('app.account.my-courses.quiz-type', [
             'quiz' => $quiz
+        ]);
+    }
+
+    public function practisePage(Course $course)
+    {
+        return view('app.account.my-courses.practise-page', [
+            'course' => $course,
         ]);
     }
 }

@@ -266,6 +266,15 @@
         optionContainer.last().after(option);
     });
 
+    // Add Related Lesson Select
+    $("#add-select-option").on("click", function (){
+        $(this)
+            .prev(".select-option")
+            .clone(true)
+            .val("")
+            .insertBefore($(this));
+    });
+
     // Remove Image
     $('a.remove').on('click', function (e) {
         e.preventDefault();

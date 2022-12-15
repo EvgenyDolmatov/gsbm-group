@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class QuizResult extends Model
 {
@@ -11,6 +13,11 @@ class QuizResult extends Model
 
     protected $table = 'quiz_results';
     protected $fillable = ['user_id', 'quiz_id', 'points', 'time_spent'];
+
+    public function quiz(): BelongsTo
+    {
+        return $this->belongsTo(Quiz::class, "quiz_id");
+    }
 
     public static function add($time_spent, $quiz)
     {

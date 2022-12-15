@@ -21,13 +21,29 @@
 
                             @if($lesson->attachments()->count() > 0)
                                 <h3 class="mt-5 mb-3">Дополнительные материалы</h3>
-                                <ul class="files ">
+                                <ul class="files mb-5">
                                     @foreach($lesson->attachments as $key => $file)
                                         <li class="mb-2">
-                                            <a href="{{$file->getFile()}}" target="_blank">{{$key+1 . ') ' . $file->title}}</a>
+                                            <a href="{{$file->getFile()}}"
+                                               target="_blank">{{$key+1 . ') ' . $file->title}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
+                            @endif
+
+                            @if(session()->has("lessonPassed"))
+                                <div class="alert alert-success d-flex justify-content-between align-items-center">
+                                    <span>{{ session()->get("lessonPassed") }}</span>
+                                    @if($lesson->relatedQuizzes->count())
+                                        <a href="{{route('account.choose-quiz', $lesson->relatedQuizzes->first())}}"
+                                           class="btn btn-success">Сдать тест</a>
+                                    @endif
+                                </div>
+                            @endif
+
+                            @if(! $user->results->where("stage_id", $lesson->stage->id)->first())
+                                <a href="{{route('account.course.pass-lesson', $lesson)}}" class="btn btn-brand">Лекция
+                                    изучена</a>
                             @endif
                         </div>
                     </div>

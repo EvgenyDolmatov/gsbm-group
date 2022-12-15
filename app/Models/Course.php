@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -22,6 +23,11 @@ class Course extends Model
     public function groups()
     {
         return $this->hasMany(StudyGroup::class);
+    }
+
+    public function stages(): HasMany
+    {
+        return $this->hasMany(CourseStage::class);
     }
 
     public function lessons()
@@ -47,5 +53,10 @@ class Course extends Model
             $quiz->remove();
         }
         $this->delete();
+    }
+
+    public function getRandomQuiz()
+    {
+        return $this->stages->where("type", "quiz")->random()->quiz;
     }
 }

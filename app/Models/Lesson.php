@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -13,14 +15,24 @@ class Lesson extends Model
 
     protected $fillable = ['title', 'content', 'course_id'];
 
-    public function course()
+    public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
     }
 
-    public function attachments()
+    public function attachments(): HasMany
     {
         return $this->hasMany(LessonAttachment::class);
+    }
+
+    public function relatedQuizzes()
+    {
+        return $this->belongsToMany(Quiz::class);
+    }
+
+    public function stage()
+    {
+        return $this->hasOne(CourseStage::class);
     }
 
     public function getSlugOptions(): SlugOptions

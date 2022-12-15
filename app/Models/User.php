@@ -6,6 +6,7 @@ use App\Notifications\CustomResetPasswordNotification;
 use App\Notifications\CustomVerificationEmail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -72,19 +73,14 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new CustomResetPasswordNotification($token));
     }
 
-//    public function group()
-//    {
-//        return $this->belongsTo(StudyGroup::class, 'group_id');
-//    }
-
     public function groups()
     {
         return $this->belongsToMany(StudyGroup::class, 'group_user');
     }
 
-    public function results()
+    public function results(): HasMany
     {
-        return $this->hasMany(QuizResult::class);
+        return $this->hasMany(UserResult::class);
     }
 
     public static function createByAdmin(array $input, $pass, $group = null)
@@ -148,5 +144,32 @@ class User extends Authenticatable implements MustVerifyEmail
         }
 
         return '-';
+    }
+
+    public function examAccess($course): bool
+    {
+        $courseLessons = $course->stages->where("type", "lesson");
+        $courseIds = [];
+        foreach ($courseLessons as $courseLesson) {
+            $courseIds[] = $courseLesson->id;
+        }
+
+        $userLessons = $this->results->whereIn("stage_id", $courseIds)->where("is_passed", 1);
+        if ($courseLessons->count() !== $userLessons->count()) {
+            return false;
+        }
+
+        $quizIds = [];
+        $courseQuizzes = $course->stages->where("type", "quiz");
+        foreach ($courseQuizzes as $courseQuiz) {
+            $quizIds[] = $courseQuiz->id;
+        }
+
+        $passedQuizzes = $this->results->whereIn("stage_id", $quizIds)->where("is_passed", 1);
+        if (!$passedQuizzes->count()) {
+            return false;
+        }
+
+        return true;
     }
 }

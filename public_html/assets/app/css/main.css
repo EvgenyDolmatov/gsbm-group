@@ -260,7 +260,7 @@ form .form-group {
     margin-bottom: 15px;
 }
 
-form .form-control {
+form .form-control, form .form-select {
     padding: 11px;
     border-radius: unset !important;
     border: none;
@@ -346,6 +346,37 @@ form .form-checkbox input[type=checkbox]:checked + label:after {
     height: 17px;
     border-radius: 2px;
     background-color: #1c3f94;
+}
+
+form.form-filter {
+    max-width: unset;
+}
+form .input-group {
+    width: 100%;
+}
+form .input-group .form-control {
+    height: 40px;
+    width: auto;
+    font-size: 14px;
+}
+form .input-group .btn-brand {
+    background-color: #1c3f94;
+    border: 1px solid #1c3f94;
+    color: #fff;
+    border-radius: 0;
+    height: 40px;
+    padding: 5px 30px;
+    margin-left: -3px;
+}
+form .input-group .btn-outline-brand {
+    background-color: inherit;
+    border: 1px solid #1c3f94;
+    color: #1c3f94;
+    border-radius: 0;
+    height: 40px;
+    padding: 5px 30px;
+    font-size: 14px;
+    line-height: 2;
 }
 
 .pl-lg-35,

@@ -57,7 +57,7 @@
                                 <p>В курсе пока нет ни одной лекции.</p>
                             @endif
 
-                            <div class="d-flex justify-content-end mt-5 mb-5">
+                            <div class="d-flex justify-content-end mt-3 mb-5">
                                 <a href="{{route('lessons.create', $course)}}" class="btn btn-success">
                                     <i class="fa fa-plus"></i> Добавить лекцию
                                 </a>
@@ -102,7 +102,7 @@
                                 <p>В курсе пока нет ни одного экзамена.</p>
                             @endif
 
-                            <div class="d-flex justify-content-end mt-5">
+                            <div class="d-flex justify-content-end mt-3">
                                 <a href="{{route('quizzes.create', $course)}}" class="btn btn-success">
                                     <i class="fa fa-plus"></i> Добавить экзамен
                                 </a>

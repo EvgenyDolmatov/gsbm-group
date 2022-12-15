@@ -11,40 +11,37 @@
                         @include('layouts.components.account-sidebar')
                     </div>
                     <!-- Page Content -->
-                    <div class="col-lg-7 offset-xl-1 offset-0 col-12">
+                    <div class="col-lg-7 col-12">
                         <div class="page-right-content">
-                            <div class="service-title">
+                            <div class="service-title mb-5">
                                 <h2>Мои курсы</h2>
                             </div>
 
                             @foreach($groups as $group)
-
-                                <h4 class="mb-3 mt-3">{{$group->course->title}}</h4>
-
+                                <h4 class="mb-3">{{$group->course->title}}</h4>
                                 @if($group->course->lessons->count() > 0)
-                                    <h5 class="mb-3 mt-5">Лекции</h5>
+                                    <h5 class="mb-3">Лекции</h5>
                                     <ul>
-                                        @foreach($group->course->lessons as $key => $lesson)
+                                        @foreach($group->course->lessons as $lesson)
                                             <li class="mt-2">
-                                                <a href="{{route('account.lesson.show', $lesson)}}">{{$key+1 . ') ' .$lesson->title}}</a>
+                                                <a href="{{route('account.lesson.show', $lesson)}}">
+                                                    {{$loop->index+1 . ') ' .$lesson->title}}
+                                                </a>
                                             </li>
                                         @endforeach
                                     </ul>
+                                    <div class="mt-3 mb-5">
+                                        <a href="{{ route('account.course.practise', $group->course) }}"
+                                           class="btn btn-outline-dark">Практика</a>
+                                        @if($user->examAccess($group->course))
+                                            <a href="{{route('account.choose-quiz', $group->course->getRandomQuiz())}}"
+                                               class="btn btn-success">Сдать экзамен</a>
+                                        @else
+                                            <button class="btn btn-secondary" disabled>Экзамен не доступен</button>
+                                        @endif
+                                    </div>
                                 @endif
-
-                                <h5 class="mb-3 mt-5">Тесты</h5>
-                                <ul>
-                                    @foreach($group->course->quizzes as $quiz)
-                                        <li class="mt-2">
-                                            <a href="{{route('account.choose-quiz', $quiz)}}"
-                                               class="@if($quiz->isPassed()) text-success @endif">{{$quiz->title}}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-
                             @endforeach
-
-
                         </div>
                     </div>
                 </div>

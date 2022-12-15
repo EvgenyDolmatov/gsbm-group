@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CourseStage;
 use App\Models\Quiz;
-use App\Models\QuizResult;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -14,6 +14,7 @@ class QuizController extends Controller
     {
         return view('app.account.courses.quizzes.create', [
             'course' => $course,
+            'lessons' => $course->lessons
         ]);
     }
 
@@ -24,6 +25,15 @@ class QuizController extends Controller
         ]);
 
         $quiz = Quiz::add($request->all(), $course);
+        CourseStage::addQuizStage($course, $quiz);
+
+        if ($request->has('related_lessons')) {
+            $lessonIds = [];
+            foreach ($request->input('related_lessons') as $lesId) {
+                if ($lesId) $lessonIds[] = $lesId;
+            }
+            $quiz->relatedLessons()->sync($lessonIds);
+        }
 
         return redirect()->route('questions.create', $quiz);
     }
@@ -42,6 +52,7 @@ class QuizController extends Controller
             'courses' => Course::all()->sortBy('title'),
             'course' => $course,
             'quiz' => $quiz,
+            'lessons' => $course->lessons
         ]);
     }
 
@@ -53,7 +64,16 @@ class QuizController extends Controller
         ]);
 
         $quiz->update($request->all());
-        return redirect()->route('quizzes.show', [$course, $quiz]);
+
+        if ($request->has('related_lessons')) {
+            $lessonIds = [];
+            foreach ($request->input('related_lessons') as $lesId) {
+                if ($lesId) $lessonIds[] = $lesId;
+            }
+            $quiz->relatedLessons()->sync($lessonIds);
+        }
+
+        return redirect()->route('courses.show', $course);
     }
 
     public function destroy(Course $course, Quiz $quiz)

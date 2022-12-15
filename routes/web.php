@@ -90,6 +90,10 @@ Route::middleware('auth')->group(function () {
     Route::post('quizzes/{quiz}', [StudentQuizController::class, 'storeAnswers'])->name('account.quiz.answers.store');
     Route::get('quizzes/{quiz}/result', [StudentQuizController::class, 'quizResult'])->name('account.quiz.result');
     Route::get('lessons/{lesson}/show', [StudentLessonController::class, 'lessonShow'])->name('account.lesson.show');
+    Route::get('course/{course}/practise', [StudentCourseController::class, 'practisePage'])->name('account.course.practise');
+
+    // Прохождение курса
+    Route::get('course/lessons/{lesson}/pass', [StudentLessonController::class, 'passLesson'])->name('account.course.pass-lesson');
 });
 
 // Функционал для супер-админа и админа

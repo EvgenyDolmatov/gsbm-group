@@ -47,6 +47,22 @@
                                     @enderror
                                 </div>
 
+                                <div class="form-group mb-5">
+                                    <label class="form-label">Связанные лекции</label>
+                                    <select name="related_lessons[]"
+                                            class="form-select w-100 shadow-none select-option">
+                                        <option value="" selected>Выберите лекцию</option>
+                                        @foreach($lessons as $lesson)
+                                            <option value="{{ $lesson->id }}">{{$lesson->title}}</option>
+                                        @endforeach
+                                    </select>
+
+                                    <button type="button" id="add-select-option"
+                                            class="btn btn-sm btn-outline-dark mt-3">
+                                        Добавить лекцию
+                                    </button>
+                                </div>
+
                                 @include('components.form-save-btn')
                             </form>
                         </div>

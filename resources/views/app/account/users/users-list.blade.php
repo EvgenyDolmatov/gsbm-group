@@ -21,6 +21,16 @@
                                 </div>
                             </div>
 
+                            <form action="" class="form-filter">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control shadow-none" name="surname_q" placeholder="Поиск по фамилии">
+                                    <div class="input-group-append">
+                                        <a href="{{ route('students.index') }}" class="btn btn-outline-brand" type="button">Сбросить</a>
+                                        <button class="btn btn-brand" type="submit">Поиск</button>
+                                    </div>
+                                </div>
+                            </form>
+
                             @if (session('success'))
                                 <div class="col-sm-12">
                                     <div class="alert alert-success">
@@ -41,7 +51,7 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
-                                        <th scope="col" >№</th>
+                                        <th scope="col">№</th>
                                         <th scope="col">ФИО</th>
                                         <th scope="col">Телефон</th>
                                         <th scope="col">Email</th>

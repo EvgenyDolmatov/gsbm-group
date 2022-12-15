@@ -3,17 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CourseStage;
 use App\Models\Lesson;
 use App\Models\LessonAttachment;
 use Illuminate\Http\Request;
 
 class LessonController extends Controller
 {
-    public function index()
-    {
-        //
-    }
-
     public function create(Course $course)
     {
         return view('app.account.courses.lessons.create', [
@@ -28,6 +24,11 @@ class LessonController extends Controller
         ]);
 
         $lesson = Lesson::add($request->all(), $course);
+        CourseStage::create([
+            "course_id" => $course->id,
+            "lesson_id" => $lesson->id,
+            "type" => "lesson"
+        ]);
 
         $files = $request->file('files');
         if ($files) {

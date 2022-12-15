@@ -10,15 +10,19 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $exceptIds = [];
         foreach (User::role(["admin", "super-admin"])->get() as $admin) {
             $exceptIds[] = $admin->id;
         }
 
+        $users = User::all();
+        if ($request->surname_q) {
+            $users = User::where("surname", "like", "%".$request->surname_q."%")->get();
+        }
         return view('app.account.users.users-list', [
-            'students' => User::all()->except($exceptIds)->sortBy("surname"),
+            'students' => $users->except($exceptIds)->sortBy("surname"),
         ]);
     }
 
