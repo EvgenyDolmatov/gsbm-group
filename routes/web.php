@@ -87,13 +87,16 @@ Route::middleware('auth')->group(function () {
     Route::get('my-courses', [StudentCourseController::class, 'myCourses'])->name('account.my-courses');
     Route::get('choose-quiz/{quiz}', [StudentCourseController::class, 'quizType'])->name('account.choose-quiz');
     Route::get('quizzes/{quiz}', [StudentQuizController::class, 'show'])->name('account.quizzes.show');
+    Route::get('quizzes/{quiz}/exam', [StudentQuizController::class, 'showExam'])->name('account.quizzes.exam.show');
     Route::post('quizzes/{quiz}', [StudentQuizController::class, 'storeAnswers'])->name('account.quiz.answers.store');
-    Route::get('quizzes/{quiz}/result', [StudentQuizController::class, 'quizResult'])->name('account.quiz.result');
     Route::get('lessons/{lesson}/show', [StudentLessonController::class, 'lessonShow'])->name('account.lesson.show');
     Route::get('course/{course}/practise', [StudentCourseController::class, 'practisePage'])->name('account.course.practise');
+    Route::get('course/results/{result}/show', [StudentQuizController::class, 'showResult'])->name('account.quiz.result');
 
     // Прохождение курса
     Route::get('course/lessons/{lesson}/pass', [StudentLessonController::class, 'passLesson'])->name('account.course.pass-lesson');
+    // Просмотр ошибок
+    Route::get('quizzes/{quiz}/mistakes/{result}', [StudentQuizController::class, 'showMistakes'])->name('account.quiz.mistakes');
 });
 
 // Функционал для супер-админа и админа

@@ -172,4 +172,19 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return true;
     }
+
+    public function getExamResultByCourse($course)
+    {
+        $courseStages = $course->stages->where("type", "quiz");
+        $userResults = $this->results->where("is_exam", 1);
+
+        foreach ($userResults as $userResult) {
+            foreach ($courseStages as $courseStage) {
+                if ($courseStage->id === $userResult->stage_id) {
+                    return $userResult;
+                }
+            }
+        }
+        return false;
+    }
 }

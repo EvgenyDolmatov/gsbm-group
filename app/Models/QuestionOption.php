@@ -38,4 +38,29 @@ class QuestionOption extends Model
 
         return $str;
     }
+
+
+    public function checkedAnswer($result): bool
+    {
+        $answers = explode(',', $result->details->where("question_id", $this->question->id)->first()->answer);
+        return in_array($this->id, $answers);
+    }
+
+    public function setMistakeClass($result)
+    {
+        if ($this->is_correct) {
+            return 'class=text-success';
+        } else if ($this->checkedAnswer($result) && !$this->is_correct) {
+            return 'class=text-danger';
+        }
+        return "";
+    }
+
+    public function isAnswerIncorrect($result): bool
+    {
+        if ($this->checkedAnswer($result) && !$this->is_correct) {
+            return true;
+        }
+        return false;
+    }
 }

@@ -1,49 +1,38 @@
 @extends('layouts.education')
 
-@section('title', $quiz->title . ' - практика')
+@section('title', $quiz->title . ' - ошибки')
 @section('content')
     <section id="quiz">
         <div class="container-xl container-fluid">
             <div class="section-content">
                 <div class="actions">
-                    <a href="{{route('account.choose-quiz', $quiz)}}" class="btn btn-brand">Назад</a>
+                    <a href="{{route('account.my-courses')}}" class="btn btn-brand">Назад</a>
                 </div>
 
                 <div class="header">
-                    <h2 class="quiz-title">{{$quiz->title . ' - практика'}}</h2>
+                    <h2 class="quiz-title">{{$quiz->title . ' - ошибки'}}</h2>
                 </div>
 
                 <div class="quiz-container">
-                    <form id="quiz-form" action="{{route('account.quiz.answers.store', $quiz)}}" method="post">
-                        @csrf
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <span>Вы ответили не на все вопросы.</span>
-                            </div>
-                        @endif
-
-                        <input type="hidden" name="time_spent" value="0">
-
+                    <form id="quiz-form" action="#" method="post">
                         <div class="questions">
                             @foreach($quiz->questions as $key => $question)
                                 <div class="question">
-                                    <h4 class="question">{{($key+1).'. '.$question->question_text}}</h4>
-
+                                    <h4 class="question @if($question->isAnswerIncorrect($result)) text-danger @endif">{{($key+1).'. '.$question->question_text}}</h4>
                                     @foreach($question->options as $option)
                                         <div class="{{$question->getFormClass()}}">
                                             <input type="{{$question->getInputType()}}" id="{{'option_'.$option->id}}"
                                                    name="{{$question->getInputName()}}"
-                                                   value="{{$option->id}}" {{$question->getInputChecked($option)}}>
-                                            <label for="{{'option_'.$option->id}}">{{$option->value}}</label>
+                                                   value="{{$option->id}}"
+                                                   @if($option->checkedAnswer($result)) checked @endif>
+                                            <label
+                                                for="{{'option_'.$option->id}}" {{$option->setMistakeClass($result)}}>
+                                                {{$option->value}}
+                                            </label>
                                         </div>
                                     @endforeach
                                 </div>
                             @endforeach
-                        </div>
-
-                        <div class="finish">
-                            <button type="submit" class="btn btn-brand btn-filled">Завершить тест</button>
                         </div>
                     </form>
                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.education')
 
-@section('title', $quiz->title . ' - практика')
+@section('title', "Экзамен. " . $quiz->title)
 @section('content')
     <section id="quiz">
         <div class="container-xl container-fluid">
@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="header">
-                    <h2 class="quiz-title">{{$quiz->title . ' - практика'}}</h2>
+                    <h2 class="quiz-title">{{"Экзамен. " . $quiz->title}}</h2>
                 </div>
 
                 <div class="quiz-container">
@@ -24,7 +24,7 @@
                         @endif
 
                         <input type="hidden" name="time_spent" value="0">
-
+                        <input type="hidden" name="is_exam" value="1">
                         <div class="questions">
                             @foreach($quiz->questions as $key => $question)
                                 <div class="question">
@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="finish">
-                            <button type="submit" class="btn btn-brand btn-filled">Завершить тест</button>
+                            <button type="submit" class="btn btn-brand btn-filled">Завершить экзамен</button>
                         </div>
                     </form>
                 </div>

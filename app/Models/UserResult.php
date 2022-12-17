@@ -11,7 +11,7 @@ class UserResult extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["user_id", "stage_id", "points", "is_passed", "time_spent"];
+    protected $fillable = ["user_id", "stage_id", "points", "is_passed", "time_spent", "is_exam"];
 
     public function user(): BelongsTo
     {
@@ -26,5 +26,11 @@ class UserResult extends Model
     public function details(): HasMany
     {
         return $this->hasMany(UserResultDetail::class, "result_id");
+    }
+
+    public function getAnswerByQuestion($q) : array
+    {
+        $userAnswer = $this->details->where("question_id", $q->id)->first()->answer;
+        return explode(',', $userAnswer);
     }
 }

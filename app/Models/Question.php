@@ -108,4 +108,15 @@ class Question extends Model
 
         return false;
     }
+
+    public function isAnswerIncorrect($result): bool
+    {
+        $options = $this->options;
+        foreach ($options as $option) {
+            if ($option->isAnswerIncorrect($result)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

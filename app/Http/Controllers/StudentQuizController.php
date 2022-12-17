@@ -15,6 +15,13 @@ class StudentQuizController extends Controller
         ]);
     }
 
+    public function showExam(Quiz $quiz)
+    {
+        return view('app.education.exam-page', [
+            'quiz' => $quiz,
+        ]);
+    }
+
     public function storeAnswers(Request $request, Quiz $quiz)
     {
         $emptyQ = [];
@@ -39,15 +46,24 @@ class StudentQuizController extends Controller
             'points' => $calcResult['points'],
             "time_spent" => $request->time_spent,
             "is_passed" => $calcResult['points'] >= 50 ? 1 : 0,
+            "is_exam" => $request->has('is_exam') ? 1 : 0,
         ]);
 
-        return redirect()->route('account.quiz.result', $quiz);
+        return redirect()->route('account.quiz.result', $userRes);
     }
 
-    public function quizResult(Quiz $quiz)
+    public function showResult(UserResult $result)
     {
         return view('app.education.quiz-result', [
-            'quiz' => $quiz
+            'result' => $result
+        ]);
+    }
+
+    public function showMistakes(Quiz $quiz, UserResult $result)
+    {
+        return view("app.education.mistakes-page", [
+            'quiz' => $quiz,
+            'result' => $result,
         ]);
     }
 }

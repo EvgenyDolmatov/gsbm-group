@@ -1489,6 +1489,7 @@ main.centered-content .form-container {
     max-width: 600px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
 }
 
 main.centered-content .form-container.direction {
@@ -1535,6 +1536,15 @@ main.centered-content .form-container.quiz-result .item-result {
     color: #1c3f94;
 }
 
+main.centered-content .form-container.quiz-result .quiz-statistic .item-result {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
 main.centered-content .form-container.quiz-result .item-result .title {
     font-size: 18px;
     font-weight: 600;
@@ -1557,9 +1567,9 @@ main.centered-content .form-container.quiz-result .item-result.mistakes .value {
 }
 
 main.centered-content .form-container.quiz-result .btn {
-    margin-top: 45px;
-    padding: 25px 0;
-    min-width: 400px;
+    margin: 45px 5px 0;
+    padding: 15px;
+    min-width: 220px;
     font-size: 18px;
     font-weight: 600;
 }
