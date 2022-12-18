@@ -54,7 +54,11 @@
                                     @foreach($students as $key => $student)
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$student->getFullName()}}</td>
+                                            <td>
+                                                <a href="{{ route('study-groups.students.report', $student) }}">
+                                                    {{$student->getFullName()}}
+                                                </a>
+                                            </td>
                                             <td><a href="{{'tel:'.$student->phone}}"
                                                    class="text-primary">{{$student->phone}}</a></td>
                                             <td>

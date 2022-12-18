@@ -187,4 +187,14 @@ class User extends Authenticatable implements MustVerifyEmail
         }
         return false;
     }
+
+    public function getResultsByGroup($group)
+    {
+        $stageIds = [];
+        foreach ($group->course->stages as $stage) {
+            $stageIds[] = $stage->id;
+        }
+
+        return $this->results->whereIn("stage_id", $stageIds);
+    }
 }

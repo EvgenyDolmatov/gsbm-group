@@ -149,4 +149,11 @@ class StudyGroupController extends Controller
             'students' => $group->students,
         ]);
     }
+
+    public function studentReport(User $student)
+    {
+        return view('app.account.users.results.student-report', [
+            'student' => $student,
+        ]);
+    }
 }

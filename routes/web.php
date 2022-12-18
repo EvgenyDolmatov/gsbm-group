@@ -118,6 +118,8 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
     Route::delete('study-groups/{group}/students/{student}', [StudyGroupController::class, 'destroyStudent'])->name('study-groups.students.destroy');
 
     Route::get('study-groups/{group}/results', [StudyGroupController::class, 'getGroupResults'])->name('study-groups.results');
+    // Отчет по студентам
+    Route::get('study-groups/students/{student}/report', [StudyGroupController::class, 'studentReport'])->name('study-groups.students.report');
 
     Route::resource('study/directions', StudyAreaController::class);
 });

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -32,5 +33,10 @@ class UserResult extends Model
     {
         $userAnswer = $this->details->where("question_id", $q->id)->first()->answer;
         return explode(',', $userAnswer);
+    }
+
+    public function getDate()
+    {
+        return Carbon::parse($this->created_at)->format('d.m.Y');
     }
 }
