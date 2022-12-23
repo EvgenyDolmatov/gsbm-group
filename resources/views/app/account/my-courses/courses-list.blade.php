@@ -30,22 +30,22 @@
                                             </li>
                                         @endforeach
                                     </ul>
-                                    <div class="mt-3 mb-5">
-                                        <a href="{{ route('account.course.practise', $group->course) }}"
-                                           class="btn btn-outline-dark">Практика</a>
-                                        @if($user->examAccess($group->course))
-                                            @if($user->getExamResultByCourse($group->course))
-                                                <a href="{{ route("account.quiz.result", $user->getExamResultByCourse($group->course)) }}"
-                                                   class="btn btn-warning">Результат экзамена</a>
-                                            @else
-                                                <a href="{{route('account.choose-quiz', $group->course->getRandomQuiz())}}"
-                                                   class="btn btn-success">Сдать экзамен</a>
-                                            @endif
-                                        @else
-                                            <button class="btn btn-secondary" disabled>Экзамен не доступен</button>
-                                        @endif
-                                    </div>
                                 @endif
+                                <div class="mt-3 mb-5">
+                                    <a href="{{ route('account.course.practise', $group->course) }}"
+                                       class="btn btn-outline-dark">Практика</a>
+                                    @if($user->examAccess($group->course))
+                                        @if($user->getExamResultByCourse($group->course))
+                                            <a href="{{ route("account.quiz.result", $user->getExamResultByCourse($group->course)) }}"
+                                               class="btn btn-warning">Результат экзамена</a>
+                                        @else
+                                            <a href="{{route('account.choose-quiz', $group->course->getRandomQuiz())}}"
+                                               class="btn btn-success">Сдать экзамен</a>
+                                        @endif
+                                    @else
+                                        <button class="btn btn-secondary" disabled>Экзамен не доступен</button>
+                                    @endif
+                                </div>
                             @endforeach
                         </div>
                     </div>
