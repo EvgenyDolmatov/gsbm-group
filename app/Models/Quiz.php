@@ -138,7 +138,8 @@ class Quiz extends Model
         $userPoints = 0;
         $wrongAnswers = array();
         $wrongQuestionsList = array();
-        $maxPoints = count($this->getAnswersByUser()); // Максимальное количество баллов за тест
+//        $maxPoints = count($this->getAnswersByUser()); // Максимальное количество баллов за тест
+        $maxPoints = count($this->questions); // Максимальное количество баллов за тест
         $answers = $this->getAnswersByUser(); // Все ответы пользователя
 
         $answersArr = array(); // Массив ответов пользователя
@@ -173,7 +174,9 @@ class Quiz extends Model
                 $wrongQuestionsList[] = QuestionOption::find($option[0])->question->question_text;
             }
 
-            $userPoints += $questionPoints;
+            if ($questionPoints == $totalPoints) {
+                $userPoints++;
+            }
         }
 
         return array(
