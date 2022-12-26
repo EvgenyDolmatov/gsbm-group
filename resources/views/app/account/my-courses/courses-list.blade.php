@@ -18,34 +18,36 @@
                             </div>
 
                             @foreach($groups as $group)
-                                <h4 class="mb-3">{{$group->course->title}}</h4>
-                                @if($group->course->lessons->count() > 0)
-                                    <h5 class="mb-3">Лекции</h5>
-                                    <ul>
-                                        @foreach($group->course->lessons as $lesson)
-                                            <li class="mt-2">
-                                                <a href="{{route('account.lesson.show', $lesson)}}">
-                                                    {{$loop->index+1 . ') ' .$lesson->title}}
-                                                </a>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                                <div class="mt-3 mb-5">
-                                    <a href="{{ route('account.course.practise', $group->course) }}"
-                                       class="btn btn-outline-dark">Практика</a>
-                                    @if($user->examAccess($group->course))
-                                        @if($user->getExamResultByCourse($group->course))
-                                            <a href="{{ route("account.quiz.result", $user->getExamResultByCourse($group->course)) }}"
-                                               class="btn btn-warning">Результат экзамена</a>
-                                        @else
-                                            <a href="{{route('account.choose-quiz', $group->course->getRandomQuiz())}}"
-                                               class="btn btn-success">Сдать экзамен</a>
-                                        @endif
-                                    @else
-                                        <button class="btn btn-secondary" disabled>Экзамен не доступен</button>
+                                @if($group->course)
+                                    <h4 class="mb-3">{{$group->course->title}}</h4>
+                                    @if($group->course->lessons->count() > 0)
+                                        <h5 class="mb-3">Лекции</h5>
+                                        <ul>
+                                            @foreach($group->course->lessons as $lesson)
+                                                <li class="mt-2">
+                                                    <a href="{{route('account.lesson.show', $lesson)}}">
+                                                        {{$loop->index+1 . ') ' .$lesson->title}}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     @endif
-                                </div>
+                                    <div class="mt-3 mb-5">
+                                        <a href="{{ route('account.course.practise', $group->course) }}"
+                                           class="btn btn-outline-dark">Практика</a>
+                                        @if($user->examAccess($group->course))
+                                            @if($user->getExamResultByCourse($group->course))
+                                                <a href="{{ route("account.quiz.result", $user->getExamResultByCourse($group->course)) }}"
+                                                   class="btn btn-warning">Результат экзамена</a>
+                                            @else
+                                                <a href="{{route('account.choose-quiz', $group->course->getRandomQuiz())}}"
+                                                   class="btn btn-success">Сдать экзамен</a>
+                                            @endif
+                                        @else
+                                            <button class="btn btn-secondary" disabled>Экзамен не доступен</button>
+                                        @endif
+                                    </div>
+                                @endif
                             @endforeach
                         </div>
                     </div>
