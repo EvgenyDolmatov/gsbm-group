@@ -4,8 +4,10 @@ namespace App\Models;
 
 use App\Notifications\CustomResetPasswordNotification;
 use App\Notifications\CustomVerificationEmail;
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,8 +31,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'middle_name',
         'email',
         'phone',
+        'birthday',
         'password',
         'group_id',
+        'company_id',
+        'profession_id',
+        'profession_discharge'
     ];
 
     /**
@@ -81,6 +87,36 @@ class User extends Authenticatable implements MustVerifyEmail
     public function results(): HasMany
     {
         return $this->hasMany(UserResult::class);
+    }
+
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function profession(): BelongsTo
+    {
+        return $this->belongsTo(Profession::class);
+    }
+
+    public function attestationDocs(): HasMany
+    {
+        return $this->hasMany(AttestationDocument::class);
+    }
+
+    /*
+     * Получаем только открытые направления для сотрудника
+     */
+    public function getStudyAreasThroughDocs()
+    {
+        $areaIds = [];
+        foreach ($this->attestationDocs as $doc) {
+            if (!in_array($doc->study_area_id, $areaIds)) {
+                $areaIds[] = $doc->study_area_id;
+            }
+        }
+
+        return StudyArea::whereIn("id", $areaIds)->get();
     }
 
     public static function createByAdmin(array $input, $pass, $group = null)
@@ -196,5 +232,60 @@ class User extends Authenticatable implements MustVerifyEmail
         }
 
         return $this->results->whereIn("stage_id", $stageIds);
+    }
+
+    public function getProfession(): string
+    {
+        $res = [];
+        if ($this->profession) {
+            $res[] = $this->profession->name;
+        }
+        if ($this->profession_discharge) {
+            $res[] = $this->profession_discharge . " разряд";
+        }
+
+        return !empty($res) ? implode(", ", $res) : "Нет данных";
+    }
+
+    public function getCompany(): string
+    {
+        if ($this->company) {
+            return $this->company->name;
+        }
+        return "Нет данных";
+    }
+
+    public function getBirthday(): string
+    {
+        if ($this->birthday) {
+            return Carbon::createFromFormat("Y-m-d", $this->birthday)->format("d.m.Y");
+        }
+        return "Нет данных";
+    }
+
+    /*
+     * Получаем последний сертификат и протокол
+     */
+    public function getLastDocsByStudyArea($area): array
+    {
+        $docs = [];
+        $protocol = $this->attestationDocs->where("study_area_id", $area->id)->where("type", "protocol")->last();
+        $cert = $this->attestationDocs->where("study_area_id", $area->id)->where("type", "certificate")->last();
+
+        if ($protocol) {
+            $validFrom = Carbon::createFromFormat("Y-m-d", $protocol->valid_from)->format("d.m.Y");
+            $docs["protocol"] = "№" . $protocol->number . "&nbsp;от&nbsp;" . $validFrom . "&nbsp;г.";
+        } else {
+            $docs["protocol"] = "Нет данных";
+        }
+
+        if ($cert) {
+            $validFrom = Carbon::createFromFormat("Y-m-d", $cert->valid_from)->format("d.m.Y");
+            $docs["cert"] = "№" . $cert->number . "&nbsp;от&nbsp;" . $validFrom . "&nbsp;г.";
+        } else {
+            $docs["protocol"] = "Нет данных";
+        }
+
+        return $docs;
     }
 }

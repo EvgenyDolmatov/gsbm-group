@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Permission\Models\Role;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layouts.components.header', function ($view) {
             $view->with([
                 'services' => Service::all()->sortBy('priority'),
+                "accessRoles" => Role::whereIn("name", ["admin", "super-admin"])->get(),
             ]);
         });
     }

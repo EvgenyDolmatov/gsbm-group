@@ -1,8 +1,11 @@
 <div class="header-top">
     <div class="container-xl container-fluid">
         <div class="d-flex justify-content-end">
-            <ul class="d-flex justify-content-end">
+            <ul class="d-flex justify-content-end align-items-center">
                 @auth()
+                    @hasanyrole($accessRoles)
+                    <li><a href="{{ route("crm.dashboard") }}" class="btn btn-sm btn-danger">CRM</a></li>
+                    @endrole
                     <li><a href="{{route('account')}}">Аккаунт</a></li>
                     <li>
                         <form method="POST" action="{{ route('logout') }}">

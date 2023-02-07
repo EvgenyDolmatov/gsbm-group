@@ -128,3 +128,4 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
 Route::get('set-superuser-role', [SuperUserController::class, 'setRoleToAdmin']);
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/crm.php';
