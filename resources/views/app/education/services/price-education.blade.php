@@ -47,9 +47,9 @@
                                 </tr>
                                 <tr>
                                     <td>4</td>
-                                    <td>Внеочередная проверка знаний</td>
-                                    <td>16</td>
-                                    <td>1 000</td>
+                                    <td>Предаттестационная подготовка по Промышленной безопасности</td>
+                                    <td>-</td>
+                                    <td>1 500</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
@@ -161,15 +161,15 @@
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Часы</span>
-                                            <span class="value">16</span>
+                                            <span class="value">-</span>
                                         </div>
                                         <div class="item-main-params hours">
                                             <span class="title">Стоимость, руб.</span>
-                                            <span class="value">1 000</span>
+                                            <span class="value">1 500</span>
                                         </div>
                                     </div>
                                     <div class="item-value description">
-                                        Внеочередная проверка знаний
+                                        Предаттестационная подготовка по Промышленной безопасности
                                     </div>
                                 </div>
                                 <!-- 5. Оказание первой помощи при несчастных случаях на производстве -->
