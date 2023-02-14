@@ -12,17 +12,12 @@ class AttestationDocument extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = "crm_attestation_documents";
-    protected $fillable = ["employee_id", "direction_id", "type", "number", "valid_from", "valid_to"];
+    protected $fillable = ["attestation_id", "type", "doc_name", "doc_number", "valid_from", "valid_to"];
 
 
-    public function employee(): BelongsTo
+    public function attestation(): BelongsTo
     {
-        return $this->belongsTo(Employee::class);
-    }
-
-    public function direction(): BelongsTo
-    {
-        return $this->belongsTo(Direction::class);
+        return $this->belongsTo(Attestation::class);
     }
 
     public static function add(array $input, $employee): static

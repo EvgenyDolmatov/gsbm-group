@@ -86,21 +86,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(UserResult::class);
     }
 
-    /*
-     * Получаем только открытые направления для сотрудника
-     */
-    public function getStudyAreasThroughDocs()
-    {
-        $areaIds = [];
-        foreach ($this->attestationDocs as $doc) {
-            if (!in_array($doc->study_area_id, $areaIds)) {
-                $areaIds[] = $doc->study_area_id;
-            }
-        }
-
-        return StudyArea::whereIn("id", $areaIds)->get();
-    }
-
     public static function createByAdmin(array $input, $pass, $group = null)
     {
         $user = new static;
@@ -216,58 +201,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->results->whereIn("stage_id", $stageIds);
     }
 
-    public function getProfession(): string
-    {
-        $res = [];
-        if ($this->profession) {
-            $res[] = $this->profession->name;
-        }
-        if ($this->profession_discharge) {
-            $res[] = $this->profession_discharge . " разряд";
-        }
-
-        return !empty($res) ? implode(", ", $res) : "Нет данных";
-    }
-
-    public function getCompany(): string
-    {
-        if ($this->company) {
-            return $this->company->name;
-        }
-        return "Нет данных";
-    }
-
     public function getBirthday(): string
     {
         if ($this->birthday) {
             return Carbon::createFromFormat("Y-m-d", $this->birthday)->format("d.m.Y");
         }
         return "Нет данных";
-    }
-
-    /*
-     * Получаем последний сертификат и протокол
-     */
-    public function getLastDocsByStudyArea($area): array
-    {
-        $docs = [];
-        $protocol = $this->attestationDocs->where("study_area_id", $area->id)->where("type", "protocol")->last();
-        $cert = $this->attestationDocs->where("study_area_id", $area->id)->where("type", "certificate")->last();
-
-        if ($protocol) {
-            $validFrom = Carbon::createFromFormat("Y-m-d", $protocol->valid_from)->format("d.m.Y");
-            $docs["protocol"] = "№" . $protocol->number . "&nbsp;от&nbsp;" . $validFrom . "&nbsp;г.";
-        } else {
-            $docs["protocol"] = "Нет данных";
-        }
-
-        if ($cert) {
-            $validFrom = Carbon::createFromFormat("Y-m-d", $cert->valid_from)->format("d.m.Y");
-            $docs["cert"] = "№" . $cert->number . "&nbsp;от&nbsp;" . $validFrom . "&nbsp;г.";
-        } else {
-            $docs["protocol"] = "Нет данных";
-        }
-
-        return $docs;
     }
 }

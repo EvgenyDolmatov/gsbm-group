@@ -187,6 +187,18 @@ return [
         'question_text' => [
             'required' => 'Поле "вопрос" должно быть заполнено'
         ],
+        'direction_id' => [
+            'required' => 'Выберите направление курса'
+        ],
+        'protocol_number' => [
+            'required' => 'Введите номер протокола'
+        ],
+        'protocol_valid_from' => [
+            'required' => 'Введите начало срока действия'
+        ],
+        'protocol_valid_to' => [
+            'required' => 'Введите конец срока действия'
+        ],
     ],
 
     /*

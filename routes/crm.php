@@ -13,13 +13,6 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('crm')->middleware(['role:super-admin|admin'])->group(function () {
     Route::get("/", [CRMController::class, "dashboard"])->name("crm.dashboard");
 
-    // Attestation
-    Route::prefix("attestation")->group(function (){
-        Route::get("/", [AttestationController::class, "usersList"])->name("crm.attestations.list");
-        Route::get("{employee}/add", [AttestationController::class, "addDocument"])->name("crm.attestation.add");
-        Route::post("{employee}/add", [AttestationController::class, "storeDocument"])->name("crm.attestation.store");
-    });
-
     // Companies
     Route::prefix("companies")->group(function (){
         Route::get("/", [CompanyController::class, "index"])->name("crm.companies.list");
@@ -47,10 +40,22 @@ Route::prefix('crm')->middleware(['role:super-admin|admin'])->group(function () 
         Route::put("{direction}/edit", [DirectionController::class, "update"])->name("crm.directions.update");
         Route::delete("{direction}", [DirectionController::class, "destroy"])->name("crm.directions.destroy");
     });
-    // Users
+    // Employees
     Route::prefix("employees")->group(function (){
+        Route::get("/", [EmployeeController::class, "index"])->name("crm.employees.list");
+        Route::get("create", [EmployeeController::class, "create"])->name("crm.employees.create");
+        Route::post("create", [EmployeeController::class, "store"])->name("crm.employees.store");
         Route::get("{employee}/edit", [EmployeeController::class, "edit"])->name("crm.employees.edit");
         Route::put("{employee}/edit", [EmployeeController::class, "update"])->name("crm.employees.update");
+        Route::delete("{employee}", [EmployeeController::class, "destroy"])->name("crm.employees.destroy");
+    });
+    // Attestations
+    Route::prefix("attestations")->group(function (){
+        Route::get("/", [AttestationController::class, "usersList"])->name("crm.attestations.list");
+        Route::get("{employee}/create", [AttestationController::class, "create"])->name("crm.attestations.create");
+        Route::post("{employee}/create", [AttestationController::class, "store"])->name("crm.attestations.store");
+        Route::get("{attestation}/edit", [AttestationController::class, "edit"])->name("crm.attestations.edit");
+        Route::put("{attestation}/edit", [AttestationController::class, "update"])->name("crm.attestations.update");
     });
 });
 

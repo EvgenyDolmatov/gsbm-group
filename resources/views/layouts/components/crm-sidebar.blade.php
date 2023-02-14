@@ -27,13 +27,16 @@
             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                     aria-controls="flush-collapseTwo">
-                Настройки
+                Управление
             </button>
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse"
              aria-labelledby="flush-headingTwo" data-bs-parent="#accordionServices">
             <div class="accordion-body">
                 <ul class="accordion-list">
+                    <li>
+                        <a href="{{ route("crm.employees.list") }}">Сотрудники</a>
+                    </li>
                     <li>
                         <a href="{{ route("crm.directions.list") }}">Направления</a>
                     </li>

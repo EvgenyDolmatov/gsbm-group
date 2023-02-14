@@ -62,7 +62,8 @@
                                                  aria-labelledby="{{ "heading" . $loop->index}}"
                                                  data-bs-parent="#accordionUsers">
                                                 <div class="accordion-body">
-                                                    <a href="{{route('crm.employees.edit', $employee)}}" class="crm-edit text-danger">
+                                                    <a href="{{route('crm.employees.edit', $employee)}}"
+                                                       class="crm-edit text-danger">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
                                                     <div class="row">
@@ -97,61 +98,39 @@
 
                                                     <div class="d-flex justify-content-between align-items-center my-4">
                                                         <h5 class="mb-0">Аттестация</h5>
-                                                        <a href="{{route("crm.attestation.add", $employee)}}" class="btn btn-success btn-sm">Добавить</a>
+                                                        <a href="{{route("crm.attestations.create", $employee)}}"
+                                                           class="btn btn-success btn-sm">Добавить</a>
                                                     </div>
 
-
-                                                    <table class="table">
-                                                        <thead>
-                                                        <tr>
-                                                            <th scope="col">Направление</th>
-                                                            <th scope="col">Протокол</th>
-                                                            <th scope="col" class="text-start">Удостоверение</th>
-                                                            <th scope="col"></th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-
-                                                        {{--todo: доделать--}}
-                                                        @foreach($employee->getStudyAreasThroughDocs() as $studyArea)
+                                                    @if($employee->attestations->count())
+                                                        <table class="table">
+                                                            <thead>
                                                             <tr>
-                                                                <td>{{ $studyArea->name }}</td>
-                                                                <td>{!! $employee->getLastDocsByStudyArea($studyArea)["protocol"] !!}</td>
-                                                                <td>{!! $employee->getLastDocsByStudyArea($studyArea)["cert"] !!}</td>
-                                                                <td>
-                                                                    <a href="">
-                                                                        <i class="fa fa-edit"></i>
-                                                                    </a>
-                                                                </td>
+                                                                <th scope="col">Направление</th>
+                                                                <th scope="col">Протокол</th>
+                                                                <th scope="col" class="text-start">Удостоверение</th>
+                                                                <th scope="col"></th>
                                                             </tr>
-                                                        @endforeach
+                                                            </thead>
+                                                            <tbody>
 
-
-
-{{--                                                        <tr class="bg-danger text-light">
-                                                            <td>Охрана труда</td>
-                                                            <td>№563-22 от 11.10.22 г.</td>
-                                                            <td>№22/1082 от 11.10.22 г.</td>
-                                                            <td>
-                                                                <a href="">
-                                                                    <i class="fa fa-plus"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Пожарная безопасность</td>
-                                                            <td>№561-22 от 11.10.22 г.</td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Машинист подъемника «Houlotte»</td>
-                                                            <td>№562-22 от 11.10.22 г.</td>
-                                                            <td>№21/616 от 16.05.22 г.</td>
-                                                            <td></td>
-                                                        </tr>--}}
-                                                        </tbody>
-                                                    </table>
+                                                            @foreach($employee->attestations as $attestation)
+                                                                <tr>
+                                                                    <td>{{$attestation->direction->name }}</td>
+                                                                    <td>{!! $attestation->getLastDocByType("protocol") !!}</td>
+                                                                    <td>{!! $attestation->getLastDocByType("certificate") !!}</td>
+                                                                    <td>
+                                                                        <a href="{{route("crm.attestations.update", $attestation)}}">
+                                                                            <i class="fa fa-edit"></i>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    @else
+                                                        <p style="font-size: 16px;">Пока нет ни одной аттестации.</p>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>

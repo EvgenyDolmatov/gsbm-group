@@ -3,14 +3,42 @@
 namespace App\Http\Controllers\CRM;
 
 use App\Http\Controllers\Controller;
-use App\Models\Company;
-use App\Models\Profession;
-use App\Models\User;
+use App\Models\CRM\Company;
+use App\Models\CRM\Employee;
+use App\Models\CRM\Profession;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    public function edit(User $employee)
+    public function index()
+    {
+        return view("crm.employees.index", [
+            "employees" => Employee::all()->sortBy("surname"),
+        ]);
+    }
+
+    public function create()
+    {
+        return view("crm.employees.create", [
+            "companies" => Company::all()->sortBy("name"),
+            "professions" => Profession::all()->sortBy("name"),
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'surname' => 'required|max:30',
+            'name' => 'required|max:30',
+            'email' => 'nullable|email|unique:crm_employees',
+            'phone' => 'nullable|unique:crm_employees'
+        ]);
+
+        Employee::create($request->all());
+        return redirect()->route("crm.employees.list");
+    }
+
+    public function edit(Employee $employee)
     {
         return view("crm.employees.edit", [
             "employee" => $employee,
@@ -19,17 +47,22 @@ class EmployeeController extends Controller
         ]);
     }
 
-    public function update(Request $request, User $employee)
+    public function update(Request $request, Employee $employee)
     {
         $request->validate([
             'surname' => 'required|max:30',
             'name' => 'required|max:30',
-            'email' => 'required|email|unique:users,email,' . $employee->id,
-            'phone' => 'nullable|unique:users,phone,' . $employee->id,
+            'email' => 'nullable|email|unique:crm_employees,email,' . $employee->id,
+            'phone' => 'nullable|unique:crm_employees,phone,' . $employee->id,
         ]);
 
         $employee->update($request->all());
+        return redirect()->route("crm.employees.list");
+    }
 
-        return redirect()->route("crm.attestations.list");
+    public function destroy(Employee $employee)
+    {
+        $employee->delete();
+        return back();
     }
 }
