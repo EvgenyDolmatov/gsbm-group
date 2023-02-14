@@ -53,7 +53,7 @@ class Attestation extends Model
         $lastProtocol = $this->lastDocumentByType("protocol");
         $lastCert = $this->lastDocumentByType("certificate");
 
-        if ($lastProtocol->getExpiresDays() < 14 || $lastCert->getExpiresDays() < 14) {
+        if (($lastProtocol && $lastProtocol->getExpiresDays() < 14) || ($lastCert && $lastCert->getExpiresDays() < 14)) {
             return true;
         }
         return false;
