@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-//        Schema::create('crm_directions', function (Blueprint $table) {
-//            $table->id();
-//            $table->string("name");
-//            $table->string("slug")->unique();
-//            $table->timestamps();
-//            $table->softDeletes();
-//        });
+        Schema::create('crm_directions', function (Blueprint $table) {
+            $table->id();
+            $table->string("name");
+            $table->string("slug")->unique();
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**

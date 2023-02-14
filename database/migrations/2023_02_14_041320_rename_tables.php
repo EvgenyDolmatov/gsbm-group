@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-//        Schema::rename("companies", "crm_companies");
-//        Schema::rename("professions", "crm_professions");
+        Schema::rename("companies", "crm_companies");
+        Schema::rename("professions", "crm_professions");
     }
 
     /**

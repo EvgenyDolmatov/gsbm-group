@@ -12,13 +12,13 @@ return new class extends Migration {
      */
     public function up()
     {
-//        Schema::table('users', function (Blueprint $table) {
-//            $table->dropForeign("users_company_id_foreign");
-//            $table->dropColumn("company_id");
-//            $table->dropForeign("users_profession_id_foreign");
-//            $table->dropColumn("profession_id");
-//            $table->dropColumn("profession_discharge");
-//        });
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign("users_company_id_foreign");
+            $table->dropColumn("company_id");
+            $table->dropForeign("users_profession_id_foreign");
+            $table->dropColumn("profession_id");
+            $table->dropColumn("profession_discharge");
+        });
     }
 
     /**
