@@ -34,9 +34,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'birthday',
         'password',
         'group_id',
-        'company_id',
-        'profession_id',
-        'profession_discharge'
     ];
 
     /**
@@ -87,21 +84,6 @@ class User extends Authenticatable implements MustVerifyEmail
     public function results(): HasMany
     {
         return $this->hasMany(UserResult::class);
-    }
-
-    public function company(): BelongsTo
-    {
-        return $this->belongsTo(Company::class);
-    }
-
-    public function profession(): BelongsTo
-    {
-        return $this->belongsTo(Profession::class);
-    }
-
-    public function attestationDocs(): HasMany
-    {
-        return $this->hasMany(AttestationDocument::class);
     }
 
     /*

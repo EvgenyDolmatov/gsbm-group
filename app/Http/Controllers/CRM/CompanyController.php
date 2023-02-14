@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\CRM;
 
 use App\Http\Controllers\Controller;
-use App\Models\Company;
+use App\Models\CRM\Company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -23,7 +23,7 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name" => ["required", "unique:companies"]
+            "name" => ["required"]
         ]);
 
         Company::create($request->all());
@@ -51,8 +51,8 @@ class CompanyController extends Controller
 
     public function destroy(Company $company)
     {
-        foreach ($company->users as $user) {
-            $user->update(["company_id" => null]);
+        foreach ($company->employees as $emp) {
+            $emp->update(["company_id" => null]);
         }
         $company->delete();
 

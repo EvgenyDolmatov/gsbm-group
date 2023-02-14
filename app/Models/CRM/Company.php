@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\CRM;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,10 +10,11 @@ class Company extends Model
 {
     use HasFactory;
 
+    protected $table = "crm_companies";
     protected $fillable = ['name'];
 
-    public function users(): HasMany
+    public function employees(): HasMany
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Employee::class);
     }
 }

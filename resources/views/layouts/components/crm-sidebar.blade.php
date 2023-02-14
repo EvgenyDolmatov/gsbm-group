@@ -35,6 +35,9 @@
             <div class="accordion-body">
                 <ul class="accordion-list">
                     <li>
+                        <a href="{{ route("crm.directions.list") }}">Направления</a>
+                    </li>
+                    <li>
                         <a href="{{ route("crm.companies.list") }}">Компании</a>
                     </li>
                     <li>

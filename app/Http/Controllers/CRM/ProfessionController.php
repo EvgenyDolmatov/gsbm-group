@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\CRM;
 
 use App\Http\Controllers\Controller;
-use App\Models\Profession;
-use App\Models\User;
+use App\Models\CRM\Profession;
 use Illuminate\Http\Request;
 
 class ProfessionController extends Controller
@@ -24,7 +23,7 @@ class ProfessionController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name" => ["required", "unique:professions"]
+            "name" => ["required", "unique:crm_professions"]
         ]);
 
         Profession::create($request->all());
@@ -42,7 +41,7 @@ class ProfessionController extends Controller
     public function update(Request $request, Profession $profession)
     {
         $request->validate([
-            "name" => ["required", "unique:professions,name," . $profession->id]
+            "name" => ["required", "unique:crm_professions,name," . $profession->id]
         ]);
 
         $profession->update($request->all());
@@ -52,8 +51,8 @@ class ProfessionController extends Controller
 
     public function destroy(Profession $profession)
     {
-        foreach ($profession->users as $user) {
-            $user->update(["profession_id" => null]);
+        foreach ($profession->employees as $emp) {
+            $emp->update(["profession_id" => null]);
         }
         $profession->delete();
 

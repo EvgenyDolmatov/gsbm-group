@@ -3,6 +3,7 @@
 use App\Http\Controllers\CRM\AttestationController;
 use App\Http\Controllers\CRM\CompanyController;
 use App\Http\Controllers\CRM\CRMController;
+use App\Http\Controllers\CRM\DirectionController;
 use App\Http\Controllers\CRM\EmployeeController;
 use App\Http\Controllers\CRM\ProfessionController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,15 @@ Route::prefix('crm')->middleware(['role:super-admin|admin'])->group(function () 
         Route::get("{profession}/edit", [ProfessionController::class, "edit"])->name("crm.professions.edit");
         Route::put("{profession}/edit", [ProfessionController::class, "update"])->name("crm.professions.update");
         Route::delete("{profession}", [ProfessionController::class, "destroy"])->name("crm.professions.destroy");
+    });
+    // Directions
+    Route::prefix("directions")->group(function (){
+        Route::get("/", [DirectionController::class, "index"])->name("crm.directions.list");
+        Route::get("create", [DirectionController::class, "create"])->name("crm.directions.create");
+        Route::post("create", [DirectionController::class, "store"])->name("crm.directions.store");
+        Route::get("{direction}/edit", [DirectionController::class, "edit"])->name("crm.directions.edit");
+        Route::put("{direction}/edit", [DirectionController::class, "update"])->name("crm.directions.update");
+        Route::delete("{direction}", [DirectionController::class, "destroy"])->name("crm.directions.destroy");
     });
     // Users
     Route::prefix("employees")->group(function (){
