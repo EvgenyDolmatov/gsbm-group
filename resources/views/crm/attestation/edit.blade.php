@@ -83,7 +83,7 @@
                                             <label for="certificate_number" class="form-label">Номер</label>
                                             <input type="text" id="certificate_number" class="form-control shadow-none"
                                                    name="certificate_number"
-                                                   value="{{old('certificate_number', $attestation->lastDocumentByType("certificate")->doc_number)}}">
+                                                   value="@if($attestation->lastDocumentByType("certificate")){{old('certificate_number', $attestation->lastDocumentByType("certificate")->doc_number)}}@else{{old('certificate_number')}}@endif">
                                             @error('certificate_number')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -95,7 +95,7 @@
                                             <input type="date" id="certificate_valid_from"
                                                    class="form-control shadow-none"
                                                    name="certificate_valid_from"
-                                                   value="{{old('certificate_valid_from', $attestation->lastDocumentByType("certificate")->valid_from)}}">
+                                                   value="@if($attestation->lastDocumentByType("certificate")){{old('certificate_valid_from', $attestation->lastDocumentByType("certificate")->valid_from)}}@else{{old('certificate_valid_from')}}@endif">
                                             @error('certificate_valid_from')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
@@ -107,7 +107,7 @@
                                             <input type="date" id="certificate_valid_to"
                                                    class="form-control shadow-none"
                                                    name="certificate_valid_to"
-                                                   value="{{old('certificate_valid_to', $attestation->lastDocumentByType("certificate")->valid_to)}}">
+                                                   value="@if($attestation->lastDocumentByType("certificate")){{old('certificate_valid_to', $attestation->lastDocumentByType("certificate")->valid_to)}}@else{{old('certificate_valid_to')}}@endif">
                                             @error('certificate_valid_to')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
