@@ -109,9 +109,6 @@
             <div class="accordion-body">
                 <ul class="accordion-list">
                     <li>
-                        <a href="{{route('education.about.contacts')}}">Контакты</a>
-                    </li>
-                    <li>
                         <a href="{{route('education.about.reviews')}}">Отзывы</a>
                     </li>
                 </ul>
