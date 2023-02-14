@@ -36,12 +36,11 @@ class Attestation extends Model
         return $this->belongsTo(Direction::class);
     }
 
-
     public function getLastDocByType($type): string
     {
         $lastDoc = $this->lastDocumentByType($type);
 
-        if ($lastDoc->count()) {
+        if ($lastDoc && $lastDoc->count()) {
             $validFrom = Carbon::createFromFormat("Y-m-d", $lastDoc->valid_from)->format("d.m.Y");
             return "№" . $lastDoc->doc_number . "<br>от&nbsp;" . $validFrom . "&nbsp;г.";
         }
