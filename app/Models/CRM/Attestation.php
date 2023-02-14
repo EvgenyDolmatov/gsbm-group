@@ -48,4 +48,14 @@ class Attestation extends Model
         return "Нет данных";
     }
 
+    public function isExpiresDate() : bool
+    {
+        $lastProtocol = $this->lastDocumentByType("protocol");
+        $lastCert = $this->lastDocumentByType("certificate");
+
+        if ($lastProtocol->getExpiresDays() < 14 || $lastCert->getExpiresDays() < 14) {
+            return true;
+        }
+        return false;
+    }
 }

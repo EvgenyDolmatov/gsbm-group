@@ -2,6 +2,7 @@
 
 namespace App\Models\CRM;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -20,13 +21,11 @@ class AttestationDocument extends Model
         return $this->belongsTo(Attestation::class);
     }
 
-    public static function add(array $input, $employee): static
+    public function getExpiresDays(): bool|int
     {
-        $doc = new static();
-        $doc->fill($input);
-        $doc->employee_id = $employee->id;
-        $doc->save();
+        $today = Carbon::now();
+        $expiredDate = new Carbon($this->valid_to);
 
-        return $doc;
+        return $expiredDate->diff($today)->days;
     }
 }

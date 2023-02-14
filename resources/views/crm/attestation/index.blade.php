@@ -114,8 +114,10 @@
                                                             </thead>
                                                             <tbody>
 
+
                                                             @foreach($employee->attestations as $attestation)
-                                                                <tr>
+
+                                                                <tr @if($attestation->isExpiresDate()) class="bg-danger text-light" @endif>
                                                                     <td>{{$attestation->direction->name }}</td>
                                                                     <td>{!! $attestation->getLastDocByType("protocol") !!}</td>
                                                                     <td>{!! $attestation->getLastDocByType("certificate") !!}</td>
