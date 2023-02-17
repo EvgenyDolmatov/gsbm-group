@@ -114,4 +114,14 @@ class AttestationController extends Controller
 
         return redirect()->route("crm.attestations.list");
     }
+
+    public function destroy(Attestation $attestation)
+    {
+        foreach ($attestation->documents as $document) {
+            $document->delete();
+        }
+        $attestation->delete();
+
+        return back();
+    }
 }

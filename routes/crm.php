@@ -56,6 +56,7 @@ Route::prefix('crm')->middleware(['role:super-admin|admin'])->group(function () 
         Route::post("{employee}/create", [AttestationController::class, "store"])->name("crm.attestations.store");
         Route::get("{attestation}/edit", [AttestationController::class, "edit"])->name("crm.attestations.edit");
         Route::put("{attestation}/edit", [AttestationController::class, "update"])->name("crm.attestations.update");
+        Route::delete("{attestation}", [AttestationController::class, "destroy"])->name("crm.attestations.destroy");
     });
 });
 

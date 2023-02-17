@@ -121,10 +121,21 @@
                                                                     <td>{{$attestation->direction->name }}</td>
                                                                     <td>{!! $attestation->getLastDocByType("protocol") !!}</td>
                                                                     <td>{!! $attestation->getLastDocByType("certificate") !!}</td>
-                                                                    <td>
+                                                                    <td class="d-flex">
                                                                         <a href="{{route("crm.attestations.update", $attestation)}}">
                                                                             <i class="fa fa-edit"></i>
                                                                         </a>
+                                                                        <form
+                                                                            action="{{route('crm.attestations.destroy', $attestation)}}"
+                                                                            method="POST">
+                                                                            @csrf @method('delete')
+
+                                                                            <a title="Удалить" href="{{route('crm.attestations.destroy', $attestation)}}"
+                                                                               class="mx-2"
+                                                                               onclick="event.preventDefault();if(confirm('Направление будет удалено. Продолжить?')){this.closest('form').submit();}">
+                                                                                <i class="fa fa-times"></i>
+                                                                            </a>
+                                                                        </form>
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
