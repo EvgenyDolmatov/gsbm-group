@@ -33,9 +33,7 @@ class AttestationController extends Controller
             "direction_id" => ["required"],
             "protocol_number" => ["required"],
             "protocol_valid_from" => ["required"],
-            "protocol_valid_to" => ["required"],
             "certificate_valid_from" => ["required_with:certificate_number"],
-            "certificate_valid_to" => ["required_with:certificate_number"],
         ]);
 
         // Создаем аттестацию
@@ -83,7 +81,6 @@ class AttestationController extends Controller
         $request->validate([
             "protocol_number" => ["required"],
             "protocol_valid_from" => ["required"],
-            "protocol_valid_to" => ["required"],
         ]);
 
         // Обновляем протокол

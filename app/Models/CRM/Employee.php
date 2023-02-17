@@ -21,6 +21,7 @@ class Employee extends Model
         "phone",
         "email",
         "birthday",
+        "snils",
         "company_id",
         "profession_id",
         "profession_discharge"
@@ -39,6 +40,11 @@ class Employee extends Model
     public function attestations(): HasMany
     {
         return $this->hasMany(Attestation::class);
+    }
+
+    public function medInspections(): HasMany
+    {
+        return $this->hasMany(MedInspection::class);
     }
 
     public function getFullName(): string
@@ -71,5 +77,32 @@ class Employee extends Model
     public function getCompany(): string
     {
         return $this->company ? $this->company->name : "Нет данных";
+    }
+
+    public function lastMedInspection($type)
+    {
+        return $this->medInspections->where("type", $type)->last();
+    }
+
+
+    /*
+     * Проверка на приближение срока медосмотра
+     */
+    public function isMedExpiresDate(): bool
+    {
+        $lastCommon = $this->medInspections->where("type", "common")->last();
+        $lastPsych = $this->medInspections->where("type", "psych")->last();
+
+        return ($lastCommon && $lastCommon->getExpiresDays() < 14) || ($lastPsych && $lastPsych->getExpiresDays() < 14);
+    }
+
+    public function getLastMedInspection($type): string
+    {
+        $lastInspect = $this->lastMedInspection($type);
+        if ($lastInspect) {
+            $inspectDate = Carbon::createFromFormat("Y-m-d", $lastInspect->inspection_date)->format("d.m.Y");
+            return $inspectDate . "&nbsp;г.";
+        }
+        return "Нет данных";
     }
 }

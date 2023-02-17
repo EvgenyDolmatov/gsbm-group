@@ -16,6 +16,9 @@
                         <li>
                             <a href="{{route('crm.attestations.list')}}">Аттестация</a>
                         </li>
+                        <li>
+                            <a href="{{route('crm.med-inspections.list')}}">Медкомиссии</a>
+                        </li>
                     </ul>
                 </div>
             </div>

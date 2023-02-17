@@ -5,6 +5,7 @@ use App\Http\Controllers\CRM\CompanyController;
 use App\Http\Controllers\CRM\CRMController;
 use App\Http\Controllers\CRM\DirectionController;
 use App\Http\Controllers\CRM\EmployeeController;
+use App\Http\Controllers\CRM\MedInspectionController;
 use App\Http\Controllers\CRM\ProfessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,16 @@ Route::prefix('crm')->middleware(['role:super-admin|admin'])->group(function () 
         Route::get("{attestation}/edit", [AttestationController::class, "edit"])->name("crm.attestations.edit");
         Route::put("{attestation}/edit", [AttestationController::class, "update"])->name("crm.attestations.update");
         Route::delete("{attestation}", [AttestationController::class, "destroy"])->name("crm.attestations.destroy");
+    });
+
+    // Medical Inspection
+    Route::prefix("medical")->group(function (){
+        Route::get("/", [MedInspectionController::class, "index"])->name("crm.med-inspections.list");
+        Route::get("{employee}/create", [MedInspectionController::class, "create"])->name("crm.med-inspections.create");
+        Route::post("{employee}/create", [MedInspectionController::class, "store"])->name("crm.med-inspections.store");
+        Route::get("{medInspection}/edit", [MedInspectionController::class, "edit"])->name("crm.med-inspections.edit");
+        Route::put("{medInspection}/edit", [MedInspectionController::class, "update"])->name("crm.med-inspections.update");
+        Route::delete("{medInspection}", [MedInspectionController::class, "destroy"])->name("crm.med-inspections.destroy");
     });
 });
 

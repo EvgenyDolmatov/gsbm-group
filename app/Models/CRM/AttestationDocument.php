@@ -23,9 +23,11 @@ class AttestationDocument extends Model
 
     public function getExpiresDays(): bool|int
     {
+        // Если next_inspection_date = null, то возвращаем любую цифру, больше чем 14
+        if (!$this->valid_to) return 100;
+
         $today = Carbon::now();
         $expiredDate = new Carbon($this->valid_to);
-
         return $expiredDate->diff($today)->days;
     }
 }

@@ -80,13 +80,25 @@
                                         </div>
                                     </div>
                                     {{-- Birthday --}}
-                                    <div class="col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="form-group mb-5">
                                             <label for="birthday" class="form-label">Дата рождения</label>
                                             <input type="date" id="birthday" class="form-control shadow-none"
                                                    name="birthday"
                                                    value="{{old('birthday', $employee->birthday)}}">
                                             @error('birthday')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    {{-- СНИЛС --}}
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="snils" class="form-label">СНИЛС</label>
+                                            <input type="text" id="snils" class="form-control shadow-none"
+                                                   name="snils"
+                                                   value="{{old('snils', $employee->snils)}}">
+                                            @error('snils')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

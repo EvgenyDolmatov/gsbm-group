@@ -1,6 +1,6 @@
 @extends('layouts.account')
 
-@section('title', 'Геострой-Буммаш CRM - Аттестация')
+@section('title', 'Геострой-Буммаш CRM - Медкомиссии')
 @section('content')
     <section id="add-services">
         <div class="container-xl container-fluid">
@@ -14,7 +14,7 @@
                     <div class="col-xl-8 col-lg-7 col-12">
                         <div class="page-right-content">
                             <div class="service-title d-flex justify-content-between align-items-center">
-                                <h2>Аттестация</h2>
+                                <h2>Медкомиссии</h2>
                             </div>
 
                             @if($employees->count())
@@ -59,15 +59,6 @@
                                                             <span>{{$employee->getFullName()}}</span>
                                                         </div>
 
-                                                        @if($employee->snils)
-                                                            <div class="col-lg-3 col-12 mb-2">
-                                                                <strong>СНИЛС:</strong>
-                                                            </div>
-                                                            <div class="col-lg-9 col-12 mb-2">
-                                                                <span>{{$employee->snils}}</span>
-                                                            </div>
-                                                        @endif
-
                                                         <div class="col-lg-3 col-12 mb-2">
                                                             <strong>Дата рождения:</strong>
                                                         </div>
@@ -91,52 +82,70 @@
                                                     </div>
 
                                                     <div class="d-flex justify-content-between align-items-center my-4">
-                                                        <h5 class="mb-0">Аттестация</h5>
-                                                        <a href="{{route("crm.attestations.create", $employee)}}"
+                                                        <h5 class="mb-0">Медкомиссии</h5>
+                                                        <a href="{{route("crm.med-inspections.create", $employee)}}"
                                                            class="btn btn-success btn-sm">Добавить</a>
                                                     </div>
 
-                                                    @if($employee->attestations->count())
+                                                    @if($employee->medInspections->count())
                                                         <table class="table">
                                                             <thead>
                                                             <tr>
-                                                                <th scope="col">Направление</th>
-                                                                <th scope="col">Протокол</th>
-                                                                <th scope="col" class="text-start">Удостоверение</th>
-                                                                <th scope="col"></th>
+                                                                <th scope="col">Плановый (дата прохождения)</th>
+                                                                <th scope="col" class="text-start">Психиатр (дата
+                                                                    прохождения)
+                                                                </th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
 
-
-                                                            @foreach($employee->attestations as $attestation)
-
-                                                                <tr @if($attestation->isExpiresDate()) class="bg-danger text-light" @endif>
-                                                                    <td>{{$attestation->direction->name }}</td>
-                                                                    <td>{!! $attestation->getLastDocByType("protocol") !!}</td>
-                                                                    <td>{!! $attestation->getLastDocByType("certificate") !!}</td>
-                                                                    <td class="d-flex">
-                                                                        <a href="{{route("crm.attestations.update", $attestation)}}">
-                                                                            <i class="fa fa-edit"></i>
+                                                            <tr @if($employee->isMedExpiresDate()) class="bg-danger text-light" @endif>
+                                                                <td>
+                                                                    {!! $employee->getLastMedInspection("common") !!}
+                                                                    @if($employee->lastMedInspection("common"))
+                                                                        <a href="{{route("crm.med-inspections.edit", $employee->lastMedInspection("common"))}}">
+                                                                            <i class="fa fa-edit mx-2 d-inline-block"></i>
                                                                         </a>
                                                                         <form
-                                                                            action="{{route('crm.attestations.destroy', $attestation)}}"
-                                                                            method="POST">
+                                                                            action="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("common"))}}"
+                                                                            method="POST" class="d-inline-block">
                                                                             @csrf @method('delete')
 
-                                                                            <a title="Удалить" href="{{route('crm.attestations.destroy', $attestation)}}"
+                                                                            <a title="Удалить"
+                                                                               href="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("common"))}}"
                                                                                class="mx-2"
-                                                                               onclick="event.preventDefault();if(confirm('Направление будет удалено. Продолжить?')){this.closest('form').submit();}">
+                                                                               onclick="event.preventDefault();if(confirm('Медкомиссия будет удалена. Продолжить?')){this.closest('form').submit();}">
                                                                                 <i class="fa fa-times"></i>
                                                                             </a>
                                                                         </form>
-                                                                    </td>
-                                                                </tr>
-                                                            @endforeach
+                                                                    @endif
+                                                                </td>
+                                                                <td>
+                                                                    {!! $employee->getLastMedInspection("psych") !!}
+                                                                    @if($employee->lastMedInspection("psych"))
+                                                                        <a href="{{route("crm.med-inspections.edit", $employee->lastMedInspection("psych"))}}">
+                                                                            <i class="fa fa-edit mx-2 d-inline-block"></i>
+                                                                        </a>
+                                                                        <form
+                                                                            action="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("psych"))}}"
+                                                                            method="POST" class="d-inline-block">
+                                                                            @csrf @method('delete')
+
+                                                                            <a title="Удалить"
+                                                                               href="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("psych"))}}"
+                                                                               class="mx-2"
+                                                                               onclick="event.preventDefault();if(confirm('Медкомиссия будет удалена. Продолжить?')){this.closest('form').submit();}">
+                                                                                <i class="fa fa-times"></i>
+                                                                            </a>
+                                                                        </form>
+                                                                    @endif
+                                                                </td>
+                                                            </tr>
                                                             </tbody>
                                                         </table>
                                                     @else
-                                                        <p style="font-size: 16px;">Пока нет ни одной аттестации.</p>
+                                                        <p style="font-size: 16px;">Пока не пройдено ни одной
+                                                            медкомиссии.</p>
                                                     @endif
                                                 </div>
                                             </div>
