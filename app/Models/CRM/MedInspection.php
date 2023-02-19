@@ -32,6 +32,7 @@ class MedInspection extends Model
 
     public function getExpiresDays(): bool|int
     {
+
         // Если next_inspection_date = null, то возвращаем любую цифру, больше чем 14
         if (!$this->next_inspection_date) return 100;
 
