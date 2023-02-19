@@ -16,9 +16,6 @@
                             <div class="service-title">
                                 <h2>{{$student->getFullName() . '. Статистика'}}</h2>
                             </div>
-
-                            {{--                            <a href="{{route('study-groups.show', $group)}}" class="btn btn-dark">Назад</a>--}}
-
                             @if($student->groups->count())
                                 @foreach($student->groups as $group)
                                     <h4 class="mt-5 mb-0">{{ "Группа «" . $group->name . "»"}}</h4>
@@ -36,49 +33,53 @@
                                         <tr class="bg-dark text-light">
                                             <td colspan="5" class="text-center font-weight-bold">Лекции</td>
                                         </tr>
-                                        @foreach($group->course->stages->where("type", "lesson") as $stage)
-                                            @foreach($student->results->where("stage_id", $stage->id) as $result)
-                                                <tr>
-                                                    <td>{{ $loop->parent->index + 1 }}</td>
-                                                    <td>{{ $result->stage->lesson->title }}</td>
-                                                    <td>-</td>
-                                                    <td>
-                                                        @if($result->is_passed)
-                                                            Изучено
-                                                        @else
-                                                            Не изучено
-                                                        @endif
-                                                    </td>
-                                                    <td>{{ $result->getDate() }}</td>
-                                                </tr>
-                                            @endforeach
-                                        @endforeach
-                                        <tr class="bg-dark text-light">
-                                            <td colspan="5" class="text-center font-weight-bold">Сдача тестов</td>
-                                        </tr>
-                                        @foreach($group->course->stages->where("type", "quiz") as $stage)
-                                            @foreach($student->results->where("stage_id", $stage->id) as $result)
-                                                <tr>
-                                                    @if($loop->index == 0)
-                                                        <td rowspan="{{$student->results->where("stage_id", $stage->id)->count()}}">
-                                                            {{ $loop->parent->index + 1 }}
+                                        @if($group->course)
+
+                                            @foreach($group->course->stages->where("type", "lesson") as $stage)
+                                                @foreach($student->results->where("stage_id", $stage->id) as $result)
+                                                    <tr>
+                                                        <td>{{ $loop->parent->index + 1 }}</td>
+                                                        <td>{{ $result->stage->lesson->title }}</td>
+                                                        <td>-</td>
+                                                        <td>
+                                                            @if($result->is_passed)
+                                                                Изучено
+                                                            @else
+                                                                Не изучено
+                                                            @endif
                                                         </td>
-                                                        <td rowspan="{{$student->results->where("stage_id", $stage->id)->count()}}">
-                                                            {{ $result->stage->quiz->title }}
-                                                        </td>
-                                                    @endif
-                                                    <td>{{ $result->points }}</td>
-                                                    <td>
-                                                        @if($result->is_passed)
-                                                            Сдано
-                                                        @else
-                                                            Не сдано
-                                                        @endif
-                                                    </td>
-                                                    <td>{{ $result->getDate() }}</td>
-                                                </tr>
+                                                        <td>{{ $result->getDate() }}</td>
+                                                    </tr>
+                                                @endforeach
                                             @endforeach
-                                        @endforeach
+                                            <tr class="bg-dark text-light">
+                                                <td colspan="5" class="text-center font-weight-bold">Сдача тестов</td>
+                                            </tr>
+                                            @foreach($group->course->stages->where("type", "quiz") as $stage)
+                                                @foreach($student->results->where("stage_id", $stage->id) as $result)
+                                                    <tr>
+                                                        @if($loop->index == 0)
+                                                            <td rowspan="{{$student->results->where("stage_id", $stage->id)->count()}}">
+                                                                {{ $loop->parent->index + 1 }}
+                                                            </td>
+                                                            <td rowspan="{{$student->results->where("stage_id", $stage->id)->count()}}">
+                                                                {{ $result->stage->quiz->title }}
+                                                            </td>
+                                                        @endif
+                                                        <td>{{ $result->points }}</td>
+                                                        <td>
+                                                            @if($result->is_passed)
+                                                                Сдано
+                                                            @else
+                                                                Не сдано
+                                                            @endif
+                                                        </td>
+                                                        <td>{{ $result->getDate() }}</td>
+                                                    </tr>
+                                                @endforeach
+                                            @endforeach
+                                        @endif
+
                                         <tr class="bg-dark text-light">
                                             <td colspan="5" class="text-center">
                                                 <strong>Итоговый тест</strong>
