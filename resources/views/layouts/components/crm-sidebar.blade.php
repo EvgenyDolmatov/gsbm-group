@@ -19,6 +19,9 @@
                         <li>
                             <a href="{{route('crm.med-inspections.list')}}">Медкомиссии</a>
                         </li>
+                        <li>
+                            <a href="{{route("crm.inventory-issue.list")}}">Выдача СИЗ</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -48,6 +51,9 @@
                     </li>
                     <li>
                         <a href="{{ route("crm.professions.list") }}">Профессии</a>
+                    </li>
+                    <li>
+                        <a href="{{ route("crm.inventory.list") }}">СИЗы</a>
                     </li>
                 </ul>
             </div>

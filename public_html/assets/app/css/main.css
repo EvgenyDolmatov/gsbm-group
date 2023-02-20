@@ -280,6 +280,11 @@ form .form-control::placeholder, form .form-control:active, form .form-control:f
     color: #1c3f94;
 }
 
+form .form-control:disabled, form .form-select:disabled {
+    color: #818181;
+    border-bottom-color: #818181 !important;
+}
+
 form .form-radio {
     margin-bottom: 5px;
 }

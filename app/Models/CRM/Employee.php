@@ -47,6 +47,22 @@ class Employee extends Model
         return $this->hasMany(MedInspection::class);
     }
 
+    public function issuedInventoryItems(): HasMany
+    {
+        return $this->hasMany(LogIssuedInventoryItem::class);
+    }
+
+    public function getLastIssueByItem($item)
+    {
+        return $this->issuedInventoryItems->where("inventory_item_id", $item->id)->last();
+    }
+
+    public function getLastIssueQtyByItem($item)
+    {
+        $lastItem = $this->issuedInventoryItems->where("inventory_item_id", $item->id)->last();
+        return $lastItem ? $lastItem->quantity : "a";
+    }
+
     public function getFullName(): string
     {
         $arr = array();
@@ -104,5 +120,24 @@ class Employee extends Model
             return $inspectDate . "&nbsp;г.";
         }
         return "Нет данных";
+    }
+
+    /*
+     * Подсчет полученных СИЗов
+     */
+    public function getQtyItemsByInventory($inv): int
+    {
+        $now = Carbon::now();
+        $startYear = $now->copy()->startOfYear();
+        $items = $this->issuedInventoryItems
+            ->where("inventory_item_id", $inv->id)
+            ->where("issue_date", ">=", $startYear);
+
+        $count = 0;
+        foreach ($items as $item) {
+            $count += $item->quantity;
+        }
+
+        return $count;
     }
 }
