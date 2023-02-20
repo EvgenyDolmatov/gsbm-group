@@ -17,11 +17,11 @@ class AddPermissionSeeder extends Seeder
      */
     public function run()
     {
-//        DB::table('permissions')->insert([
-//            ['name' => 'manage attestation','guard_name' => 'web'],
-//            ['name' => 'manage medical','guard_name' => 'web'],
-//            ['name' => 'manage inventory','guard_name' => 'web']
-//        ]);
+        DB::table('permissions')->insert([
+            ['name' => 'manage attestation','guard_name' => 'web'],
+            ['name' => 'manage medical','guard_name' => 'web'],
+            ['name' => 'manage inventory','guard_name' => 'web']
+        ]);
 
         $superUser = User::where("email", "evd.work@yandex.ru")->first();
         $attestationAdmin = User::where("email", "averholanceva@gsbm-group.ru")->first();
