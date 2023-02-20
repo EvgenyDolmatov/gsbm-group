@@ -16,9 +16,11 @@
                             <div class="service-title d-flex justify-content-between align-items-center">
                                 <h2>Средства индивидуальной защиты</h2>
                             </div>
-                            <a href="{{route('crm.inventory.create')}}" class="btn btn-success">
-                                <i class="fa fa-plus"></i> Добавить
-                            </a>
+                            @can("manage inventory")
+                                <a href="{{route('crm.inventory.create')}}" class="btn btn-success">
+                                    <i class="fa fa-plus"></i> Добавить
+                                </a>
+                            @endcan
 
                             @if($invItems->count())
                                 <table class="table">
@@ -41,22 +43,24 @@
                                             </td>
                                             <td>{{$item->quantity}}</td>
                                             <td class="actions">
-                                                <a href="{{route('crm.inventory.show', $item)}}"
-                                                   class="text-success">Приход</a>
-                                                <a href="{{ route("crm.inventory.edit", $item) }}"
-                                                   class="text-primary">Изменить</a>
+                                                @can("manage inventory")
+                                                    <a href="{{route('crm.inventory.show', $item)}}"
+                                                       class="text-success">Приход</a>
+                                                    <a href="{{ route("crm.inventory.edit", $item) }}"
+                                                       class="text-primary">Изменить</a>
 
-                                                <form
-                                                    action="{{route("crm.inventory.destroy", $item)}}"
-                                                    method="POST">
-                                                    @csrf @method('DELETE')
+                                                    <form
+                                                        action="{{route("crm.inventory.destroy", $item)}}"
+                                                        method="POST">
+                                                        @csrf @method('DELETE')
 
-                                                    <a href=""
-                                                       class="text-danger"
-                                                       onclick="event.preventDefault();if(confirm('СИЗ будет удален. Продолжить?')){this.closest('form').submit();}">
-                                                        Удалить
-                                                    </a>
-                                                </form>
+                                                        <a href=""
+                                                           class="text-danger"
+                                                           onclick="event.preventDefault();if(confirm('СИЗ будет удален. Продолжить?')){this.closest('form').submit();}">
+                                                            Удалить
+                                                        </a>
+                                                    </form>
+                                                @endcan
                                             </td>
                                         </tr>
                                     @endforeach

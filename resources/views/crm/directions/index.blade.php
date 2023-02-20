@@ -16,9 +16,11 @@
                             <div class="service-title d-flex justify-content-between align-items-center">
                                 <h2>Направления</h2>
                             </div>
-                            <a href="{{route('crm.directions.create')}}" class="btn btn-success">
-                                <i class="fa fa-plus"></i> Добавить
-                            </a>
+                            @can("manage attestation")
+                                <a href="{{route('crm.directions.create')}}" class="btn btn-success">
+                                    <i class="fa fa-plus"></i> Добавить
+                                </a>
+                            @endcan
 
                             @if($directions->count())
                                 <table class="table">
@@ -35,20 +37,22 @@
                                             <td>{{$loop->index + 1}}</td>
                                             <td>{{$direction->name}}</td>
                                             <td class="actions">
-                                                <a href="{{ route("crm.directions.edit", $direction) }}"
-                                                   class="text-primary">Изменить</a>
+                                                @can("manage attestation")
+                                                    <a href="{{ route("crm.directions.edit", $direction) }}"
+                                                       class="text-primary">Изменить</a>
 
-                                                <form
-                                                    action="{{route("crm.directions.destroy", $direction)}}"
-                                                    method="POST">
-                                                    @csrf @method('DELETE')
+                                                    <form
+                                                        action="{{route("crm.directions.destroy", $direction)}}"
+                                                        method="POST">
+                                                        @csrf @method('DELETE')
 
-                                                    <a href="{{route("crm.directions.destroy", $direction)}}"
-                                                       class="text-danger"
-                                                       onclick="event.preventDefault();if(confirm('Направление будет удалено. Продолжить?')){this.closest('form').submit();}">
-                                                        Удалить
-                                                    </a>
-                                                </form>
+                                                        <a href="{{route("crm.directions.destroy", $direction)}}"
+                                                           class="text-danger"
+                                                           onclick="event.preventDefault();if(confirm('Направление будет удалено. Продолжить?')){this.closest('form').submit();}">
+                                                            Удалить
+                                                        </a>
+                                                    </form>
+                                                @endcan
                                             </td>
                                         </tr>
                                     @endforeach

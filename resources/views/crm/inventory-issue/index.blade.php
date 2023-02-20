@@ -51,8 +51,10 @@
 
                                                     <div class="d-flex justify-content-between align-items-center my-4">
                                                         <h5 class="mb-0">Выданные СИЗ</h5>
-                                                        <a href="{{ route("crm.inventory-issue.create", $employee) }}"
-                                                           class="btn btn-success btn-sm">Выдать</a>
+                                                        @can("manage inventory")
+                                                            <a href="{{ route("crm.inventory-issue.create", $employee) }}"
+                                                               class="btn btn-success btn-sm">Выдать</a>
+                                                        @endcan
                                                     </div>
 
                                                     @if($employee->issuedInventoryItems->count())

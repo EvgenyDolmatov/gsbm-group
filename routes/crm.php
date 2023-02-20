@@ -56,44 +56,53 @@ Route::prefix('crm')->middleware(['role:super-admin|admin'])->group(function () 
     // Attestations
     Route::prefix("attestations")->group(function () {
         Route::get("/", [AttestationController::class, "usersList"])->name("crm.attestations.list");
-        Route::get("{employee}/create", [AttestationController::class, "create"])->name("crm.attestations.create");
-        Route::post("{employee}/create", [AttestationController::class, "store"])->name("crm.attestations.store");
-        Route::get("{attestation}/edit", [AttestationController::class, "edit"])->name("crm.attestations.edit");
-        Route::put("{attestation}/edit", [AttestationController::class, "update"])->name("crm.attestations.update");
-        Route::delete("{attestation}", [AttestationController::class, "destroy"])->name("crm.attestations.destroy");
+        Route::group(['middleware' => ['permission:manage attestation']], function () {
+            Route::get("{employee}/create", [AttestationController::class, "create"])->name("crm.attestations.create");
+            Route::post("{employee}/create", [AttestationController::class, "store"])->name("crm.attestations.store");
+            Route::get("{attestation}/edit", [AttestationController::class, "edit"])->name("crm.attestations.edit");
+            Route::put("{attestation}/edit", [AttestationController::class, "update"])->name("crm.attestations.update");
+            Route::delete("{attestation}", [AttestationController::class, "destroy"])->name("crm.attestations.destroy");
+        });
     });
     // Medical Inspection
     Route::prefix("medical")->group(function () {
         Route::get("/", [MedInspectionController::class, "index"])->name("crm.med-inspections.list");
-        Route::get("{employee}/create", [MedInspectionController::class, "create"])->name("crm.med-inspections.create");
-        Route::post("{employee}/create", [MedInspectionController::class, "store"])->name("crm.med-inspections.store");
-        Route::get("{medInspection}/edit", [MedInspectionController::class, "edit"])->name("crm.med-inspections.edit");
-        Route::put("{medInspection}/edit", [MedInspectionController::class, "update"])->name("crm.med-inspections.update");
-        Route::delete("{medInspection}", [MedInspectionController::class, "destroy"])->name("crm.med-inspections.destroy");
+        Route::group(['middleware' => ['permission:manage medical']], function () {
+            Route::get("{employee}/create", [MedInspectionController::class, "create"])->name("crm.med-inspections.create");
+            Route::post("{employee}/create", [MedInspectionController::class, "store"])->name("crm.med-inspections.store");
+            Route::get("{medInspection}/edit", [MedInspectionController::class, "edit"])->name("crm.med-inspections.edit");
+            Route::put("{medInspection}/edit", [MedInspectionController::class, "update"])->name("crm.med-inspections.update");
+            Route::delete("{medInspection}", [MedInspectionController::class, "destroy"])->name("crm.med-inspections.destroy");
+        });
     });
     // Inventory
     Route::prefix("inventory")->group(function () {
         Route::get("/", [InventoryItemController::class, "index"])->name("crm.inventory.list");
-        Route::get("create", [InventoryItemController::class, "create"])->name("crm.inventory.create");
-        Route::post("create", [InventoryItemController::class, "store"])->name("crm.inventory.store");
-        Route::get("{inventory}/show", [InventoryItemController::class, "show"])->name("crm.inventory.show");
-        Route::get("{inventory}/edit", [InventoryItemController::class, "edit"])->name("crm.inventory.edit");
-        Route::put("{inventory}/edit", [InventoryItemController::class, "update"])->name("crm.inventory.update");
-        Route::delete("{inventory}", [InventoryItemController::class, "destroy"])->name("crm.inventory.destroy");
-        Route::get("{inventory}/add", [InventoryItemController::class, "addQty"])->name("crm.inventory.add-qty");
-        Route::put("{inventory}/add", [InventoryItemController::class, "updateQty"])->name("crm.inventory.update-qty");
-        // Inventory schedule
-        Route::get("{inventory}/schedule/create", [InventoryScheduleController::class, "create"])->name("crm.inventory.schedule.create");
-        Route::post("{inventory}/schedule/create", [InventoryScheduleController::class, "store"])->name("crm.inventory.schedule.store");
-        Route::get("{inventory}/schedule/{schedule}/edit", [InventoryScheduleController::class, "edit"])->name("crm.inventory.schedule.edit");
-        Route::put("{inventory}/schedule/{schedule}/edit", [InventoryScheduleController::class, "update"])->name("crm.inventory.schedule.update");
-        Route::delete("{inventory}/schedule/{schedule}", [InventoryScheduleController::class, "destroy"])->name("crm.inventory.schedule.destroy");
+        Route::group(['middleware' => ['permission:manage inventory']], function () {
+            Route::get("create", [InventoryItemController::class, "create"])->name("crm.inventory.create");
+            Route::post("create", [InventoryItemController::class, "store"])->name("crm.inventory.store");
+            Route::get("{inventory}/show", [InventoryItemController::class, "show"])->name("crm.inventory.show");
+            Route::get("{inventory}/edit", [InventoryItemController::class, "edit"])->name("crm.inventory.edit");
+            Route::put("{inventory}/edit", [InventoryItemController::class, "update"])->name("crm.inventory.update");
+            Route::delete("{inventory}", [InventoryItemController::class, "destroy"])->name("crm.inventory.destroy");
+            Route::get("{inventory}/add", [InventoryItemController::class, "addQty"])->name("crm.inventory.add-qty");
+            Route::put("{inventory}/add", [InventoryItemController::class, "updateQty"])->name("crm.inventory.update-qty");
+            // Inventory schedule
+            Route::get("{inventory}/schedule/create", [InventoryScheduleController::class, "create"])->name("crm.inventory.schedule.create");
+            Route::post("{inventory}/schedule/create", [InventoryScheduleController::class, "store"])->name("crm.inventory.schedule.store");
+            Route::get("{inventory}/schedule/{schedule}/edit", [InventoryScheduleController::class, "edit"])->name("crm.inventory.schedule.edit");
+            Route::put("{inventory}/schedule/{schedule}/edit", [InventoryScheduleController::class, "update"])->name("crm.inventory.schedule.update");
+            Route::delete("{inventory}/schedule/{schedule}", [InventoryScheduleController::class, "destroy"])->name("crm.inventory.schedule.destroy");
+        });
     });
+
 
     Route::prefix("inventory-issue")->group(function () {
         Route::get("/", [InventoryIssueController::class, "index"])->name("crm.inventory-issue.list");
-        Route::get("{employee}/create", [InventoryIssueController::class, "create"])->name("crm.inventory-issue.create");
-        Route::post("{employee}/create", [InventoryIssueController::class, "store"])->name("crm.inventory-issue.store");
+        Route::group(['middleware' => ['permission:manage inventory']], function () {
+            Route::get("{employee}/create", [InventoryIssueController::class, "create"])->name("crm.inventory-issue.create");
+            Route::post("{employee}/create", [InventoryIssueController::class, "store"])->name("crm.inventory-issue.store");
+        });
     });
 });
 

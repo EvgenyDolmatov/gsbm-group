@@ -51,8 +51,10 @@
 
                                                     <div class="d-flex justify-content-between align-items-center my-4">
                                                         <h5 class="mb-0">Медкомиссии</h5>
-                                                        <a href="{{route("crm.med-inspections.create", $employee)}}"
-                                                           class="btn btn-success btn-sm">Добавить</a>
+                                                        @can("manage medical")
+                                                            <a href="{{route("crm.med-inspections.create", $employee)}}"
+                                                               class="btn btn-success btn-sm">Добавить</a>
+                                                        @endcan
                                                     </div>
 
                                                     @if($employee->medInspections->count())
@@ -70,43 +72,47 @@
                                                             <tr @if($employee->isMedExpiresDate()) class="bg-danger text-light" @endif>
                                                                 <td>
                                                                     {!! $employee->getLastMedInspection("common") !!}
-                                                                    @if($employee->lastMedInspection("common"))
-                                                                        <a href="{{route("crm.med-inspections.edit", $employee->lastMedInspection("common"))}}">
-                                                                            <i class="fa fa-edit mx-2 d-inline-block"></i>
-                                                                        </a>
-                                                                        <form
-                                                                            action="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("common"))}}"
-                                                                            method="POST" class="d-inline-block">
-                                                                            @csrf @method('delete')
-
-                                                                            <a title="Удалить"
-                                                                               href="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("common"))}}"
-                                                                               class="mx-2"
-                                                                               onclick="event.preventDefault();if(confirm('Медкомиссия будет удалена. Продолжить?')){this.closest('form').submit();}">
-                                                                                <i class="fa fa-times"></i>
+                                                                    @can("manage medical")
+                                                                        @if($employee->lastMedInspection("common"))
+                                                                            <a href="{{route("crm.med-inspections.edit", $employee->lastMedInspection("common"))}}">
+                                                                                <i class="fa fa-edit mx-2 d-inline-block"></i>
                                                                             </a>
-                                                                        </form>
-                                                                    @endif
+                                                                            <form
+                                                                                action="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("common"))}}"
+                                                                                method="POST" class="d-inline-block">
+                                                                                @csrf @method('delete')
+
+                                                                                <a title="Удалить"
+                                                                                   href="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("common"))}}"
+                                                                                   class="mx-2"
+                                                                                   onclick="event.preventDefault();if(confirm('Медкомиссия будет удалена. Продолжить?')){this.closest('form').submit();}">
+                                                                                    <i class="fa fa-times"></i>
+                                                                                </a>
+                                                                            </form>
+                                                                        @endif
+                                                                    @endcan
                                                                 </td>
                                                                 <td>
                                                                     {!! $employee->getLastMedInspection("psych") !!}
-                                                                    @if($employee->lastMedInspection("psych"))
-                                                                        <a href="{{route("crm.med-inspections.edit", $employee->lastMedInspection("psych"))}}">
-                                                                            <i class="fa fa-edit mx-2 d-inline-block"></i>
-                                                                        </a>
-                                                                        <form
-                                                                            action="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("psych"))}}"
-                                                                            method="POST" class="d-inline-block">
-                                                                            @csrf @method('delete')
-
-                                                                            <a title="Удалить"
-                                                                               href="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("psych"))}}"
-                                                                               class="mx-2"
-                                                                               onclick="event.preventDefault();if(confirm('Медкомиссия будет удалена. Продолжить?')){this.closest('form').submit();}">
-                                                                                <i class="fa fa-times"></i>
+                                                                    @can("manage medical")
+                                                                        @if($employee->lastMedInspection("psych"))
+                                                                            <a href="{{route("crm.med-inspections.edit", $employee->lastMedInspection("psych"))}}">
+                                                                                <i class="fa fa-edit mx-2 d-inline-block"></i>
                                                                             </a>
-                                                                        </form>
-                                                                    @endif
+                                                                            <form
+                                                                                action="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("psych"))}}"
+                                                                                method="POST" class="d-inline-block">
+                                                                                @csrf @method('delete')
+
+                                                                                <a title="Удалить"
+                                                                                   href="{{route('crm.med-inspections.destroy', $employee->lastMedInspection("psych"))}}"
+                                                                                   class="mx-2"
+                                                                                   onclick="event.preventDefault();if(confirm('Медкомиссия будет удалена. Продолжить?')){this.closest('form').submit();}">
+                                                                                    <i class="fa fa-times"></i>
+                                                                                </a>
+                                                                            </form>
+                                                                        @endif
+                                                                    @endcan
                                                                 </td>
                                                             </tr>
                                                             </tbody>

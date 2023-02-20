@@ -51,8 +51,10 @@
 
                                                     <div class="d-flex justify-content-between align-items-center my-4">
                                                         <h5 class="mb-0">Аттестация</h5>
-                                                        <a href="{{route("crm.attestations.create", $employee)}}"
-                                                           class="btn btn-success btn-sm">Добавить</a>
+                                                        @can("manage attestation")
+                                                            <a href="{{route("crm.attestations.create", $employee)}}"
+                                                               class="btn btn-success btn-sm">Добавить</a>
+                                                        @endcan
                                                     </div>
 
                                                     @if($employee->attestations->count())
@@ -73,20 +75,22 @@
                                                                     <td>{!! $attestation->getLastDocByType("protocol") !!}</td>
                                                                     <td>{!! $attestation->getLastDocByType("certificate") !!}</td>
                                                                     <td class="d-flex">
-                                                                        <a href="{{route("crm.attestations.update", $attestation)}}">
-                                                                            <i class="fa fa-edit"></i>
-                                                                        </a>
-                                                                        <form
-                                                                            action="{{route('crm.attestations.destroy', $attestation)}}"
-                                                                            method="POST">
-                                                                            @csrf @method('delete')
-
-                                                                            <a title="Удалить" href="{{route('crm.attestations.destroy', $attestation)}}"
-                                                                               class="mx-2"
-                                                                               onclick="event.preventDefault();if(confirm('Направление будет удалено. Продолжить?')){this.closest('form').submit();}">
-                                                                                <i class="fa fa-times"></i>
+                                                                        @can("manage attestation")
+                                                                            <a href="{{route("crm.attestations.update", $attestation)}}">
+                                                                                <i class="fa fa-edit"></i>
                                                                             </a>
-                                                                        </form>
+                                                                            <form
+                                                                                action="{{route('crm.attestations.destroy', $attestation)}}"
+                                                                                method="POST">
+                                                                                @csrf @method('delete')
+
+                                                                                <a title="Удалить" href="{{route('crm.attestations.destroy', $attestation)}}"
+                                                                                   class="mx-2"
+                                                                                   onclick="event.preventDefault();if(confirm('Направление будет удалено. Продолжить?')){this.closest('form').submit();}">
+                                                                                    <i class="fa fa-times"></i>
+                                                                                </a>
+                                                                            </form>
+                                                                        @endcan
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
