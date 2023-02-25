@@ -41,7 +41,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group">
                                             <label for="quantity" class="form-label">Количество</label>
                                             <input type="number" id="quantity" class="form-control shadow-none"
@@ -52,12 +52,22 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-4 col-12">
                                         <div class="form-group mb-5">
                                             <label for="issue_date" class="form-label">Дата выдачи</label>
                                             <input type="date" id="issue_date" class="form-control shadow-none"
                                                    name="issue_date" value="{{old('issue_date')}}">
                                             @error('issue_date')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="next_issue_date" class="form-label">Дата следующей выдачи</label>
+                                            <input type="date" id="next_issue_date" class="form-control shadow-none"
+                                                   name="next_issue_date" value="{{old('next_issue_date')}}">
+                                            @error('next_issue_date')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

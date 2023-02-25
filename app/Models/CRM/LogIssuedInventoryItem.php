@@ -13,7 +13,7 @@ class LogIssuedInventoryItem extends Model
     use HasFactory, SoftDeletes;
 
     protected $table = "crm_log_issued_inventory_items";
-    protected $fillable = ["employee_id", "inventory_item_id", "quantity", "issue_date"];
+    protected $fillable = ["employee_id", "inventory_item_id", "quantity", "issue_date", "next_issue_date"];
 
     public function employee(): BelongsTo
     {
@@ -35,8 +35,43 @@ class LogIssuedInventoryItem extends Model
         return $log;
     }
 
-    public function getIssueDate()
+    /*
+     * Дата выдачи
+     */
+    public function getIssueDate(): string
     {
-        return Carbon::createFromFormat("Y-m-d", $this->issue_date)->format("d.m.Y") . " г.";
+        if ($this->issue_date)
+            return Carbon::createFromFormat("Y-m-d", $this->issue_date)->format("d.m.Y") . " г.";
+        return "Не указано";
+    }
+
+    /*
+     * Дата следующей выдачи
+     */
+    public function getNextIssueDate(): string
+    {
+        if ($this->next_issue_date)
+            return Carbon::createFromFormat("Y-m-d", $this->next_issue_date)->format("d.m.Y") . " г.";
+        return "Не указано";
+    }
+
+    /*
+     * Количество дней до замены СИЗ
+     */
+    public function getExpiresDays(): bool|int
+    {
+        if (!$this->next_issue_date) return 100;
+
+        $today = Carbon::now();
+        $expiredDate = new Carbon($this->next_issue_date);
+        return $expiredDate->diff($today)->days;
+    }
+
+    /*
+     * Приближение срока замены СИЗ
+     */
+    public function isExpiresDays(): bool
+    {
+        return $this->getExpiresDays() < 14;
     }
 }

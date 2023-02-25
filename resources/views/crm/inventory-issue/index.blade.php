@@ -66,7 +66,8 @@
                                                                 </th>
                                                                 <th scope="col" class="text-start">Норма выдачи,<br>ед/год
                                                                 </th>
-                                                                <th scope="col" class="text-start">Дата предыдущей
+                                                                <th scope="col" class="text-start">Дата выдачи</th>
+                                                                <th scope="col" class="text-start">Дата следующей
                                                                     выдачи
                                                                 </th>
                                                             </tr>
@@ -74,7 +75,7 @@
                                                             <tbody>
                                                             @foreach($items as $item)
                                                                 @if($employee->getLastIssueByItem($item))
-                                                                    <tr>
+                                                                    <tr class="@if($employee->getLastIssueByItem($item)->isExpiresDays()) bg-danger text-light @endif">
                                                                         <td>{{ $item->name }}</td>
                                                                         <td>
                                                                             {{ $employee->getLastIssueQtyByItem($item) }}
@@ -84,6 +85,9 @@
                                                                         </td>
                                                                         <td>
                                                                             {{ $employee->getLastIssueByItem($item)->getIssueDate() }}
+                                                                        </td>
+                                                                        <td>
+                                                                            {{ $employee->getLastIssueByItem($item)->getNextIssueDate() }}
                                                                         </td>
                                                                     </tr>
                                                                 @endif

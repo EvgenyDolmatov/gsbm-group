@@ -21,10 +21,15 @@ class Employee extends Model
         "phone",
         "email",
         "birthday",
+        "sex",
+        "height",
+        "clothing_size",
+        "shoe_size",
         "snils",
         "company_id",
         "profession_id",
-        "profession_discharge"
+        "profession_discharge",
+        "employment_date",
     ];
 
     public function company(): BelongsTo
@@ -139,5 +144,23 @@ class Employee extends Model
         }
 
         return $count;
+    }
+
+    /*
+     * Получить пол
+     */
+    public function getSex(): string
+    {
+        return $this->sex == "male" ? "Мужской" : "Женский";
+    }
+
+    /*
+     * Получить дату приёма на работу
+     */
+    public function getEmploymentDate(): string
+    {
+        if ($this->employment_date)
+            return Carbon::createFromFormat("Y-m-d", $this->employment_date)->format("d.m.Y") . " г.";
+        return "Нет данных";
     }
 }

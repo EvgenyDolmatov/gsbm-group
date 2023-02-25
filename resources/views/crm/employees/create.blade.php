@@ -104,7 +104,7 @@
                                         </div>
                                     </div>
                                     {{-- Company --}}
-                                    <div class="col-12">
+                                    <div class="col-md-6 col-12">
                                         <div class="form-group mb-5">
                                             <label for="company_id" class="form-label">Компания</label>
                                             <select name="company_id" id="company_id" class="form-select shadow-none">
@@ -121,8 +121,20 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    {{-- Profession --}}
-                                    <div class="col-md-8 col-12">
+                                    {{-- Дата приёма на работу --}}
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="employment_date" class="form-label">Дата приёма на работу</label>
+                                            <input type="date" id="employment_date" class="form-control shadow-none"
+                                                   name="employment_date"
+                                                   value="{{old('employment_date')}}">
+                                            @error('employment_date')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    {{-- Профессия --}}
+                                    <div class="col-md-6 col-12">
                                         <div class="form-group mb-5">
                                             <label for="profession_id" class="form-label">Профессия</label>
                                             <select name="profession_id" id="profession_id"
@@ -140,8 +152,8 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    {{-- Profession Discharge --}}
-                                    <div class="col-md-4 col-12">
+                                    {{-- Разряд --}}
+                                    <div class="col-md-6 col-12">
                                         <div class="form-group mb-5">
                                             <label for="profession_discharge" class="form-label">Разряд</label>
                                             <select name="profession_discharge" id="profession_discharge"
@@ -159,8 +171,54 @@
                                             @enderror
                                         </div>
                                     </div>
+                                    {{-- Пол --}}
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="sex" class="form-label">Пол</label>
+                                            <select name="sex" id="sex" class="form-select shadow-none">
+                                                <option value="male" @if(old("male")=="male") selected @endif>
+                                                    Мужской
+                                                </option>
+                                                <option value="female" @if(old("female")=="female") selected @endif>
+                                                    Женский
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {{-- Рост --}}
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="height" class="form-label">Рост, см</label>
+                                            <input type="text" id="height" class="form-control shadow-none"
+                                                   name="height" value="{{old('height')}}">
+                                            @error('height')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    {{-- Размер одежды --}}
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="clothing_size" class="form-label">Размер одежды</label>
+                                            <input type="text" id="clothing_size" class="form-control shadow-none"
+                                                   name="clothing_size" value="{{old('clothing_size')}}">
+                                            @error('clothing_size')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    {{-- Размер обуви --}}
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="shoe_size" class="form-label">Размер обуви</label>
+                                            <input type="text" id="shoe_size" class="form-control shadow-none"
+                                                   name="shoe_size" value="{{old('shoe_size')}}">
+                                            @error('shoe_size')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
                                 </div>
-
                                 <button type="submit" class="btn btn-brand btn-filled mb-3">Сохранить</button>
                             </form>
                         </div>
