@@ -31,7 +31,11 @@ class EmployeeController extends Controller
             'surname' => 'required|max:30',
             'name' => 'required|max:30',
             'email' => 'nullable|email|unique:crm_employees',
-            'phone' => 'nullable|unique:crm_employees'
+            'phone' => 'nullable|unique:crm_employees',
+            'clothing_size' => 'nullable|string|max:255',
+            'shoe_size' => 'nullable|string|max:255',
+            'height' => 'nullable|integer',
+            'employment_date' => 'nullable|date',
         ]);
 
         Employee::create($request->all());
@@ -54,6 +58,10 @@ class EmployeeController extends Controller
             'name' => 'required|max:30',
             'email' => 'nullable|email|unique:crm_employees,email,' . $employee->id,
             'phone' => 'nullable|unique:crm_employees,phone,' . $employee->id,
+            'clothing_size' => 'nullable|string|max:255',
+            'shoe_size' => 'nullable|string|max:255',
+            'height' => 'nullable|integer',
+            'employment_date' => 'nullable|date',
         ]);
 
         $employee->update($request->all());
