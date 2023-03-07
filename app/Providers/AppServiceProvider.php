@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layouts.components.header', function ($view) {
             $view->with([
                 'services' => Service::all()->sortBy('priority'),
-                "accessRoles" => Role::whereIn("name", ["admin", "super-admin"])->get(),
+                "accessRoles" => Role::whereIn("name", ["admin", "super-admin", "leader"])->get(),
             ]);
         });
     }

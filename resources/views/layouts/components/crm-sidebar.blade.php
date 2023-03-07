@@ -1,6 +1,6 @@
 <div class="accordion accordion-flush left-sidebar" id="accordionServices">
     <!-- Учебный центр -->
-    @can('manage course')
+    @if(auth()->user()->can(['manage course', 'manage medical', 'manage inventory']) || auth()->user()->hasrole('leader'))
         <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-    @endcan
+    @endif
 
     <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingTwo">
