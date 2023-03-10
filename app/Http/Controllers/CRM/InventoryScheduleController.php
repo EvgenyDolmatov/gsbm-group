@@ -30,7 +30,7 @@ class InventoryScheduleController extends Controller
         if ($sch) {
             $sch->update([
                 "rate_per_year" => $request->input("rate_per_year"),
-                "period" => $request->input("period"),
+                "period" => $request->input("period") ? $request->input("period") : 1,
             ])
             ;
         } else {
@@ -57,7 +57,7 @@ class InventoryScheduleController extends Controller
 
         $schedule->update([
             'rate_per_year'=>$request->input('rate_per_year'),
-            "period" => $request->input("period"),
+            "period" => $request->input("period") ? $request->input("period") : 1,
         ]);
         return redirect()->route("crm.inventory.show", $inventory);
     }
