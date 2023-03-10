@@ -22,7 +22,7 @@
                                 @csrf @method('PUT')
 
                                 <div class="row">
-                                    <div class="col-md-9 col-12">
+                                    <div class="col-md-8 col-12">
                                         <div class="form-group mb-5">
                                             <label for="profession_id" class="form-label">Профессия</label>
                                             <select name="profession_id" id="profession_id"
@@ -40,13 +40,24 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-12">
+                                    <div class="col-md-2 col-12">
                                         <div class="form-group mb-5">
-                                            <label for="rate_per_year" class="form-label">Количество/год</label>
+                                            <label for="rate_per_year" class="form-label">Кол-во, лет</label>
                                             <input type="number" id="rate_per_year" class="form-control shadow-none"
                                                    name="rate_per_year"
                                                    value="{{old('rate_per_year', $schedule->rate_per_year)}}">
                                             @error('rate_per_year')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="period" class="form-label">Период, лет</label>
+                                            <input type="text" id="period" class="form-control shadow-none"
+                                                   name="period"
+                                                   value="{{old('period', $schedule->period)}}">
+                                            @error('period')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

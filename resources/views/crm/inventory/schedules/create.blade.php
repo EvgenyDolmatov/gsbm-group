@@ -21,7 +21,7 @@
                                 @csrf
 
                                 <div class="row">
-                                    <div class="col-md-9 col-12">
+                                    <div class="col-md-8 col-12">
                                         <div class="form-group mb-5">
                                             <label for="profession_id" class="form-label">Профессия</label>
                                             <select name="profession_id" id="profession_id"
@@ -39,13 +39,24 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-3 col-12">
+                                    <div class="col-md-2 col-12">
                                         <div class="form-group mb-5">
-                                            <label for="rate_per_year" class="form-label">Количество/год</label>
+                                            <label for="rate_per_year" class="form-label">Кол-во, ед.</label>
                                             <input type="number" id="rate_per_year" class="form-control shadow-none"
                                                    name="rate_per_year"
                                                    value="{{old('rate_per_year', 1)}}">
                                             @error('rate_per_year')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-12">
+                                        <div class="form-group mb-5">
+                                            <label for="period" class="form-label">Период, лет</label>
+                                            <input type="text" id="period" class="form-control shadow-none"
+                                                   name="period"
+                                                   value="{{old('period', 1)}}">
+                                            @error('period')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>

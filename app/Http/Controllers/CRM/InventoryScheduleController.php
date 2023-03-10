@@ -23,11 +23,16 @@ class InventoryScheduleController extends Controller
         $request->validate([
             'profession_id' => ["required"],
             'rate_per_year' => ["required"],
+            'period' => ["required", "numeric"],
         ]);
 
         $sch = InventorySchedule::where("inventory_item_id", $inventory->id)->where("profession_id", $request->input("profession_id"))->first();
         if ($sch) {
-            $sch->update(["rate_per_year" => $request->input("rate_per_year")]);
+            $sch->update([
+                "rate_per_year" => $request->input("rate_per_year"),
+                "period" => $request->input("period"),
+            ])
+            ;
         } else {
             InventorySchedule::add($request->all(), $inventory);
         }
@@ -48,9 +53,13 @@ class InventoryScheduleController extends Controller
     {
         $request->validate([
             'rate_per_year' => ["required"],
+            'period' => ["required", "numeric"],
         ]);
 
-        $schedule->update(['rate_per_year'=>$request->input('rate_per_year')]);
+        $schedule->update([
+            'rate_per_year'=>$request->input('rate_per_year'),
+            "period" => $request->input("period"),
+        ]);
         return redirect()->route("crm.inventory.show", $inventory);
     }
 

@@ -18,7 +18,8 @@
                                 <p class="mb-0">Остаток: {{$item->quantity . " шт"}}</p>
                             </div>
                             <div class="d-flex justify-content-start">
-                                <a href="{{route('crm.inventory.schedule.create', $item)}}" class="btn btn-success" style="margin-right: 10px;">
+                                <a href="{{route('crm.inventory.schedule.create', $item)}}" class="btn btn-success"
+                                   style="margin-right: 10px;">
                                     <i class="fa fa-plus"></i> Добавить норму
                                 </a>
                                 <a href="{{route('crm.inventory.add-qty', $item)}}" class="btn btn-primary">
@@ -31,7 +32,7 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Профессия</th>
-                                        <th scope="col">Количество/год</th>
+                                        <th scope="col">Кол-во / лет</th>
                                         <th scope="col">Действия</th>
                                     </tr>
                                     </thead>
@@ -39,7 +40,7 @@
                                     @foreach($item->limitSchedules as $schedule)
                                         <tr>
                                             <td>{{$schedule->profession->name}}</td>
-                                            <td>{{$schedule->rate_per_year}}</td>
+                                            <td width="150">{{$schedule->rate_per_year . " / " . $schedule->period}}</td>
                                             <td class="actions">
                                                 <a href="{{ route("crm.inventory.schedule.edit", [$item, $schedule]) }}"
                                                    class="text-primary">Изменить</a>
