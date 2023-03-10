@@ -53,7 +53,7 @@ class InventoryScheduleController extends Controller
     {
         $request->validate([
             'rate_per_year' => ["required"],
-            'period' => ["required", "numeric"],
+            'period' => ["required"],
         ]);
 
         $schedule->update([
