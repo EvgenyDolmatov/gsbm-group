@@ -64,7 +64,7 @@
                                                                 <th scope="col">СИЗ</th>
                                                                 <th scope="col" class="text-start">Выдано,<br>ед
                                                                 </th>
-                                                                <th scope="col" class="text-start">Норма выдачи,<br>ед/год
+                                                                <th scope="col" class="text-start">Норма выдачи,<br>ед/мес
                                                                 </th>
                                                                 <th scope="col" class="text-start">
                                                                     Дата выдачи
@@ -84,7 +84,7 @@
                                                                             {{ $employee->getLastIssueQtyByItem($item) }}
                                                                         </td>
                                                                         <td>
-                                                                            {{ $employee->getQtyItemsByInventory($item) . " / " .$item->getLimitByProf($employee->profession) }}
+                                                                            {!! $employee->getLimits($item) !!}
                                                                         </td>
                                                                         <td>
                                                                             {{ $employee->getLastIssueByItem($item)->getIssueDate() }}

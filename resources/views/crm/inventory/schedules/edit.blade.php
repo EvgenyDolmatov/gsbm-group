@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col-md-2 col-12">
                                         <div class="form-group mb-5">
-                                            <label for="rate_per_year" class="form-label">Кол-во, лет</label>
+                                            <label for="rate_per_year" class="form-label">Кол-во</label>
                                             <input type="number" id="rate_per_year" class="form-control shadow-none"
                                                    name="rate_per_year"
                                                    value="{{old('rate_per_year', $schedule->rate_per_year)}}">

@@ -163,4 +163,16 @@ class Employee extends Model
             return Carbon::createFromFormat("Y-m-d", $this->employment_date)->format("d.m.Y") . " г.";
         return "Нет данных";
     }
+
+    /**
+     * Получить норму выдачи инвентаря
+     */
+    public function getLimits($item): string
+    {
+        $limit = InventorySchedule::where("inventory_item_id", $item->id)->where("profession_id", $this->profession->id)->first();
+
+        return $limit ?
+            $limit->rate_per_year . "&nbsp/&nbsp;" . $limit->period :
+            "Нет данных";
+    }
 }
