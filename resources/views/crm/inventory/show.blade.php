@@ -32,7 +32,7 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">Профессия</th>
-                                        <th scope="col">Кол-во / лет</th>
+                                        <th scope="col" style="width: 180px">Кол-во / период</th>
                                         <th scope="col">Действия</th>
                                     </tr>
                                     </thead>
@@ -40,7 +40,7 @@
                                     @foreach($item->limitSchedules as $schedule)
                                         <tr>
                                             <td>{{$schedule->profession->name}}</td>
-                                            <td width="150">{{$schedule->rate_per_year . " / " . $schedule->period}}</td>
+                                            <td class="text-center">{{$schedule->rate_per_year . " ед. / " . $schedule->period . " мес"}}</td>
                                             <td class="actions">
                                                 <a href="{{ route("crm.inventory.schedule.edit", [$item, $schedule]) }}"
                                                    class="text-primary">Изменить</a>

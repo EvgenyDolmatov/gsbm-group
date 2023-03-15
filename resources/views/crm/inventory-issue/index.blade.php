@@ -66,10 +66,13 @@
                                                                 </th>
                                                                 <th scope="col" class="text-start">Норма выдачи,<br>ед/год
                                                                 </th>
-                                                                <th scope="col" class="text-start">Дата выдачи</th>
-                                                                <th scope="col" class="text-start">Дата следующей
-                                                                    выдачи
+                                                                <th scope="col" class="text-start">
+                                                                    Дата выдачи
                                                                 </th>
+                                                                <th scope="col" class="text-start">
+                                                                    Дата следующей выдачи
+                                                                </th>
+                                                                <th></th>
                                                             </tr>
                                                             </thead>
                                                             <tbody>
@@ -88,6 +91,23 @@
                                                                         </td>
                                                                         <td>
                                                                             {{ $employee->getLastIssueByItem($item)->getNextIssueDate() }}
+                                                                        </td>
+                                                                        <td class="d-flex">
+                                                                            <a href="{{ route("crm.inventory-issue.edit", [$employee, $employee->getLastIssueByItem($item)]) }}">
+                                                                                <i class="fa fa-edit mx-2 d-inline-block"></i>
+                                                                            </a>
+                                                                            <form
+                                                                                action="{{route('crm.inventory-issue.destroy', [$employee, $employee->getLastIssueByItem($item)])}}"
+                                                                                method="POST" class="d-inline-block">
+                                                                                @csrf @method('delete')
+
+                                                                                <a title="Удалить"
+                                                                                   href="{{route('crm.inventory-issue.destroy', [$employee, $employee->getLastIssueByItem($item)])}}"
+                                                                                   class="mx-2"
+                                                                                   onclick="event.preventDefault();if(confirm('Выдача будет аннулирована. Продолжить?')){this.closest('form').submit();}">
+                                                                                    <i class="fa fa-times"></i>
+                                                                                </a>
+                                                                            </form>
                                                                         </td>
                                                                     </tr>
                                                                 @endif

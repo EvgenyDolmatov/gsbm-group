@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="col-md-2 col-12">
                                         <div class="form-group mb-5">
-                                            <label for="period" class="form-label">Период, лет</label>
+                                            <label for="period" class="form-label">Период, мес</label>
                                             <input type="text" id="period" class="form-control shadow-none"
                                                    name="period"
                                                    value="{{old('period', $schedule->period)}}">

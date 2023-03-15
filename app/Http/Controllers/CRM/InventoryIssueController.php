@@ -7,6 +7,7 @@ use App\Models\CRM\Employee;
 use App\Models\CRM\InventoryItem;
 use App\Models\CRM\LogIssuedInventoryItem;
 use Illuminate\Http\Request;
+use Throwable;
 
 class InventoryIssueController extends Controller
 {
@@ -38,5 +39,48 @@ class InventoryIssueController extends Controller
         $item = InventoryItem::find($issuedItem->inventory_item_id);
         $item->update(["quantity" => $item->quantity - $issuedItem->quantity]);
         return redirect()->route("crm.inventory-issue.list");
+    }
+
+    public function edit(Employee $employee, LogIssuedInventoryItem $issuedInventory)
+    {
+        return view("crm.inventory-issue.edit", [
+            "employee" => $employee,
+            "items" => InventoryItem::all()->sortBy("name"),
+            "issuedInventory" => $issuedInventory,
+        ]);
+    }
+
+    public function update(Request $request, Employee $employee, LogIssuedInventoryItem $issuedInventory)
+    {
+        $request->validate([
+            "quantity" => ["required", "numeric"],
+            "issue_date" => ["required", "date"],
+        ]);
+
+        try {
+            $item = InventoryItem::find($issuedInventory->inventory_item_id);
+            $resetQty = $item->quantity + $issuedInventory->quantity;
+            $issuedInventory->update($request->all());
+            $item->update(["quantity" => $resetQty - $request->quantity]);
+        } catch (Throwable $e) {
+            report($e);
+            return false;
+        }
+
+        return redirect()->route("crm.inventory-issue.list");
+    }
+
+    public function destroy(Employee $employee, LogIssuedInventoryItem $issuedInventory)
+    {
+        try {
+            $item = InventoryItem::find($issuedInventory->inventory_item_id);
+            $item->update(["quantity" => $item->quantity + $issuedInventory->quantity]);
+            $issuedInventory->delete();
+        } catch (Throwable $e) {
+            report($e);
+            return false;
+        }
+
+        return back();
     }
 }

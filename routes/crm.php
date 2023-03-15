@@ -103,12 +103,15 @@ Route::prefix('crm')->middleware(['role:super-admin|admin|leader'])->group(funct
             Route::delete("{inventory}/schedule/{schedule}", [InventoryScheduleController::class, "destroy"])->name("crm.inventory.schedule.destroy");
         });
     });
-    
+
     Route::prefix("inventory-issue")->group(function () {
         Route::get("/", [InventoryIssueController::class, "index"])->name("crm.inventory-issue.list");
         Route::group(['middleware' => ['permission:manage inventory']], function () {
             Route::get("{employee}/create", [InventoryIssueController::class, "create"])->name("crm.inventory-issue.create");
             Route::post("{employee}/create", [InventoryIssueController::class, "store"])->name("crm.inventory-issue.store");
+            Route::get("{employee}/issue/{issuedInventory}/edit", [InventoryIssueController::class, "edit"])->name("crm.inventory-issue.edit");
+            Route::put("{employee}/issue/{issuedInventory}/edit", [InventoryIssueController::class, "update"])->name("crm.inventory-issue.update");
+            Route::delete("{employee}/issue/{issuedInventory}", [InventoryIssueController::class, "destroy"])->name("crm.inventory-issue.destroy");
         });
     });
 });
