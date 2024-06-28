@@ -58,9 +58,9 @@
                             <p>Фактический адрес: 614051, г. Пермь, ул. Подольская, д. 35</p>
                             <p>Режим работы: с понедельника по пятницу с 09:00 до 17:00</p>
                             <p>Выходные дни – суббота и воскресенье</p>
-                            <p>Телефон: <a href="tel:+79091112167" class="text-primary">+7 (909) 111 2167</a></p>
+                            <p>Телефон: <a href="tel:+79824859262" class="text-primary">+7 (982) 485 9262</a></p>
                             <p>E-mail: <a href="mailto:gsbm.center@mail.ru" class="text-primary">gsbm.center@mail.ru</a>,
-                                <a href="mailto:averholanceva@gsbm-group.ru" class="text-primary">averholanceva@gsbm-group.ru</a>
+                                <a href="mailto:yvashenko@gsbm-group.ru" class="text-primary">yvashenko@gsbm-group.ru</a>
                             </p>
 
                             <div class="my-5">
