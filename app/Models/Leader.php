@@ -49,7 +49,7 @@ class Leader extends Model
     {
         if ($this->photo != null)
             return '/uploads/' . $this->photo;
-        return false;
+        return asset('assets/img/no-image.jpg');
     }
 
     public function removePhoto()
