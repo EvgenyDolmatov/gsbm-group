@@ -1155,6 +1155,14 @@ main section#contacts a {
     margin-bottom: 20px;
     font-weight: 300;
 }
+main section#contacts h5,
+main section#contacts p.person-name,
+main section#contacts a.person-link {
+    margin-bottom: 0;
+}
+main section#contacts a.person-link.person-link-email {
+    color: #1c3f94;
+}
 
 #map {
     margin-bottom: 20px;
