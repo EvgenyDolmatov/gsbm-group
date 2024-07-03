@@ -118,6 +118,34 @@
                             <p>Сертификат соответствия «Геострой&#8209;Буммаш»</p>
                         </div>
                     </div>
+                    <!-- Certificate -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="document-thumb">
+                            <div class="document-actions">
+                                <div class="scale-btn"></div>
+                                <a href="{{asset('assets/app/img/certificates/certificate8.pdf')}}" class="download-btn"
+                                   target="_blank"></a>
+                            </div>
+                            <img src="{{asset('assets/app/img/certificates/certificate8.jpg')}}" alt>
+                        </div>
+                        <div class="document-title">
+                            <p>Свидетельство НАКС №АЦСТ-92-02262</p>
+                        </div>
+                    </div>
+                    <!-- Certificate -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="document-thumb">
+                            <div class="document-actions">
+                                <div class="scale-btn"></div>
+                                <a href="{{asset('assets/app/img/certificates/certificate9.pdf')}}" class="download-btn"
+                                   target="_blank"></a>
+                            </div>
+                            <img src="{{asset('assets/app/img/certificates/certificate9.jpg')}}" alt>
+                        </div>
+                        <div class="document-title">
+                            <p>Свидетельство НАКС №АЦСТ-92-02353</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
