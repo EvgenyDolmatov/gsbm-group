@@ -141,6 +141,25 @@
                         <div class="simple-tile">
                             <div class="tile-image">
                                 <div class="overlay-image"></div>
+                                <img src="{{asset('assets/app/img/no-image.jpg')}}" alt="Коровин Пётр">
+                            </div>
+                            <div class="tile-title">
+                                <h4>Коровин Пётр</h4>
+                            </div>
+                            <div class="tile-description">
+                                <p>И.О. Генерального директора</p>
+                            </div>
+                            <div class="tile-contacts">
+                                <a href="mailto:pkorovin@gsbm-group.ru">pkorovin@gsbm-group.ru</a>
+                                <a href="tel:+79027909924">+7 902 790 9924</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tile Item -->
+                    <div class="col-xl-3 col-lg-4 col-6">
+                        <div class="simple-tile">
+                            <div class="tile-image">
+                                <div class="overlay-image"></div>
                                 <img src="{{asset('assets/app/img/supervisors/leader3.jpg')}}" alt="Шепелев Алексей">
                             </div>
                             <div class="tile-title">
@@ -198,7 +217,7 @@
                         <div class="simple-tile">
                             <div class="tile-image">
                                 <div class="overlay-image"></div>
-                                <img src="{{asset('assets/app/img/supervisors/leader6.jpg')}}" alt="Кузьмин Сергей">
+                                <img src="{{asset('assets/app/img/supervisors/leader06.jpg')}}" alt="Кузьмин Сергей">
                             </div>
                             <div class="tile-title">
                                 <h4>Кузьмин Сергей</h4>
@@ -209,44 +228,6 @@
                             <div class="tile-contacts">
                                 <a href="mailto:skuzmin@gsbm-group.ru">skuzmin@gsbm-group.ru</a>
                                 <a href="tel:+79247025857">+7 924 702 5857</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Tile Item -->
-                    <div class="col-xl-3 col-lg-4 col-6">
-                        <div class="simple-tile">
-                            <div class="tile-image">
-                                <div class="overlay-image"></div>
-                                <img src="{{asset('assets/app/img/supervisors/leader7.jpg')}}" alt="Лобанов Игорь">
-                            </div>
-                            <div class="tile-title">
-                                <h4>Лобанов Игорь</h4>
-                            </div>
-                            <div class="tile-description">
-                                <p>Руководитель проектов</p>
-                            </div>
-                            <div class="tile-contacts">
-                                <a href="mailto:ilobanov@gsbm-group.ru">ilobanov@gsbm-group.ru</a>
-                                <a href="tel:+79027912385">+7 902 791 2385</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Tile Item -->
-                    <div class="col-xl-3 col-lg-4 col-6">
-                        <div class="simple-tile">
-                            <div class="tile-image">
-                                <div class="overlay-image"></div>
-                                <img src="{{asset('assets/app/img/supervisors/leader8.jpg')}}" alt="Харламов Евгений">
-                            </div>
-                            <div class="tile-title">
-                                <h4>Харламов Евгений</h4>
-                            </div>
-                            <div class="tile-description">
-                                <p>Зам. генерального директора по стратегическому развитию</p>
-                            </div>
-                            <div class="tile-contacts">
-                                <a href="mailto:ekharlamov@gsbm-group.ru">ekharlamov@gsbm-group.ru</a>
-                                <a href="tel:+79223801909">+7 922 380 1909</a>
                             </div>
                         </div>
                     </div>
