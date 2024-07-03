@@ -32,6 +32,9 @@
                                 <a href="#">Виды работ</a>
                             </li>
                             <li class="footer-nav-item">
+                                <a href="{{route('app.production-page')}}">Производство</a>
+                            </li>
+                            <li class="footer-nav-item">
                                 <a href="{{route('app.licensees-page')}}">Свидетельства</a>
                             </li>
                             <li class="footer-nav-item">

@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AppController::class, 'frontPage'])->name('app.front-page');
 Route::get('about', [AppController::class, 'aboutPage'])->name('app.about-page');
+Route::get('production', [AppController::class, 'productionPage'])->name('app.production-page');
 Route::get('licensees', [AppController::class, 'licenseesPage'])->name('app.licensees-page');
 Route::get('contacts', [AppController::class, 'contactsPage'])->name('app.contacts-page');
 Route::get('privacy-policy', [AppController::class, 'privacyPolicyPage'])->name('app.privacy-policy-page');

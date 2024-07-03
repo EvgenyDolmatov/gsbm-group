@@ -24,6 +24,11 @@ class AppController extends Controller
         return view('app.about');
     }
 
+    public function productionPage()
+    {
+        return view('app.production');
+    }
+
     public function licenseesPage()
     {
         return view('app.licensees');

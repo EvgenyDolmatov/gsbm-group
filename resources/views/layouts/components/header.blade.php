@@ -68,6 +68,9 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{route('app.production-page')}}">Производство</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{route('app.licensees-page')}}">Свидетельства</a>
                                 </li>
                                 <li class="nav-item dropdown">
