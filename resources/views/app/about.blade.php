@@ -147,7 +147,7 @@
                                 <h4>Коровин Пётр</h4>
                             </div>
                             <div class="tile-description">
-                                <p>И.О. Генерального директора</p>
+                                <p>Исполнительный директор</p>
                             </div>
                             <div class="tile-contacts">
                                 <a href="mailto:pkorovin@gsbm-group.ru">pkorovin@gsbm-group.ru</a>
