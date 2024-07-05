@@ -61,18 +61,18 @@
                             <div class="feedback-title pr-md-70">
                                 <h2 class="mb-4">Прием резюме ООО&nbsp;«Геострой&#8209;Буммаш»</h2>
 
-                                <div>
-                                    <p class="person-name mb-1">Ксения Алексеевна</p>
+                                <div style="margin-bottom: 30px;">
+                                    <p class="person-name mb-1">Ждахина Ксения Алексеевна</p>
+                                    <a href="tel:+79026477092" class="person-link">
+                                        +7 (902) 647-70-92
+                                    </a>
                                     <a href="mailto:k.zhdahina@gsbm-group.ru" class="person-link person-link-email">
                                         k.zhdahina@gsbm-group.ru
                                     </a>
-                                    <a href="tel:+79026477092" class="person-link" style="margin-bottom: 30px;">
-                                        +7 (902) 647-70-92
-                                    </a>
                                 </div>
 
-                                <div>
-                                    <p class="person-name mb-1">Денис Александрович</p>
+                                <div style="margin-bottom: 30px;">
+                                    <p class="person-name mb-1">Соснин Денис Александрович</p>
                                     <a href="tel:+79519385356" class="person-link" style="margin-bottom: 30px;">
                                         +7 (951) 938-53-56
                                     </a>

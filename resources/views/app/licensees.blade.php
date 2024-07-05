@@ -39,34 +39,6 @@
                         <div class="document-thumb">
                             <div class="document-actions">
                                 <div class="scale-btn"></div>
-                                <a href="{{asset('assets/app/img/certificates/certificate2.pdf')}}" class="download-btn"
-                                   target="_blank"></a>
-                            </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate2.jpg')}}" alt>
-                        </div>
-                        <div class="document-title">
-                            <p>Свидетельство МП «Геострой&#8209;Буммаш»</p>
-                        </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
-                                <a href="{{asset('assets/app/img/certificates/certificate3.pdf')}}" class="download-btn"
-                                   target="_blank"></a>
-                            </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate3.jpg')}}" alt>
-                        </div>
-                        <div class="document-title">
-                            <p>Свидетельство СК «Геострой&#8209;Буммаш»</p>
-                        </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
                                 <a href="{{asset('assets/app/img/certificates/certificate4.pdf')}}" class="download-btn"
                                    target="_blank"></a>
                             </div>
@@ -74,34 +46,6 @@
                         </div>
                         <div class="document-title">
                             <p>Выписка из реестра членов СРО</p>
-                        </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
-                                <a href="{{asset('assets/app/img/certificates/certificate5.jpg')}}" class="download-btn"
-                                   target="_blank"></a>
-                            </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate5.jpg')}}" alt>
-                        </div>
-                        <div class="document-title">
-                            <p>Свидетельство НАКС №АЦСТ-92-02015</p>
-                        </div>
-                    </div>
-                    <!-- Certificate -->
-                    <div class="col-lg-3 col-sm-6 col-12">
-                        <div class="document-thumb">
-                            <div class="document-actions">
-                                <div class="scale-btn"></div>
-                                <a href="{{asset('assets/app/img/certificates/certificate6.jpg')}}" class="download-btn"
-                                   target="_blank"></a>
-                            </div>
-                            <img src="{{asset('assets/app/img/certificates/certificate6.jpg')}}" alt>
-                        </div>
-                        <div class="document-title">
-                            <p>Свидетельство НАКС №АЦСТ-92-02016</p>
                         </div>
                     </div>
                     <!-- Certificate -->

@@ -86,7 +86,7 @@ class EmailController extends Controller
         $employeeRequest = EmployeeRequest::create($request->all());
         $employeeRequest->uploadFile($request->file('resume'));
 
-        Mail::to('evd.work@yandex.ru')->send(new FeedbackResumeMail($employeeRequest));
+        Mail::to('k.zhdahina@gsbm-group.ru')->send(new FeedbackResumeMail($employeeRequest));
 
         return back()->with('success', 'Ваше резюме успешно отпарвлено! Мы скоро с Вами свяжемся.');
     }

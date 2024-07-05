@@ -24,17 +24,17 @@
                                             <div class="simple-tile">
                                                 <div class="tile-image">
                                                     <div class="overlay-image"></div>
-                                                    <img src="{{asset('assets/app/img/education/vercholantceva.jpg')}}" alt="Верхоланцева Александра">
+                                                    <img src="{{asset('assets/app/img/no-image.jpg')}}" alt="Юлия Ващенко">
                                                 </div>
                                                 <div class="tile-title">
-                                                    <h4>Александра Верхоланцева</h4>
+                                                    <h4>Юлия Ващенко</h4>
                                                 </div>
                                                 <div class="tile-description">
                                                     <p>Руководитель учебного центра</p>
                                                 </div>
                                                 <div class="tile-contacts">
-                                                    <a href="mailto:rlopatin@gsbm-group.ru">averholanceva@gsbm-group.ru</a>
-                                                    <a href="tel:+79091112167">+7 909 111 2167</a>
+                                                    <a href="mailto:yvashenko@gsbm-group.ru">yvashenko@gsbm-group.ru</a>
+                                                    <a href="tel:+79824859262">+ 7 982 485 9262</a>
                                                 </div>
                                             </div>
                                         </div>

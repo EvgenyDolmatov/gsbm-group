@@ -13,15 +13,6 @@
                         <h1 class="page-header">Контакты</h1>
                         <p>ООО «Геострой-Буммаш»</p>
 
-                        <h5>Генеральный директор</h5>
-                        <p class="person-name">Лопатин Роман</p>
-                        <a href="mailto:rlopatin@gsbm-group.ru" class="person-link person-link-email">
-                            rlopatin@gsbm-group.ru
-                        </a>
-                        <a href="tel:+79242055003" class="person-link" style="margin-bottom: 30px;">
-                            +7 (924) 205 50 03
-                        </a>
-
                         <h5>Исполнительный директор</h5>
                         <p class="person-name">Коровин Пётр</p>
                         <a href="mailto:pkorovin@gsbm-group.ru" class="person-link person-link-email">
@@ -40,7 +31,7 @@
                             +7 (951) 938 53 56
                         </a>
 
-                        <h5>Руководитель проектов</h5>
+                        <h5>Региональный менеджер</h5>
                         <p class="person-name">Кузьмин Сергей</p>
                         <a href="mailto:skuzmin@gsbm-group.ru" class="person-link person-link-email">
                             skuzmin@gsbm-group.ru
@@ -48,23 +39,6 @@
                         <a href="tel:+79247025857" class="person-link" style="margin-bottom: 30px;">
                             +7 (924) 702 58 57
                         </a>
-
-                        <h5>Начальник ПТО</h5>
-                        <p class="person-name">Игнатьев Александр</p>
-                        <a href="mailto:aignatev@gsbm-group.ru" class="person-link person-link-email">
-                            aignatev@gsbm-group.ru
-                        </a>
-                        <a href="tel:+79504725766" class="person-link" style="margin-bottom: 30px;">
-                            +7 (950) 472 57 66
-                        </a>
-
-                        <h5>Банковские реквизиты</h5>
-                        <p>ВОЛГО-ВЯТСКИЙ БАНК Сбербанка России<br>
-                            ИНН/КПП 5906152298/590601001<br>
-                            р/с 40702810449770034142<br>
-                            БИК 042202603,<br>
-                            к/с 30101810900000000603
-                        </p>
                     </div>
                 </div>
                 <div class="col-lg-7 col-12">
@@ -73,8 +47,17 @@
 
                         <h5>Юридический адрес</h5>
                         <p>614107, Российская&nbsp;Федерация, Пермский&nbsp;край, г.&nbsp;Пермь, ул Уральская, д. 69/1, этаж 2</p>
+
                         <h5>Фактический адрес</h5>
                         <p>614107, Российская&nbsp;Федерация, Пермский&nbsp;край, г.&nbsp;Пермь, ул Уральская, д. 69/1, этаж 2</p>
+
+                        <h5>Банковские реквизиты</h5>
+                        <p>ВОЛГО-ВЯТСКИЙ БАНК Сбербанка России<br>
+                            ИНН/КПП 5906152298/590601001<br>
+                            р/с 40702810449770034142<br>
+                            БИК 042202603,<br>
+                            к/с 30101810900000000603
+                        </p>
                     </div>
                 </div>
             </div>

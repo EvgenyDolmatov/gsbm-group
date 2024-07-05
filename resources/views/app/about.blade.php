@@ -68,7 +68,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-12">
                         <ul class="page-list pr-lg-35">
-                            <li class="page-list-item">Комплекс работ по монтажу технологического оборудования ЦБП</li>
+                            <li class="page-list-item">Комплекс работ по монтажу технологического оборудования ЦБП и другие</li>
                             <li class="page-list-item">Монтаж технологических трубопроводов</li>
                             <li class="page-list-item">Монтаж металлоконструкций любой сложности</li>
                             <li class="page-list-item">Изготовление ж/б фундаментов под технологическое оборудование</li>
@@ -223,7 +223,7 @@
                                 <h4>Кузьмин Сергей</h4>
                             </div>
                             <div class="tile-description">
-                                <p>Руководитель проектов</p>
+                                <p>Региональный менеджер</p>
                             </div>
                             <div class="tile-contacts">
                                 <a href="mailto:skuzmin@gsbm-group.ru">skuzmin@gsbm-group.ru</a>
