@@ -19,6 +19,11 @@ class AppController extends Controller
         return view('app.contacts');
     }
 
+    public function careerPage()
+    {
+        return view('app.career');
+    }
+
     public function aboutPage()
     {
         return view('app.about');

@@ -14,6 +14,13 @@
         background-size: 560px;
     }
 
+    header.header .header-contacts .phone a {
+        font-size: 18px;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        font-size: 13px;
+    }
+
     main section#main-directions ul.page-list {
         margin-left: 35px;
     }

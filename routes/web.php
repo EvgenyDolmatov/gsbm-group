@@ -25,6 +25,7 @@ Route::get('/', [AppController::class, 'frontPage'])->name('app.front-page');
 Route::get('about', [AppController::class, 'aboutPage'])->name('app.about-page');
 Route::get('production', [AppController::class, 'productionPage'])->name('app.production-page');
 Route::get('licensees', [AppController::class, 'licenseesPage'])->name('app.licensees-page');
+Route::get('career', [AppController::class, 'careerPage'])->name('app.career-page');
 Route::get('contacts', [AppController::class, 'contactsPage'])->name('app.contacts-page');
 Route::get('privacy-policy', [AppController::class, 'privacyPolicyPage'])->name('app.privacy-policy-page');
 
@@ -36,6 +37,7 @@ Route::prefix('email')->group(function (){
     Route::post('feedback/data', [EmailController::class, 'mailFeedbackData'])->name('email.feedback');
     Route::post('feedback/consult', [EmailController::class, 'mailFeedbackConsultData'])->name('email.feedback-consult-data');
     Route::post('feedback/partner', [EmailController::class, 'mailFeedbackPartnerData'])->name('email.feedback-partner-data');
+    Route::post('feedback/resume', [EmailController::class, 'mailFeedbackResume'])->name('email.feedback-resume');
 });
 
 Route::prefix('education')->group(function () {

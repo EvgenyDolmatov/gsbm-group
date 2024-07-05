@@ -41,9 +41,11 @@
                                 <a href="{{route('education.info.main')}}">Учебный центр</a>
                             </li>
                             <li class="footer-nav-item">
+                                <a href="{{route('app.career-page')}}">Карьера</a>
+                            </li>
+                            <li class="footer-nav-item">
                                 <a href="{{route('app.contacts-page')}}">Контакты</a>
                             </li>
-
                         </ul>
                     </nav>
 

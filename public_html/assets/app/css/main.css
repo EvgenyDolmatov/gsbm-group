@@ -1150,17 +1150,23 @@ main section#contacts p {
     max-width: 500px;
 }
 
-main section#contacts a {
+main section#contacts a,
+main section#career a
+{
     display: block;
     margin-bottom: 20px;
     font-weight: 300;
 }
 main section#contacts h5,
 main section#contacts p.person-name,
-main section#contacts a.person-link {
+main section#contacts a.person-link,
+main section#career h5,
+main section#career p.person-name,
+main section#career a.person-link {
     margin-bottom: 0;
 }
-main section#contacts a.person-link.person-link-email {
+main section#contacts a.person-link.person-link-email,
+main section#career a.person-link.person-link-email {
     color: #1c3f94;
 }
 
