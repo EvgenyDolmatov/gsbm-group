@@ -20,7 +20,7 @@
             <div class="slider-item">
                 <div class="slide-image">
                     <div class="overlay-image"></div>
-                    <img src="{{asset('assets/app/img/banner/slide1.jpg')}}" alt="">
+                    <img src="{{asset('assets/app/img/banner/slide2.jpg')}}" alt="">
                 </div>
                 <div class="slide-content">
                     <div class="container-xl container-fluid">
