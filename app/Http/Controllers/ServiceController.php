@@ -66,11 +66,18 @@ class ServiceController extends Controller
         ]);
 
         $images = $request->file('images');
+        $imagesBefore = $request->file('images_before');
         $service->update($request->all());
 
         if ($images) {
             foreach ($images as $image) {
                 ServiceImage::uploadImage($image, $service);
+            }
+        }
+
+        if ($imagesBefore) {
+            foreach ($imagesBefore as $image) {
+                ServiceImage::uploadImage($image, $service, true);
             }
         }
 
