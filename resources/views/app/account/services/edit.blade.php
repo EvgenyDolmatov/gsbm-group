@@ -40,7 +40,7 @@
                                     <label for="images" class="form-label">Фотографии</label>
 
                                     <div class="d-flex justify-content-start mb-3">
-                                        @foreach($service->images as $image)
+                                        @foreach($service->images->where('is_before', false) as $image)
                                             <div class="img-thumbnail">
                                                 <a href="{{route('ajax.remove-image', $image)}}" class="remove"><i class="fa fa-plus"></i></a>
                                                 <img src="{{$image->getImage()}}" alt="{{$service->title}}">
@@ -49,6 +49,21 @@
                                     </div>
 
                                     <input type="file" name="images[]" id="images" class="form-control" multiple>
+                                </div>
+
+                                <div class="form-group mb-5">
+                                    <label for="images" class="form-label">Фотографии (было до)</label>
+
+                                    <div class="d-flex justify-content-start mb-3">
+                                        @foreach($service->images->where('is_before', true) as $image)
+                                            <div class="img-thumbnail">
+                                                <a href="{{route('ajax.remove-image', $image)}}" class="remove"><i class="fa fa-plus"></i></a>
+                                                <img src="{{$image->getImage()}}" alt="{{$service->title}}">
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    <input type="file" name="images_before[]" id="images_before" class="form-control" multiple>
                                 </div>
 
                                 <button type="submit" class="btn btn-brand btn-filled mb-3">Сохранить</button>

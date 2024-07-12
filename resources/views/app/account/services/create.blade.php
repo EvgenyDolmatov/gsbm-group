@@ -38,6 +38,11 @@
                                     <input type="file" name="images[]" id="images" class="form-control" multiple>
                                 </div>
 
+                                <div class="form-group mb-5">
+                                    <label for="images_before" class="form-label">Фотографии (было до)</label>
+                                    <input type="file" name="images_before[]" id="images_before" class="form-control" multiple>
+                                </div>
+
                                 <button type="submit" class="btn btn-brand btn-filled mb-3">Добавить</button>
                             </form>
                         </div>

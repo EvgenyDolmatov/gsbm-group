@@ -13,14 +13,14 @@ class ServiceImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['service_id', 'title', 'image_path'];
+    protected $fillable = ['service_id', 'title', 'image_path', 'is_before'];
 
     public function service()
     {
         return $this->belongsTo(Service::class);
     }
 
-    public static function uploadImage($image, $service)
+    public static function uploadImage($image, $service, $isBefore = false)
     {
         if ($image == null) return;
         $ext = $image->extension();
@@ -51,6 +51,7 @@ class ServiceImage extends Model
         $newImage->service_id = $service->id;
         $newImage->title = $filename . '.' . $ext;
         $newImage->image_path = $path . '/' . $filename . '_thumb.' . $ext;
+        $newImage->is_before = $isBefore;
         $newImage->save();
     }
 

@@ -53,8 +53,22 @@
         <div class="container-xl container-fluid">
             <div class="section-content p-0">
                 <div class="gallery-tiles">
+                    @if($service->images->where('is_before')->count())
+                        <h4>Было:</h4>
+                        <div class="row">
+                            @foreach($service->images->where('is_before') as $image)
+                                <div class="col-lg-4 col-6">
+                                    <div class="gallery-item" data-src="{{$image->getFullImage()}}">
+                                        <div class="overlay-image"></div>
+                                        <img src="{{$image->getImage()}}" alt="{{$service->title}}">
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <h4 class="mt-5">Стало:</h4>
+                    @endif
                     <div class="row">
-                        @foreach($service->images as $image)
+                        @foreach($service->images->where('is_before', false) as $image)
                             <div class="col-lg-4 col-6">
                                 <div class="gallery-item" data-src="{{$image->getFullImage()}}">
                                     <div class="overlay-image"></div>
@@ -79,48 +93,7 @@
         <div class="section-content bg-lg">
             <div class="container-xl container-fluid">
                 <div class="row">
-                    @if($service->title == 'Сварочные работы')
-                        <div class="col-lg-3 col-sm-6 col-12">
-                            <div class="document-thumb">
-                                <div class="document-actions">
-                                    <div class="scale-btn"></div>
-                                </div>
-                                <img src="{{asset('assets/app/img/certificates/certificate2.jpg')}}" alt>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-12">
-                            <div class="document-thumb">
-                                <div class="document-actions">
-                                    <div class="scale-btn"></div>
-                                </div>
-                                <img src="{{asset('assets/app/img/certificates/certificate3.jpg')}}" alt>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-12">
-                            <div class="document-thumb">
-                                <div class="document-actions">
-                                    <div class="scale-btn"></div>
-                                </div>
-                                <img src="{{asset('assets/app/img/certificates/certificate4.jpg')}}" alt>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-12">
-                            <div class="document-thumb">
-                                <div class="document-actions">
-                                    <div class="scale-btn"></div>
-                                </div>
-                                <img src="{{asset('assets/app/img/certificates/certificate5.jpg')}}" alt>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-sm-6 col-12">
-                            <div class="document-thumb">
-                                <div class="document-actions">
-                                    <div class="scale-btn"></div>
-                                </div>
-                                <img src="{{asset('assets/app/img/certificates/certificate6.jpg')}}" alt>
-                            </div>
-                        </div>
-                    @elseif($service->title == 'Работы по проектированию')
+                    @if($service->title == 'Работы по проектированию')
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="document-thumb">
                                 <div class="document-actions">
