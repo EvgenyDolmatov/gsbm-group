@@ -89,8 +89,10 @@
                                         <a href="{{route('services.show-public', $service->slug)}}">
                                             <div class="tile-image" style="opacity: 1">
                                                 <div class="overlay-image"></div>
-                                                <img src="{{$service->images->first()->getImage()}}"
-                                                     alt="{{$service->title}}">
+                                                @if($service->images->count())
+                                                    <img src="{{$service->images->first()->getImage()}}"
+                                                         alt="{{$service->title}}">
+                                                @endif
                                             </div>
                                         </a>
 
