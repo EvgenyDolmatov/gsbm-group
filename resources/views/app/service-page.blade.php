@@ -110,6 +110,39 @@
                                 <img src="{{asset('assets/app/img/certificates/certificate4.jpg')}}" alt>
                             </div>
                         </div>
+                    @elseif($service->title == 'Сварочные работы')
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate-92-02848.jpg')}}" alt>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate9.jpg')}}" alt>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate-92-02292.jpg')}}" alt>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 col-12">
+                            <div class="document-thumb">
+                                <div class="document-actions">
+                                    <div class="scale-btn"></div>
+                                </div>
+                                <img src="{{asset('assets/app/img/certificates/certificate8.jpg')}}" alt>
+                            </div>
+                        </div>
                     @else
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="document-thumb">

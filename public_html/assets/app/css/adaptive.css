@@ -81,6 +81,11 @@
       max-width: 100%;
         height: 100%;
     }
+
+    .footer-right {
+        margin-top: 30px;
+        max-width: unset;
+    }
 }
 
 @media (max-width: 1200px) and (min-width: 992px) {
@@ -154,11 +159,6 @@
 
     .feedback-image img {
         object-fit: cover;
-    }
-
-    .footer-right {
-        margin-top: 30px;
-        max-width: unset;
     }
 
     .footer-right .footer-nav-list {

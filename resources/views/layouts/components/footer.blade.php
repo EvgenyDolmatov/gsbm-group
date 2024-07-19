@@ -1,10 +1,10 @@
 <footer id="footer" class="bg-lg">
     <div class="container-xl container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-12">
+            <div class="col-xl-4 col-12">
                 <div class="footer-contacts">
                     <div class="footer-phone">
-                        <a href="tel:+73422055003">8&nbsp;342&nbsp;2055003</a>
+                        <a href="tel:+73422055003">+7&nbsp;(342)&nbsp;205-50-03</a>
                     </div>
                     <div class="footer-email">
                         <a href="mailto:info@gsbm-group.ru">info@gsbm-group.ru</a>
@@ -21,7 +21,7 @@
                     <a href="https://t.me/gsbm_center" class="social telegram" target="_blank"></a>
                 </div>
             </div>
-            <div class="col-lg-9 col-12">
+            <div class="col-xl-8 col-12">
                 <div class="footer-right">
                     <nav class="footer-nav">
                         <ul class="footer-nav-list">
