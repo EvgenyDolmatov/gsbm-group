@@ -91,6 +91,9 @@
                     <li>
                         <a href="{{route('education.docs.local')}}">Локально-нормативные документы</a>
                     </li>
+                    <li>
+                        <a href="{{route('education.docs.safety')}}">Документы по охране труда</a>
+                    </li>
                 </ul>
             </div>
         </div>

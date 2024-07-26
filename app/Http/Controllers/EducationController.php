@@ -73,6 +73,11 @@ class EducationController extends Controller
         return view('app.education.documents.docs');
     }
 
+    public function safetyDocsView()
+    {
+        return view('app.education.documents.docs-safety');
+    }
+
     /*
      * Об учебном центре
      */

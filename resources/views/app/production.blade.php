@@ -32,7 +32,7 @@
 
                     <div class="col-12 mt-5">
                         <div class="page-description">
-                            <h3 class="mb-4">Представляем наши парокондесатные головки.</h3>
+                            <h3 class="mb-5">Представляем наши парокондесатные головки.</h3>
                         </div>
                     </div>
                     <div class="col-lg-4 col-12">
@@ -49,7 +49,7 @@
                             <div class="overlay-image"></div>
                             <img src="{{asset('assets/app/img/production/production2.jpg')}}"
                                  alt="Аналог КАДАНТ">
-                            <p class="text-sm-center mt-3">Аналог КАДАНТ</p>
+                            <p class="text-sm-center mt-3">Аналог KADANT</p>
                         </div>
                     </div>
 
@@ -76,8 +76,12 @@
                         <table class="table my-5">
                             <thead>
                             <tr>
-                                <th scope="col" class="text-start">Наша пароконденсатная головка:</th>
-                                <th scope="col" class="text-start">Приобретая нашу продукцию вы:</th>
+                                <th scope="col" class="text-center" style="background-color: #3c61bb">
+                                    Наша пароконденсатная головка:
+                                </th>
+                                <th scope="col" class="text-center" style="background-color: #3c61bb">
+                                    Приобретая нашу продукцию вы:
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
@@ -114,8 +118,8 @@
                     </div>
 
 
-                    <div class="col-lg-7 col-12 my-5">
-                        <h2 class="mb-4">Преимущество нашей конструкции является:</h2>
+                    <div class="col-lg-6 col-12 my-5">
+                        <h2 class="mb-5">Преимущество нашей конструкции является:</h2>
                         <ul class="info-list-secondary mb-5">
                             <li>применение литья чугуна марки СЧ25 для корпуса</li>
                             <li>прижимное кольцо изготовлено из марки чугуна АЧВ (антифрикционный чугун)</li>
@@ -123,18 +127,8 @@
                             <li>применяются высококачественные уплотнения Viton</li>
                             <li>прокладки изготовлены из терморасширенного графита (ПУТГ)</li>
                         </ul>
-                    </div>
-                    <div class="col-lg-5 col-12 my-5">
-                        <div class="about-image">
-                            <div class="overlay-image"></div>
-                            <img src="{{asset('assets/app/img/production/production4.jpg')}}"
-                                 alt="Пароконденсатная головка">
-                        </div>
-                    </div>
 
-
-                    <div class="col-12">
-                        <table class="table mb-5">
+                        <table class="table mb-3">
                             <thead>
                             <tr>
                                 <th scope="col" class="text-start">Комплектация конструкции</th>
@@ -155,6 +149,13 @@
                             </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="col-lg-6 col-12 my-5">
+                        <div class="about-image">
+                            <div class="overlay-image"></div>
+                            <img src="{{asset('assets/app/img/production/production4.jpg')}}"
+                                 alt="Пароконденсатная головка">
+                        </div>
                     </div>
 
                     <h2 class="mb-4">
@@ -178,11 +179,10 @@
                         от лидера производства в море некачественных подделок, которыми кишит сейчас Интернет. Но
                         стоит отличать подлинно отечественную продукцию от китайских экземпляров!</p>
 
-                    <h4 class="text-center mt-5">Вас заинтересовало наше предложение?</h4>
-                    <h4 class="text-center mb-4">Будем рады помочь!</h4>
-                    <p class="text-center"><i>Остались вопросы? <br>Свяжись с нами по телефону:<br><a
-                                href="tel:+79504725766">+7 (950) 472-57-66</a> -
-                            Александр Игнатьев <br>Или напишите нам e-mail:
+                    <h4 class="text-center mt-5">Вас заинтересовало наше предложение? Будем рады помочь!</h4>
+                    <p class="text-center"><i>Остались вопросы? Свяжись с нами по телефону: <a
+                                href="tel:+79504725766">+7&nbsp;(950)&nbsp;472&#8209;57&#8209;66</a> -
+                            Александр&nbsp;Игнатьев <br>Или напишите нам e-mail:
                             <a href="mailto:zakaz@gsbm-group.ru">zakaz@gsbm-group.ru</a></i>
                     </p>
                 </div>

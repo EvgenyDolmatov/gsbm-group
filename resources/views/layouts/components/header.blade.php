@@ -67,8 +67,15 @@
                                         @endforeach
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route('app.production-page')}}">Производство</a>
+                                <li class="nav-item dropdown active">
+                                    <a class="nav-link" href="#">Производство</a>
+                                    <ul class="nav-dropdown-list">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('app.production-page')}}">
+                                                Пароконденсатные головки
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route('app.licensees-page')}}">Свидетельства</a>

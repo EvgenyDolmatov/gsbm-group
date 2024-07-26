@@ -112,9 +112,6 @@
                             <div class="tile-description">
                                 <p>Генеральный директор</p>
                             </div>
-                            <div class="tile-contacts">
-                                <a href="mailto:rlopatin@gsbm-group.ru">rlopatin@gsbm-group.ru</a>
-                            </div>
                         </div>
                     </div>
                     <!-- Tile Item -->

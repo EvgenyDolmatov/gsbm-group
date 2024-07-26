@@ -6,13 +6,16 @@
 
 @section('content')
     <section id="contacts">
+        <div class="header bg-white mb-5">
+            <div class="container-xl container-fluid">
+                <h1 class="page-header mb-0">Контакты</h1>
+                <p>ООО «Геострой-Буммаш»</p>
+            </div>
+        </div>
         <div class="container-xl container-fluid">
             <div class="row">
                 <div class="col-lg-5 col-12">
                     <div class="header">
-                        <h1 class="page-header">Контакты</h1>
-                        <p>ООО «Геострой-Буммаш»</p>
-
                         <h5>Исполнительный директор</h5>
                         <p class="person-name">Коровин Пётр</p>
                         <a href="mailto:pkorovin@gsbm-group.ru" class="person-link person-link-email">

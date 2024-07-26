@@ -63,6 +63,7 @@ Route::prefix('education')->group(function () {
     Route::prefix('documents')->group(function () {
         Route::get('permits', [EducationController::class, 'permitsDocsView'])->name('education.docs.permits');
         Route::get('local', [EducationController::class, 'localDocsView'])->name('education.docs.local');
+        Route::get('safety-and-health', [EducationController::class, 'safetyDocsView'])->name('education.docs.safety');
     });
     // Об учебном центре
     Route::prefix('about')->group(function () {
