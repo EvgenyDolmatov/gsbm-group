@@ -118,6 +118,20 @@
                             <p>Свидетельство НАКС №АЦСТ-92-02848</p>
                         </div>
                     </div>
+                    <!-- Certificate -->
+                    <div class="col-lg-3 col-sm-6 col-12">
+                        <div class="document-thumb">
+                            <div class="document-actions">
+                                <div class="scale-btn"></div>
+                                <a href="{{asset('documents/sout2024.pdf')}}"
+                                   class="download-btn" target="_blank"></a>
+                            </div>
+                            <img src="{{asset('assets/app/img/certificates/sout2024.jpg')}}" alt>
+                        </div>
+                        <div class="document-title">
+                            <p>Специальная оценка условий труда</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

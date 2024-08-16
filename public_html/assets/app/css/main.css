@@ -855,7 +855,7 @@ header.header.education .header-right {
 .about-image {
     position: relative;
     margin-bottom: 40px;
-    border-radius: 0 10px 10px 10px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
