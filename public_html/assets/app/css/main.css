@@ -1398,12 +1398,9 @@ table.table tbody tr:nth-child(2n-1) {
 
 table.table th, table.table td {
     padding: 12px 30px;
-    /*text-align: center;*/
     min-height: 50px;
     border: none;
-    /*border-left: 1px solid #e3e3e3;*/
-    /*border-right: 1px solid #e3e3e3;*/
-    font-weight: 300;
+    font-weight: 400;
 }
 
 table.table th {
