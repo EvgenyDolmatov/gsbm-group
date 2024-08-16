@@ -39,6 +39,7 @@
                         <div class="about-image">
                             <div class="overlay-image"></div>
                             <img src="{{asset('assets/app/img/production/production1.jpg')}}"
+                                 style="border-radius: 10px"
                                  alt="Аналог ОСТ 454.00.000 ТО2">
                             <p class="text-sm-center mt-3">Аналог ОСТ 454.00.000 ТО2</p>
                         </div>
@@ -48,6 +49,7 @@
                         <div class="about-image">
                             <div class="overlay-image"></div>
                             <img src="{{asset('assets/app/img/production/production2.jpg')}}"
+                                 style="border-radius: 10px"
                                  alt="Аналог КАДАНТ">
                             <p class="text-sm-center mt-3">Аналог KADANT</p>
                         </div>
@@ -57,6 +59,7 @@
                         <div class="about-image">
                             <div class="overlay-image"></div>
                             <img src="{{asset('assets/app/img/production/production3.jpg')}}"
+                                 style="border-radius: 10px"
                                  alt="Аналог Deublin">
                             <p class="text-sm-center mt-3">Аналог Deublin</p>
                         </div>
