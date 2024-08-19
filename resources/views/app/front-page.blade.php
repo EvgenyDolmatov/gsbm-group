@@ -59,7 +59,7 @@
             <div class="slider-dots"></div>
 
             <div class="slider-btn">
-                <a href="#feedback" class="btn btn-brand">Связаться с нами</a>
+                <a href="{{route("app.contacts-page")}}" class="btn btn-brand">Связаться с нами</a>
             </div>
         </div>
     </section>

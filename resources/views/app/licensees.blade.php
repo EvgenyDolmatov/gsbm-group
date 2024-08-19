@@ -118,6 +118,22 @@
                             <p>Свидетельство НАКС №АЦСТ-92-02848</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header bg-white">
+            <div class="container-xl container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 col-12">
+                        <h1 class="page-header">Документы по охране труда</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-xl container-fluid">
+            <div class="section-content pt-sm-4 pt-0">
+                <div class="row">
                     <!-- Certificate -->
                     <div class="col-lg-3 col-sm-6 col-12">
                         <div class="document-thumb">
