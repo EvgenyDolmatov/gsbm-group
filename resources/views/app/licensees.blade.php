@@ -145,7 +145,7 @@
                             <img src="{{asset('assets/app/img/certificates/sout2024.jpg')}}" alt>
                         </div>
                         <div class="document-title">
-                            <p>Специальная оценка условий труда</p>
+                            <p>Специальная оценка условий труда 2024 г.</p>
                         </div>
                     </div>
                 </div>
