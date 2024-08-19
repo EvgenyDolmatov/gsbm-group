@@ -10,7 +10,7 @@
         <div class="header bg-white">
             <div class="container-xl container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-7 col-12">
                         <h1 class="page-header">Лицензии и свидетельства</h1>
                     </div>
                 </div>
