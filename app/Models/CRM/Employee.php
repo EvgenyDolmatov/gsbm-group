@@ -169,7 +169,12 @@ class Employee extends Model
      */
     public function getLimits($item): string
     {
-        $limit = InventorySchedule::where("inventory_item_id", $item->id)->where("profession_id", $this->profession->id)->first();
+        $profession = $this->profession;
+        if (!$profession) {
+            return 'Не найдена профессия';
+        }
+
+        $limit = InventorySchedule::where("inventory_item_id", $item->id)->where("profession_id", $profession->id)->first();
 
         return $limit ?
             $limit->rate_per_year . "&nbsp/&nbsp;" . $limit->period :
