@@ -10,7 +10,7 @@
                         <a href="mailto:info@gsbm-group.ru">info@gsbm-group.ru</a>
                     </div>
                     <div class="footer-address">
-                        г. Пермь, ул. Уральская 69/1, 2 этаж
+                        г. Пермь, ул. Хрустальная, 10а
                     </div>
                 </div>
 
