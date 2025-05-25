@@ -34,7 +34,6 @@
                                             <td colspan="5" class="text-center font-weight-bold">Лекции</td>
                                         </tr>
                                         @if($group->course)
-
                                             @foreach($group->course->stages->where("type", "lesson") as $stage)
                                                 @foreach($student->results->where("stage_id", $stage->id) as $result)
                                                     <tr>

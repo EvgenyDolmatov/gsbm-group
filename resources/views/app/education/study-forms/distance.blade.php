@@ -25,8 +25,8 @@
 
                             <ul class="info-list-secondary">
                                 <li><a href="#" class="link-primary">оставив заявку</a> на нашем сайте</li>
-                                <li>позвонив по телефону (Viber, WhatsApp): <a href="tel:+79091112167" class="link-primary">+7&nbsp;909&nbsp;111&nbsp;2167</a></li>
-                                <li>отправить заявку на электронную почту: <a href="mailto:averholanceva@gsbm-group.ru" class="link-primary">averholanceva@gsbm-group.ru</a></li>
+                                <li>позвонив по телефону (Viber, WhatsApp): <a href="tel:+79824859262" class="link-primary">+7&nbsp;982&nbsp;485&nbsp;9262</a></li>
+                                <li>отправить заявку на электронную почту: <a href="mailto:yvashenko@gsbm-group.ru" class="link-primary">yvashenko@gsbm-group.ru</a></li>
                             </ul>
                         </div>
                     </div>
