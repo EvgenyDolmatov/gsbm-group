@@ -47,10 +47,6 @@
                     и запускают, скрупулёзно и терпеливо собирая воедино тысячи деталей, заставляя их крутиться с одной
                     скоростью.
                 </p>
-                <div class="about-image">
-                    <div class="overlay-image"></div>
-                    <img src="{{asset('assets/app/img/about-page.jpg')}}" alt="О нас">
-                </div>
             </div>
         </div>
     </section>
