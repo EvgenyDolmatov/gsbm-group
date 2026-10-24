@@ -1,6 +1,6 @@
 @extends('layouts.education')
 
-@section('title', 'Руководство. Педагогический состав')
+@section('title', 'Педагогический состав')
 @section('content')
     <section id="add-services">
         <div class="container-xl container-fluid">
@@ -14,7 +14,7 @@
                     <div class="col-lg-7 offset-xl-1 offset-0 col-12">
                         <div class="page-right-content">
                             <div class="service-title">
-                                <h2>Руководство. Педагогический состав</h2>
+                                <h2>Педагогический состав</h2>
                             </div>
 
                             <div class="section-content">

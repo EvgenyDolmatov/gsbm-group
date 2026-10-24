@@ -38,7 +38,7 @@
                                 <a href="{{route('app.licensees-page')}}">Свидетельства</a>
                             </li>
                             <li class="footer-nav-item">
-                                <a href="{{route('education.info.main')}}">Учебный центр</a>
+                                <a href="{{route('education.sveden.common')}}">Учебный центр</a>
                             </li>
                             <li class="footer-nav-item">
                                 <a href="{{route('app.career-page')}}">Карьера</a>
