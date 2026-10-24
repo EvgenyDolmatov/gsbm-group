@@ -2,33 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class EducationController extends Controller
 {
-    /*
-     * Основные сведения
-     */
-    public function mainInformationView()
-    {
-        return view('app.education.info.main-info');
-    }
-
-    public function structureView()
-    {
-        return view('app.education.info.structure');
-    }
-
-    public function standardsView()
-    {
-        return view('app.education.info.standards');
-    }
-
-    public function teachersView()
-    {
-        return view('app.education.info.teachers');
-    }
-
     /*
      * Платные услуги
      */

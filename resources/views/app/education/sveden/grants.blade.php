@@ -1,6 +1,6 @@
 @extends('layouts.education')
 
-@section('title', 'Образовательные стандарты')
+@section('title', 'Стипендии и меры поддержки обучающихся')
 @section('content')
     <section id="add-services">
         <div class="container-xl container-fluid">
@@ -14,9 +14,10 @@
                     <div class="col-lg-7 offset-xl-1 offset-0 col-12">
                         <div class="page-right-content">
                             <div class="service-title">
-                                <h2>Образовательные стандарты</h2>
+                                <h2>Стипендии и меры поддержки обучающихся</h2>
                             </div>
-                            <p>Федеральные государственные стандарты не реализуем</p>
+
+                            {{-- ... Content ... --}}
                         </div>
                     </div>
                 </div>

@@ -84,7 +84,7 @@
                                     <a class="nav-link" href="#">Учебный центр</a>
                                     <ul class="nav-dropdown-list">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('education.info.main')}}">Сведенья об
+                                            <a class="nav-link" href="{{route('education.sveden.common')}}">Сведения об
                                                 образовательной организации</a>
                                         </li>
                                         <li class="nav-item">
@@ -145,7 +145,7 @@
                 <a class="nav-link parent-link" href="#">Учебный центр</a>
                 <ul class="nav-dropdown-list">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('education.info.main')}}">Сведенья об образовательной
+                        <a class="nav-link" href="{{route('education.sveden.common')}}">Сведения об образовательной
                             организации</a>
                     </li>
                     <li class="nav-item">
