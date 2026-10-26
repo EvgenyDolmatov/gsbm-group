@@ -60,6 +60,7 @@
                                 <a
                                     class="btn btn-brand mt-3"
                                     href="{{asset('documents/edu_programs/П01_Программа_А_Общие_вопросы_охраны_труда_и_СУОТ.pdf')}}"
+                                    target="_blank"
                                 ><i class="fas fa-download"></i> Скачать программу обучения</a>
                             </div>
 
@@ -85,6 +86,7 @@
                                 <a
                                     class="btn btn-brand mt-3"
                                     href="{{asset('documents/edu_programs/П02_Программа_Б_Безопасные_методы_при_воздействии_вредных_факторов.pdf')}}"
+                                    target="_blank"
                                 ><i class="fas fa-download"></i> Скачать программу обучения</a>
                             </div>
 
@@ -103,6 +105,7 @@
                                 <a
                                     class="btn btn-brand mt-3"
                                     href="{{asset('documents/edu_programs/П03_Программа_В_Работы_с_подъемными_сооружениями.pdf')}}"
+                                    target="_blank"
                                 ><i class="fas fa-download"></i> Скачать программу обучения</a>
                             </div>
 
@@ -705,6 +708,7 @@
                                 <a
                                     href="{{asset('downloads/sveden/15_Справка_о_языке_образования.pdf')}}"
                                     title="Скачать"
+                                    target="_blank"
                                 >справка</a>.
                             </p>
 
