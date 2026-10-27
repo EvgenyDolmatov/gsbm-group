@@ -1,31 +1,10 @@
-@extends('layouts.education')
+@extends('layouts.education.sveden')
 
 @section('title', 'Вакантные места для приема (перевода) обучающихся')
-@section('content')
-    <section id="add-services">
-        <div class="container-xl container-fluid">
-            <div class="section-content">
-                <div class="row">
-                    <!-- Sidebar -->
-                    <div class="col-xl-4 col-lg-5 col-12">
-                        @include('layouts.components.education-sidebar')
-                    </div>
-                    <!-- Page Content -->
-                    <div class="col-lg-7 offset-xl-1 offset-0 col-12">
-                        <div class="page-right-content">
-                            <div class="service-title">
-                                <h2>Вакантные места для приема (перевода) обучающихся</h2>
-                            </div>
-
-                            <p>
-                                Таблица по каждой программе: вакантные места за счет бюджетных ассигнований — 0 (не
-                                предусмотрены); вакантные места по договорам с физическими и юридическими лицами — по
-                                данным Учебного центра – 10 человек
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+@section('page-title', 'Вакантные места для приема (перевода) обучающихся')
+@section('page-content')
+    <p>
+        Таблица по каждой программе: вакантные места за счет бюджетных ассигнований — 0 (не предусмотрены); вакантные
+        места по договорам с физическими и юридическими лицами — по данным Учебного центра – 10 человек
+    </p>
 @endsection

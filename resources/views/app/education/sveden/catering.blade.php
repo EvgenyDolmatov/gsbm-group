@@ -1,30 +1,10 @@
-@extends('layouts.education')
+@extends('layouts.education.sveden')
 
 @section('title', 'Организация питания в образовательной организации')
-@section('content')
-    <section id="add-services">
-        <div class="container-xl container-fluid">
-            <div class="section-content">
-                <div class="row">
-                    <!-- Sidebar -->
-                    <div class="col-xl-4 col-lg-5 col-12">
-                        @include('layouts.components.education-sidebar')
-                    </div>
-                    <!-- Page Content -->
-                    <div class="col-lg-7 offset-xl-1 offset-0 col-12">
-                        <div class="page-right-content">
-                            <div class="service-title">
-                                <h2>Организация питания в образовательной организации</h2>
-                            </div>
-
-                            <p>
-                                Условия питания и охраны здоровья обучающихся: при очной форме обучения предусмотрен
-                                перерыв для приема пищи не менее 40 минут (Положение о режиме занятий).
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+@section('page-title', 'Организация питания в образовательной организации')
+@section('page-content')
+    <p>
+        Условия питания и охраны здоровья обучающихся: при очной форме обучения предусмотрен
+        перерыв для приема пищи не менее 40 минут (Положение о режиме занятий).
+    </p>
 @endsection

@@ -92,8 +92,9 @@
                                                 услуги</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('education.forms.full-time')}}">Дистанционное
-                                                обучение</a>
+                                            <a class="nav-link" href="{{route('education.forms.distance')}}">
+                                                Дистанционное обучение
+                                            </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{route('education.docs.permits')}}">Документы</a>
