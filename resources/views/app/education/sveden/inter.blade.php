@@ -1,30 +1,10 @@
-@extends('layouts.education')
+@extends('layouts.education.sveden')
 
 @section('title', 'Международное сотрудничество')
-@section('content')
-    <section id="add-services">
-        <div class="container-xl container-fluid">
-            <div class="section-content">
-                <div class="row">
-                    <!-- Sidebar -->
-                    <div class="col-xl-4 col-lg-5 col-12">
-                        @include('layouts.components.education-sidebar')
-                    </div>
-                    <!-- Page Content -->
-                    <div class="col-lg-7 offset-xl-1 offset-0 col-12">
-                        <div class="page-right-content">
-                            <div class="service-title">
-                                <h2>Международное сотрудничество</h2>
-                            </div>
-
-                            <p>
-                                Договоры с иностранными и (или) международными организациями по вопросам образования и
-                                науки не заключались и не планируются к заключению.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+@section('page-title', 'Международное сотрудничество')
+@section('page-content')
+    <p>
+        Договоры с иностранными и (или) международными организациями по вопросам образования и науки не заключались и не
+        планируются к заключению.
+    </p>
 @endsection
