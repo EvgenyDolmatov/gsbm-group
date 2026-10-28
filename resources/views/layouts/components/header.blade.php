@@ -1,6 +1,13 @@
 <div class="header-top">
     <div class="container-xl container-fluid">
-        <div class="d-flex justify-content-end">
+        <div class="d-flex justify-content-between">
+            <form action="{{ route('accessibility.toggle') }}" method="POST" style="display: inline;">
+                @csrf
+                <button  type="submit" class="btn-accessibility">
+                    {{ session('visually_impaired_mode') ? 'Обычная версия' : 'Версия для слабовидящих' }}
+                </button>
+            </form>
+
             <ul class="d-flex justify-content-end align-items-center">
                 @auth()
                     @hasanyrole($accessRoles)
@@ -11,10 +18,10 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <a href="{{route('logout')}}"
-                               onclick="event.preventDefault();this.closest('form').submit();">
-                                Выйти
-                            </a>
+                            <a
+                                href="{{route('logout')}}"
+                                onclick="event.preventDefault();this.closest('form').submit();"
+                            >Выйти</a>
                         </form>
                     </li>
                 @else

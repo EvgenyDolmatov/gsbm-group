@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\AccessibilityController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\Education\SvedenController;
-use App\Http\Controllers\EducationController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\LessonController;
@@ -40,48 +39,6 @@ Route::prefix('email')->group(function (){
     Route::post('feedback/partner', [EmailController::class, 'mailFeedbackPartnerData'])->name('email.feedback-partner-data');
     Route::post('feedback/resume', [EmailController::class, 'mailFeedbackResume'])->name('email.feedback-resume');
 });
-
-Route::prefix('education')->name('education.')->group(function () {
-    // Сведения об образовательной организации
-    Route::prefix('sveden')->name('sveden.')->group(function () {
-        Route::get('common', [SvedenController::class, 'commonView'])->name('common');
-        Route::get('struct', [SvedenController::class, 'structView'])->name('struct');
-        Route::get('document', [SvedenController::class, 'documentView'])->name('document');
-        Route::get('education', [SvedenController::class, 'educationView'])->name('education');
-        Route::get('eduStandards', [SvedenController::class, 'eduStandardsView'])->name('eduStandards');
-        Route::get('managers', [SvedenController::class, 'managersView'])->name('managers');
-        Route::get('employees', [SvedenController::class, 'employeesView'])->name('employees');
-        Route::get('objects', [SvedenController::class, 'objectsView'])->name('objects');
-        Route::get('piad_edu', [SvedenController::class, 'paidEduView'])->name('paidEdu');
-        Route::get('budget', [SvedenController::class, 'budgetView'])->name('budget');
-        Route::get('vacant', [SvedenController::class, 'vacantView'])->name('vacant');
-        Route::get('grants', [SvedenController::class, 'grantsView'])->name('grants');
-        Route::get('inter', [SvedenController::class, 'interView'])->name('inter');
-        Route::get('catering', [SvedenController::class, 'cateringView'])->name('catering');
-    });
-    // Платные услуги
-    Route::prefix('services')->group(function (){
-        Route::get('price', [EducationController::class, 'educationPrice'])->name('price');
-        Route::get('outsourcing/price', [EducationController::class, 'outsourcingPrice'])->name('outsourcing.price');
-    });
-    // Формы обучения
-    Route::prefix('forms')->group(function () {
-        Route::get('full-time', [EducationController::class, 'fullTimeStudyView'])->name('forms.full-time');
-        Route::get('distance', [EducationController::class, 'distanceStudyView'])->name('forms.distance');
-        Route::get('remote', [EducationController::class, 'remoteStudyView'])->name('forms.remote');
-    });
-    // Документы
-    Route::prefix('documents')->group(function () {
-        Route::get('permits', [EducationController::class, 'permitsDocsView'])->name('docs.permits');
-        Route::get('local', [EducationController::class, 'localDocsView'])->name('docs.local');
-    });
-    // Об учебном центре
-    Route::prefix('about')->group(function () {
-        Route::get('contacts', [EducationController::class, 'contactsView'])->name('about.contacts');
-        Route::get('reviews', [EducationController::class, 'reviewsView'])->name('about.reviews');
-    });
-});
-
 
 // AJAX
 Route::get('ajax/remove-image/{image}', [AjaxController::class, 'removeImage'])->name('ajax.remove-image');
@@ -138,8 +95,11 @@ Route::prefix('super-admin')->middleware(['role:super-admin|admin'])->group(func
     Route::resource('study/directions', StudyAreaController::class);
 });
 
+Route::post('accessibility/toggle', [AccessibilityController::class, 'toggle'])->name('accessibility.toggle');
+
 // Делаем пользователя evd.work@yandex.ru супер-администратором
 Route::get('set-superuser-role', [SuperUserController::class, 'setRoleToAdmin']);
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/education.php';
 require __DIR__ . '/crm.php';
