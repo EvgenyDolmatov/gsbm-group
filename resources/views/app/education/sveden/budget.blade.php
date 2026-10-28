@@ -10,7 +10,8 @@
 
     <p>
         <a
-            href="{{asset('documents/sveden/26_Сведения_о_финансово-хозяйственной_деятельности_2025.pdf')}}"
+            itemprop="finDocLink"
+            href="{{ asset('documents/sveden/26_Сведения_о_финансово-хозяйственной_деятельности_2025.pdf') }}"
             target="_blank"
         >
             <i class="fas fa-download"></i> Объем образовательной деятельности по договорам с физическими и юридическими
@@ -20,8 +21,11 @@
 
     <p>
         <a
-            href="{{asset('documents/sveden/26а_План_ФХД_(смета)_на_2026_год.pdf')}}"
+            itemprop="finDocLink"
+            href="{{ asset('documents/sveden/26а_План_ФХД_(смета)_на_2026_год.pdf') }}"
             target="_blank"
-        ><i class="fas fa-download"></i> План финансово-хозяйственной деятельности (смета) на 2026 год.</a>
+        >
+            <i class="fas fa-download"></i> План финансово-хозяйственной деятельности (смета) на 2026 год.
+        </a>
     </p>
 @endsection
