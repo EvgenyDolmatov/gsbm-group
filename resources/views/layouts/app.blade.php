@@ -17,8 +17,12 @@
     <link rel="stylesheet" href="{{asset('assets/app/vendor/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/app/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('assets/app/css/adaptive.css')}}">
+
+    @if(session('visually_impaired_mode'))
+        <link rel="stylesheet" href="{{ asset('assets/app/css/visually-impaired.css') }}">
+    @endif
 </head>
-<body>
+<body class="{{ session('visually_impaired_mode') ? 'theme-visually-impaired' : '' }}">
 
 <!-- Header -->
 @include('layouts.components.header')

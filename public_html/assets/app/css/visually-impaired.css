@@ -1,0 +1,27 @@
+/* Базовые требования ГОСТ Р 52872-2019 для слабовидящих */
+.theme-visually-impaired {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #0000ff;
+
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    font-size: 150% !important;
+    font-family: Arial, sans-serif !important;
+}
+
+.theme-visually-impaired * {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--text-color) !important;
+}
+
+.theme-visually-impaired a {
+    color: var(--link-color) !important;
+    text-decoration: underline !important;
+}
+
+.theme-visually-impaired img.decorative,
+.theme-visually-impaired .bg-image {
+    display: none !important;
+}

@@ -199,6 +199,11 @@ table a.list-link:hover {
     color: #fff;
 }
 
+.btn-accessibility {
+    background-color: #000;
+    color: #fff;
+}
+
 .btn-rounded-10 {
     border-radius: 10px;
 }
