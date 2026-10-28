@@ -454,32 +454,33 @@
         </table>
     </div>
 
-    {{-- Колесников Николай Анатольевич --}}
-    <div class="table-flex-item">
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title"><strong>ФИО</strong></span>
-                <span class="value"><strong>Колесников Николай Анатольевич</strong></span>
+    <div class="table-flex">
+        {{-- Колесников Николай Анатольевич --}}
+        <div class="table-flex-item">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title"><strong>ФИО</strong></span>
+                    <span class="value"><strong>Колесников Николай Анатольевич</strong></span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Должность</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Должность</span>
+                    <span class="value">
                         мастер строительных и монтажных работ (штатный работник); ведет преподавательскую работу
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Преподаваемые дисциплины (модули)</span>
-                <span class="value">Безопасные методы и приемы выполнения работ в электроустановках</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Преподаваемые дисциплины (модули)</span>
+                    <span class="value">Безопасные методы и приемы выполнения работ в электроустановках</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
+                    <span class="value">
                         высшее образование – магистратура, направление подготовки 13.04.02 «Электроэнергетика и
                         электротехника», квалификация «магистр» (ФГАОУ ВО «Пермский национальный исследовательский
                         политехнический университет», 2024);высшее образование – бакалавриат, направление подготовки
@@ -491,90 +492,90 @@
                         квалификация «электромонтажник по кабельным сетям 4 разряда, электромонтажник по освещению и
                         осветительным сетям 4 разряда» (профессиональное училище № 47 г. Перми, 2003)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Ученая степень, ученое звание</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Ученая степень, ученое звание</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Повышение квалификации (за последние 3 года)</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Повышение квалификации (за последние 3 года)</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Профессиональная переподготовка</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Профессиональная переподготовка</span>
+                    <span class="value">
                         «Пожарная безопасность», 256 ч., квалификация «Специалист по пожарной профилактике»,
                         ООО «Геострой-Буммаш», 27.07.2026–19.10.2026
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Стаж работы в профессиональной сфере</span>
-                <span class="value">более 15 лет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Стаж работы в профессиональной сфере</span>
+                    <span class="value">более 15 лет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Образовательные программы</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Образовательные программы</span>
+                    <span class="value">
                         Программа В «Безопасные методы и приемы выполнения работ в электроустановках» (№17 таблицы
                         подраздела «Образование»)
                     </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    {{-- Соснин Денис Александрович --}}
-    <div class="table-flex-item">
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title"><strong>ФИО</strong></span>
-                <span class="value"><strong>Соснин Денис Александрович</strong></span>
+        {{-- Соснин Денис Александрович --}}
+        <div class="table-flex-item">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title"><strong>ФИО</strong></span>
+                    <span class="value"><strong>Соснин Денис Александрович</strong></span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Должность</span>
-                <span class="value">начальник участка (штатный работник); ведет преподавательскую работу</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Должность</span>
+                    <span class="value">начальник участка (штатный работник); ведет преподавательскую работу</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Преподаваемые дисциплины (модули)</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Преподаваемые дисциплины (модули)</span>
+                    <span class="value">
                         Гражданская оборона и защита от чрезвычайных ситуаций; дисциплины профессионального обучения по
                         профессиям «Монтажник технологического оборудования и связанных с ним конструкций», «Монтажник
                         технологических трубопроводов», «Подсобный рабочий»; промышленная безопасность (А.1, Б.9.3)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
+                    <span class="value">
                         высшее образование – бакалавриат, направление подготовки 080200.62 «Менеджмент», квалификация
                         «бакалавр» (НОУ ВПО «Гуманитарно-экономический и технологический институт», г. Москва, 2016);
                         среднее профессиональное образование (2005)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Ученая степень, ученое звание</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Ученая степень, ученое звание</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Повышение квалификации (за последние 3 года)</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Повышение квалификации (за последние 3 года)</span>
+                    <span class="value">
                         «Обучение должностных лиц и специалистов в области гражданской обороны и единой государственной
                         системы предупреждения и ликвидации ЧС», 36 ч., Ассоциация дополнительного профессионального
                         образования «Уральский центр технического обучения», 02.05.2024–08.05.2024; удостоверение о ПК
@@ -583,244 +584,245 @@
                         правил при работе на высоте…» (2019) и «Организация и ведение воинского учета на предприятии»
                         (22.12.2023)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Профессиональная переподготовка</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Профессиональная переподготовка</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Стаж работы в профессиональной сфере</span>
-                <span class="value">более 10 лет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Стаж работы в профессиональной сфере</span>
+                    <span class="value">более 10 лет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Образовательные программы</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Образовательные программы</span>
+                    <span class="value">
                         «Гражданская оборона и защита от чрезвычайных ситуаций»; «Монтажник технологического
                         оборудования и связанных с ним конструкций»; «Подсобный рабочий»; «Монтажник технологических
                         трубопроводов»; программы повышения квалификации по промышленной безопасности (А.1, Б.9.3)
                         (№ 10, 23, 27, 31, 32, 33 таблицы подраздела «Образование»)
                     </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    {{-- Шепелев Алексей Витальевич --}}
-    <div class="table-flex-item">
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title"><strong>ФИО</strong></span>
-                <span class="value"><strong>Шепелев Алексей Витальевич</strong></span>
+        {{-- Шепелев Алексей Витальевич --}}
+        <div class="table-flex-item">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title"><strong>ФИО</strong></span>
+                    <span class="value"><strong>Шепелев Алексей Витальевич</strong></span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Должность</span>
-                <span class="value">руководитель проектов (штатный работник); ведет преподавательскую работу</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Должность</span>
+                    <span class="value">руководитель проектов (штатный работник); ведет преподавательскую работу</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Преподаваемые дисциплины (модули)</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Преподаваемые дисциплины (модули)</span>
+                    <span class="value">
                         Огневые работы; газоопасные работы; работы с технологическим оборудованием; эксплуатация
                         тепловых энергоустановок; эксплуатация сосудов, работающих под избыточным давлением;
                         электрогазосварочные работы; газовая резка металлов; промышленная безопасность (Б.1.10, Б.1.11,
                         Б.8.6)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
+                    <span class="value">
                         высшее образование – бакалавриат, направление подготовки 15.03.01 «Машиностроение», квалификация
                         «бакалавр» (ФГБОУ ВО «Воронежский государственный технический университет», 2016);
                         профессиональное обучение по профессии «Сварщик (электросварочные и газосварочные работы)»,
                         квалификация «электросварщик ручной дуговой сварки 4 разряда» (ПУ-22 г. Липецка, 2001)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Ученая степень, ученое звание</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Ученая степень, ученое звание</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Повышение квалификации (за последние 3 года)</span>
-                <span class="value">нет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Повышение квалификации (за последние 3 года)</span>
+                    <span class="value">нет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Профессиональная переподготовка</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Профессиональная переподготовка</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Стаж работы в профессиональной сфере</span>
-                <span class="value">более 15 лет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Стаж работы в профессиональной сфере</span>
+                    <span class="value">более 15 лет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Образовательные программы</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Образовательные программы</span>
+                    <span class="value">
                         программы обучения по охране труда № 14, 15, 16, 19, 20; программы профессионального обучения
                         «Электрогазосварщик», «Газорезчик» (№ 25, 26); программы повышения квалификации по промышленной
                         безопасности (Б.1.10, Б.1.11, Б.8.6) (№ 28, 29, 30) таблицы подраздела «Образование»
                     </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    {{-- Иванов Василий Павлович --}}
-    <div class="table-flex-item">
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title"><strong>ФИО</strong></span>
-                <span class="value"><strong>Иванов Василий Павлович</strong></span>
+        {{-- Иванов Василий Павлович --}}
+        <div class="table-flex-item">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title"><strong>ФИО</strong></span>
+                    <span class="value"><strong>Иванов Василий Павлович</strong></span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Должность</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Должность</span>
+                    <span class="value">
                         мастер строительных и монтажных работ (штатный работник); ведет преподавательскую работу
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Преподаваемые дисциплины (модули)</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Преподаваемые дисциплины (модули)</span>
+                    <span class="value">
                         Ремонтные, монтажные и демонтажные работы зданий и сооружений; земляные работы; монтаж
                         технологического оборудования и связанных с ним конструкций; работы в люльке подъемника (вышки);
                         стропальные работы (профессия «Стропальщик»); промышленная безопасность (Б.1.11, Б.9.3)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
+                    <span class="value">
                         среднее профессиональное образование, специальность «Строительство и эксплуатация зданий и
                         сооружений», квалификация «техник-строитель-технолог» (Хабаровский строительный техникум, 1997);
                         профессиональное обучение по профессиям «Монтажник технологического оборудования и связанных
                         с ним конструкций», «Стропальщик» (Ассоциация ДПО «Уральский центр технического обучения», 2018)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Ученая степень, ученое звание</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Ученая степень, ученое звание</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Повышение квалификации (за последние 3 года)</span>
-                <span class="value">нет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Повышение квалификации (за последние 3 года)</span>
+                    <span class="value">нет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Профессиональная переподготовка</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Профессиональная переподготовка</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Стаж работы в профессиональной сфере</span>
-                <span class="value">более 15 лет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Стаж работы в профессиональной сфере</span>
+                    <span class="value">более 15 лет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Образовательные программы</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Образовательные программы</span>
+                    <span class="value">
                         программы обучения по охране труда № 18, 21; программы профессионального обучения «Стропальщик»,
                         «Монтажник технологического оборудования и связанных с ним конструкций», «Рабочий люльки
                         подъемника (вышки)» (№ 11, 23, 24); программы повышения квалификации по промышленной
                         безопасности (Б.1.11, Б.9.3) (№ 29, 31) таблицы подраздела «Образование»
                     </span>
+                </div>
             </div>
         </div>
-    </div>
 
-    {{-- Азанов Владислав Станиславович --}}
-    <div class="table-flex-item">
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title"><strong>ФИО</strong></span>
-                <span class="value"><strong>Азанов Владислав Станиславович</strong></span>
+        {{-- Азанов Владислав Станиславович --}}
+        <div class="table-flex-item">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title"><strong>ФИО</strong></span>
+                    <span class="value"><strong>Азанов Владислав Станиславович</strong></span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Должность</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Должность</span>
+                    <span class="value">
                         мастер строительных и монтажных работ (штатный работник); ведет преподавательскую работу
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Преподаваемые дисциплины (модули)</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Преподаваемые дисциплины (модули)</span>
+                    <span class="value">
                         Промышленная безопасность (эксплуатация химически опасных производственных объектов, Б.1.1)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Уровень образования, направление подготовки / специальность, квалификация</span>
+                    <span class="value">
                         реднее профессиональное образование, специальность 15.02.01 «Монтаж и техническая эксплуатация
                         промышленного оборудования (по отраслям)», квалификация «техник-механик» (ГБПОУ «Соликамский
                         технологический колледж», 2024)
                     </span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Ученая степень, ученое звание</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Ученая степень, ученое звание</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Повышение квалификации (за последние 3 года)</span>
-                <span class="value">нет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Повышение квалификации (за последние 3 года)</span>
+                    <span class="value">нет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Профессиональная переподготовка</span>
-                <span class="value">не имеет</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Профессиональная переподготовка</span>
+                    <span class="value">не имеет</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Стаж работы в профессиональной сфере</span>
-                <span class="value">2 года</span>
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Стаж работы в профессиональной сфере</span>
+                    <span class="value">2 года</span>
+                </div>
             </div>
-        </div>
-        <div class="item-main mb-2">
-            <div class="item-main-params">
-                <span class="title">Образовательные программы</span>
-                <span class="value">
+            <div class="item-main mb-2">
+                <div class="item-main-params">
+                    <span class="title">Образовательные программы</span>
+                    <span class="value">
                         «Эксплуатация химически опасных производственных объектов (Б.1.1)» (№ 36 таблицы подраздела
                         «Образование»)
                     </span>
+                </div>
             </div>
         </div>
     </div>
