@@ -1,14 +1,25 @@
 <div class="header-top">
     <div class="container-xl container-fluid">
-        <div class="d-flex justify-content-between">
-            <form action="{{ route('accessibility.toggle') }}" method="POST" style="display: inline;">
-                @csrf
-                <button  type="submit" class="btn-accessibility">
-                    {{ session('visually_impaired_mode') ? 'Обычная версия' : 'Версия для слабовидящих' }}
-                </button>
-            </form>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+                <form action="{{ route('accessibility.toggle') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="btn-accessibility">
+                        {{ session('visually_impaired_mode') ? 'Обычная версия' : 'Версия для слабовидящих' }}
+                    </button>
+                </form>
 
-            <ul class="d-flex justify-content-end align-items-center">
+                <div class="d-md-flex d-none align-items-center gap-3 small border-start ps-3">
+                    <a href="https://minobrnauki.gov.ru" target="_blank" rel="noopener noreferrer">
+                        Минобрнауки России
+                    </a>
+                    <a href="https://edu.gov.ru" target="_blank" rel="noopener noreferrer">
+                        Минпросвещения России
+                    </a>
+                </div>
+            </div>
+
+            <ul class="d-flex justify-content-end align-items-center mb-0">
                 @auth()
                     @hasanyrole($accessRoles)
                     <li><a href="{{ route("crm.dashboard") }}" class="btn btn-sm btn-danger">CRM</a></li>
